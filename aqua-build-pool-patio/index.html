@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquabuild Pool & Patio - Premier Pool & Patio Services in Tri-Cities, WA</title>
+    <meta name="description" content="Aquabuild Pool & Patio - Your trusted family-owned pool and patio experts serving Kennewick, Richland, Pasco, and West Richland. Pool construction, maintenance, and hardscaping services.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #0B3954;
+            --secondary-blue: #1A759F;
+            --accent-aqua: #52B69A;
+            --light-gray: #F8FAFC;
+            --warm-gray: #64748B;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(11, 57, 84, 0.9) 0%, rgba(26, 117, 159, 0.8) 100%);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .form-input:focus {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(26, 117, 159, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(11, 57, 84, 0.3);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-left: 4px solid var(--accent-aqua);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, var(--accent-aqua) 0%, #34A0A4 100%);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-blue-900">
+                        Aquabuild <span class="text-teal-600">Pool & Patio</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium transition">Home</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium transition">Services</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium transition">About</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium transition">Gallery</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium transition">Contact</a>
+                        <button onclick="openModal('quoteModal')" class="btn-primary text-white px-6 py-2 rounded-lg text-sm font-medium">
+                            Get Free Quote
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-blue-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-white z-50">
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-xl font-bold text-blue-900">
+                        Aquabuild Pool & Patio
+                    </div>
+                    <button onclick="toggleMobileMenu()" class="text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <a href="#home" onclick="closeMobileMenu()" class="block text-gray-700 hover:text-blue-900 text-lg">Home</a>
+                    <a href="#services" onclick="closeMobileMenu()" class="block text-gray-700 hover:text-blue-900 text-lg">Services</a>
+                    <a href="#about" onclick="closeMobileMenu()" class="block text-gray-700 hover:text-blue-900 text-lg">About</a>
+                    <a href="#gallery" onclick="closeMobileMenu()" class="block text-gray-700 hover:text-blue-900 text-lg">Gallery</a>
+                    <a href="#contact" onclick="closeMobileMenu()" class="block text-gray-700 hover:text-blue-900 text-lg">Contact</a>
+                    <button onclick="openModal('quoteModal'); closeMobileMenu()" class="btn-primary text-white px-6 py-3 rounded-lg w-full text-center">
+                        Get Free Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen bg-cover bg-center" style="background-image: url('https://plus.unsplash.com/premium_photo-1720846036448-1b45bdec171d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0')">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="relative z-10 h-full flex items-center justify-center text-center">
+            <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+                    Transform Your Backyard Into a
+                    <span class="text-teal-300">Paradise</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8">
+                    Tri-Cities' Premier Pool & Patio Experts | Family-Owned Since 2010
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openModal('quoteModal')" class="btn-primary text-white px-8 py-4 rounded-lg text-lg font-semibold pulse-animation">
+                        Get Free Quote
+                    </button>
+                    <button onclick="scrollToSection('services')" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-900 transition">
+                        View Services
+                    </button>
+                </div>
+                
+                <!-- Emergency Contact -->
+                <div class="mt-12 text-white">
+                    <p class="text-lg mb-2">Emergency Service Available 24/7</p>
+                    <a href="tel:+15095551234" class="text-2xl font-bold text-teal-300 hover:text-teal-200">
+                        (509) 231-4213
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
+            <i class="fas fa-chevron-down text-2xl animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    Our Services
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From custom pool construction to complete outdoor living spaces, we deliver excellence in every project
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pool Construction -->
+                <div class="service-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-swimming-pool text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pool Construction</h3>
+                    <p class="text-gray-600 mb-6">Custom pool design and installation for your dream backyard. From concept to completion.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>New pool builds</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Pool restoration</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Vinyl liner replacement</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Equipment upgrades</li>
+                    </ul>
+                    <button onclick="openModal('quoteModal')" class="btn-primary text-white px-6 py-3 rounded-lg w-full">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <!-- Pool Maintenance -->
+                <div class="service-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pool Maintenance</h3>
+                    <p class="text-gray-600 mb-6">Keep your pool pristine year-round with our comprehensive maintenance services.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Weekly cleaning</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Chemical balancing</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Equipment maintenance</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Seasonal services</li>
+                    </ul>
+                    <button onclick="openModal('maintenanceModal')" class="btn-primary text-white px-6 py-3 rounded-lg w-full">
+                        Schedule Service
+                    </button>
+                </div>
+                
+                <!-- Patio & Hardscaping -->
+                <div class="service-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Patio & Hardscaping</h3>
+                    <p class="text-gray-600 mb-6">Complete outdoor living solutions including patios, driveways, and outdoor kitchens.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Patio construction</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Driveway installation</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Outdoor kitchens</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Fire features</li>
+                    </ul>
+                    <button onclick="openModal('quoteModal')" class="btn-primary text-white px-6 py-3 rounded-lg w-full">
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-display font-bold text-gray-900 mb-6">
+                        Your Trusted Tri-Cities Pool & Patio Experts
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        As a family-owned business serving the Tri-Cities area since 2010, we understand the unique needs of Washington homeowners. Our commitment to quality craftsmanship and exceptional customer service has made us the go-to choice for pool and patio projects.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <div class="text-3xl font-bold text-blue-900 mb-2">500+</div>
+                            <p class="text-gray-600">Projects Completed</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-900 mb-2">13+</div>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-900 mb-2">4.9★</div>
+                            <p class="text-gray-600">Google Rating</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-900 mb-2">24/7</div>
+                            <p class="text-gray-600">Emergency Service</p>
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('quoteModal')" class="btn-primary text-white px-8 py-3 rounded-lg">
+                        Get Free Consultation
+                    </button>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1574186907057-849802af13d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Team working on pool project" 
+                         class="rounded-xl shadow-lg w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-sm text-gray-600">Serving</p>
+                        <p class="text-lg font-bold text-blue-900">Tri-Cities, WA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    Our Work
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Transformations that speak for themselves
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery items -->
+                <div class="relative group overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1727102013163-08ff175d3a62?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Pool Before/After" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Modern Pool Design</h4>
+                            <p class="text-gray-200 text-sm">Kennewick, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1683556102875-ad4874b2bdf6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Patio Construction" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Outdoor Living Space</h4>
+                            <p class="text-gray-200 text-sm">Richland, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1710330758934-865ce4e4f298?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Pool Maintenance" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Pool Renovation</h4>
+                            <p class="text-gray-200 text-sm">Pasco, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1534097575056-ddba81f714c8?q=80&w=1939&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Driveway Installation" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Custom Driveway</h4>
+                            <p class="text-gray-200 text-sm">West Richland, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1742353980377-b8e42932c590?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Pool Equipment" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Equipment Upgrade</h4>
+                            <p class="text-gray-200 text-sm">Kennewick, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1745415054568-be59cf50f4e1?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Patio Construction" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Complete Backyard</h4>
+                            <p class="text-gray-200 text-sm">Richland, WA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    What Our Customers Say
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Real experiences from Tri-Cities homeowners
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Aquabuild transformed our backyard into a resort-style oasis. The team was professional, timely, and exceeded all our expectations. Highly recommend for any pool project!"
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">Sarah M.</p>
+                        <p class="text-gray-600 text-sm">Kennewick, WA</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Exceptional service! They respond quickly to any maintenance needs and their attention to detail is unmatched. Our pool has never looked better."
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">Mike R.</p>
+                        <p class="text-gray-600 text-sm">Richland, WA</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "The patio they built is absolutely stunning. The craftsmanship is top-notch and they completed the project on time and within budget. Couldn't be happier!"
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">Jennifer L.</p>
+                        <p class="text-gray-600 text-sm">Pasco, WA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    Ready to Get Started?
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Contact us today for a free consultation and quote
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                            <input type="tel" name="phone" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Needed *</label>
+                            <select name="service" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                <option value="">Select a service</option>
+                                <option value="pool-construction">Pool Construction</option>
+                                <option value="pool-maintenance">Pool Maintenance</option>
+                                <option value="patio-hardscaping">Patio & Hardscaping</option>
+                                <option value="emergency-repair">Emergency Repair</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea name="message" rows="4" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" 
+                                      placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary text-white px-8 py-3 rounded-lg w-full text-lg font-semibold">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-aos="fade-left">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-900 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Address</p>
+                                    <p class="text-gray-600">Kennewick, WA 99336</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-900 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Phone</p>
+                                    <a href="tel:+15095551234" class="text-gray-600 hover:text-blue-900">(509) 555-1234</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-900 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Email</p>
+                                    <a href="mailto:info@aquabuildpoolandpatio.com" class="text-gray-600 hover:text-blue-900">
+                                        info@aquabuildpoolandpatio.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-blue-900 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Business Hours</p>
+                                    <p class="text-gray-600">Mon-Sat: 6AM-6PM</p>
+                                    <p class="text-gray-600">Sun: 8AM-6PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Service Areas -->
+                        <div class="border-t pt-6">
+                            <h4 class="text-lg font-bold text-gray-900 mb-4">Service Areas</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <span class="text-gray-600">Kennewick</span>
+                                <span class="text-gray-600">Richland</span>
+                                <span class="text-gray-600">Pasco</span>
+                                <span class="text-gray-600">West Richland</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Get answers to common questions about our services
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-lg" data-aos="fade-up">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left font-semibold text-gray-900 flex justify-between items-center">
+                        How long does pool construction take?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">Pool construction typically takes 6-12 weeks depending on the complexity of the design, weather conditions, and permitting process. We'll provide you with a detailed timeline during your consultation.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg" data-aos="fade-up">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left font-semibold text-gray-900 flex justify-between items-center">
+                        Do you offer financing options?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">Yes, we offer flexible financing options through our trusted partners. We can discuss payment plans during your free consultation to find a solution that works for your budget.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg" data-aos="fade-up">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left font-semibold text-gray-900 flex justify-between items-center">
+                        What areas do you serve?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">We proudly serve the entire Tri-Cities area including Kennewick, Richland, Pasco, and West Richland. We also serve surrounding communities within a 50-mile radius.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg" data-aos="fade-up">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left font-semibold text-gray-900 flex justify-between items-center">
+                        Do you provide emergency services?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">Yes, we offer 24/7 emergency services for urgent pool repairs. Call our emergency line at (509) 555-1234 for immediate assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Aquabuild Pool & Patio</h3>
+                    <p class="text-gray-300 mb-4">Your trusted family-owned pool and patio experts serving the Tri-Cities area since 2010.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition">Pool Construction</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Pool Maintenance</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Patio Construction</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Emergency Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Service Areas</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Kennewick, WA</li>
+                        <li>Richland, WA</li>
+                        <li>Pasco, WA</li>
+                        <li>West Richland, WA</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>(509) 231-4213</li>
+                        <li>info@aquabuildpoolandpatio.com</li>
+                        <li>Mon-Sat: 6AM-6PM</li>
+                        <li>Sun: 8AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Aquabuild Pool & Patio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Get Free Quote</h3>
+                <button onclick="closeModal('quoteModal')" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="quoteForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                    <input type="text" name="name" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                    <input type="email" name="email" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                    <input type="tel" name="phone" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Service Needed *</label>
+                    <select name="service" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option value="">Select service</option>
+                        <option value="pool-construction">Pool Construction</option>
+                        <option value="pool-maintenance">Pool Maintenance</option>
+                        <option value="patio-hardscaping">Patio & Hardscaping</option>
+                        <option value="emergency-repair">Emergency Repair</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-primary text-white px-6 py-3 rounded-lg w-full">
+                    Get Free Quote
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Maintenance Modal -->
+    <div id="maintenanceModal" class="modal">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Schedule Maintenance</h3>
+                <button onclick="closeModal('maintenanceModal')" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="maintenanceForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                    <input type="text" name="name" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                    <input type="email" name="email" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                    <input type="tel" name="phone" required class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Service Type</label>
+                    <select name="serviceType" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option value="weekly-cleaning">Weekly Cleaning</option>
+                        <option value="chemical-balancing">Chemical Balancing</option>
+                        <option value="equipment-maintenance">Equipment Maintenance</option>
+                        <option value="seasonal-service">Seasonal Service</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-primary text-white px-6 py-3 rounded-lg w-full">
+                    Schedule Service
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('active');
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Accordion Function
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            this.reset();
+        });
+
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your quote request! We will contact you within 24 hours.');
+            this.reset();
+            closeModal('quoteModal');
+        });
+
+        document.getElementById('maintenanceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for scheduling maintenance! We will contact you to confirm your appointment.');
+            this.reset();
+            closeModal('maintenanceModal');
+        });
+
+        // Fade-in Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Phone Number Formatting
+        document.querySelectorAll('input[type="tel"]').forEach(input => {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 6) {
+                    value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                } else if (value.length >= 3) {
+                    value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+                }
+                e.target.value = value;
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/aqua-build-pool-patio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
