@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Made Concrete & Carpentry | Ronan, Montana</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A506B',
+                        secondary: '#1C2541',
+                        accent: '#5D7592',
+                        neutral: '#F8F9FA',
+                        'custom-gray': '#4A5568',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(28, 37, 65, 0.85), rgba(28, 37, 65, 0.9)), url('http://static.photos/construction/1200x630/15');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .map-container {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-neutral text-custom-gray">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-primary font-bold text-xl">Taylor Made</span>
+                    <span class="text-accent font-light text-xl ml-1">Concrete & Carpentry</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-primary hover:text-accent transition">Services</a>
+                    <a href="#projects" class="text-primary hover:text-accent transition">Projects</a>
+                    <a href="#about" class="text-primary hover:text-accent transition">About</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition">Free Estimate</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-primary">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#services" class="block px-3 py-2 text-primary hover:bg-gray-50">Services</a>
+                <a href="#projects" class="block px-3 py-2 text-primary hover:bg-gray-50">Projects</a>
+                <a href="#about" class="block px-3 py-2 text-primary hover:bg-gray-50">About</a>
+                <a href="#contact" class="block px-3 py-2 bg-primary text-white rounded mx-3">Free Estimate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white pt-24 pb-20 md:pt-32 md:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Trusted Local Concrete & Carpentry</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Serving Ronan, Pablo & the Mission Valley with quality construction from foundation to finish</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-white text-primary px-8 py-3 rounded font-semibold hover:bg-gray-100 transition">Get Free Estimate</a>
+                    <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded font-semibold hover:bg-white hover:text-primary transition">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+                <p class="text-xl text-custom-gray max-w-3xl mx-auto">Complete construction solutions for residential, commercial, and agricultural projects throughout the Flathead Valley</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Concrete Services -->
+                <div class="service-card bg-neutral rounded-lg p-6 shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="layers" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Concrete Services</h3>
+                    <ul class="space-y-2 text-custom-gray">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Foundation pouring & structural concrete</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Driveways & parking areas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Patios, walkways & decorative concrete</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Retaining walls & landscape features</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carpentry Services -->
+                <div class="service-card bg-neutral rounded-lg p-6 shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="tool" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Carpentry & Construction</h3>
+                    <ul class="space-y-2 text-custom-gray">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Home framing & rough carpentry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Custom finish carpentry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Additions & remodeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Deck & outdoor structure construction</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Services -->
+                <div class="service-card bg-neutral rounded-lg p-6 shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="home" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Specialized Solutions</h3>
+                    <ul class="space-y-2 text-custom-gray">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Agricultural building foundations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Flathead Reservation development projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Complete project management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-accent mr-2 mt-1 w-4 h-4"></i>
+                            <span>Concrete repair & restoration</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Native to the Flathead Valley</h2>
+                    <p class="text-lg mb-6">For over a decade, Taylor Made Concrete & Carpentry has been serving the Ronan, Pablo, and Mission Valley communities with quality construction services that stand the test of Montana's climate.</p>
+                    <p class="text-lg mb-8">Our local expertise and commitment to craftsmanship have made us the preferred choice for homeowners, businesses, and agricultural properties throughout Lake County.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-3xl font-bold text-accent">100%</div>
+                            <div class="text-sm">Local & Family-Owned</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-accent">10+</div>
+                            <div class="text-sm">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-accent">500+</div>
+                            <div class="text-sm">Projects Completed</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-accent">100%</div>
+                            <div class="text-sm">Satisfaction Guarantee</div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-white p-1 rounded-lg shadow-xl">
+                        <img src="http://static.photos/construction/640x360/42" alt="Taylor Made Construction Team" class="rounded-lg w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Map -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Serving the Mission Valley</h2>
+                <p class="text-xl text-custom-gray">Proudly providing construction services throughout Ronan, Pablo, and the surrounding Flathead Reservation areas</p>
+            </div>
+            
+            <div class="bg-neutral rounded-xl p-8 shadow-inner" data-aos="fade-up">
+                <div class="relative h-96 w-full rounded-lg overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d174303.2259309702!2d-114.284812!3d47.376272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536635c782d9762d%3A0x558ce4ff7c0b6b99!2sRonan%2C%20MT%2059864!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="map-container">
+                    </iframe>
+                    <div class="absolute top-4 left-4 bg-white p-3 rounded-lg shadow-md">
+                        <div class="font-semibold text-primary">Service Area</div>
+                        <div class="text-sm">Ronan • Pablo • Mission Valley</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-16 md:py-24 bg-neutral">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Work</h2>
+                <p class="text-xl text-custom-gray max-w-3xl mx-auto">Browse our portfolio of completed projects showcasing quality craftsmanship throughout Lake County</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1685233503234-0c56fd142ac7?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Concrete Foundation Project" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg text-primary mb-2">Residential Foundation</h3>
+                        <p class="text-custom-gray">New home foundation in Ronan with precise grading and reinforcement.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1692133188474-8c5591e6a6a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Driveway Project" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg text-primary mb-2">Concrete Driveway</h3>
+                        <p class="text-custom-gray">Durable residential driveway with decorative finishing near Pablo.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1644715001907-7cc1fe2dd278?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Barn Construction" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg text-primary mb-2">Agricultural Building</h3>
+                        <p class="text-custom-gray">Complete barn construction with foundation and framing services.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1716904519810-349244919824?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Deck Construction" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg text-primary mb-2">Custom Deck</h3>
+                        <p class="text-custom-gray">Outdoor living space with composite decking and structural support.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1587646825019-bae6d9bbfdda?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Patio Project" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg text-primary mb-2">Stamped Concrete Patio</h3>
+                        <p class="text-custom-gray">Decorative patio with custom stamp pattern and sealant protection.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1719381502987-058c2140df08?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Home Addition" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg text-primary mb-2">Home Addition</h3>
+                        <p class="text-custom-gray">Complete room addition from foundation to finish carpentry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-custom-gray">Hear from homeowners and businesses throughout the Mission Valley</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-neutral p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-custom-gray mb-4">"Taylor Made poured our foundation and framed our new home. Their attention to detail and knowledge of Montana building codes was impressive."</p>
+                    <div class="font-semibold text-primary">- Mark T., Ronan</div>
+                </div>
+
+                <div class="bg-neutral p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-custom-gray mb-4">"We needed a new driveway and patio. The team was professional, completed the work on time, and the quality exceeded our expectations."</p>
+                    <div class="font-semibold text-primary">- Sarah L., Pablo</div>
+                </div>
+
+                <div class="bg-neutral p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-custom-gray mb-4">"As a local business owner, I appreciate working with other local businesses. Taylor Made delivered quality work at a fair price for our commercial project."</p>
+                    <div class="font-semibold text-primary">- James K., Mission Valley</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Ready to Start Your Project?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contact us today for a free estimate on your concrete or carpentry project</p>
+            <a href="#contact" class="bg-white text-primary px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition inline-block" data-aos="fade-up" data-aos-delay="200">
+                Get Your Free Estimate
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Get In Touch</h2>
+                    <p class="text-lg text-custom-gray mb-8">Reach out to discuss your project, request a free estimate, or learn more about our services.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="map-pin" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary">Address</h3>
+                                <p class="text-custom-gray">32557 Snyder Hill Ln<br>Ronan, MT 59864-9032</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="phone" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary">Phone</h3>
+                                <p class="text-custom-gray">(406) 555-0123</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="mail" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary">Email</h3>
+                                <p class="text-custom-gray">info@taylormadeconcrete.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i data-feather="clock" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary">Hours</h3>
+                                <p class="text-custom-gray">Monday - Friday: 8am - 6pm<br>Saturday: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-neutral p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-primary mb-6">Request a Free Estimate</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-custom-gray mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-custom-gray mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-custom-gray mb-1">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-custom-gray mb-1">Service Needed</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Select a service</option>
+                                    <option value="concrete">Concrete Work</option>
+                                    <option value="carpentry">Carpentry</option>
+                                    <option value="foundation">Foundation</option>
+                                    <option value="driveway">Driveway</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-custom-gray mb-1">Project Details</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded font-semibold hover:bg-secondary transition">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Taylor Made Concrete & Carpentry</h3>
+                    <p class="text-gray-300">Quality construction services for the Mission Valley community since 2010.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Concrete Foundations</li>
+                        <li class="text-gray-300">Driveways & Patios</li>
+                        <li class="text-gray-300">Framing Carpentry</li>
+                        <li class="text-gray-300">Home Additions</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i data-feather="phone"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-400">© 2024 Taylor Made Concrete & Carpentry</p>
+                        <p class="text-sm text-gray-400">All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
