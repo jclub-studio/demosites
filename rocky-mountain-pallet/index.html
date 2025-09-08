@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocky Mountain Pallet - Your Trusted Pallet Partner in the Rocky Mountain Region</title>
+    <meta name="description" content="Leading pallet manufacturing, recycling, and supply services in Montana and Idaho. Sustainable solutions for your supply chain needs.">
+    <meta name="keywords" content="Montana pallet supplier, Lolo pallet company, recycled pallets Montana, custom pallets, pallet repair, export pallets, sustainable pallets">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
+        
+        /* Custom gradient */
+        .bg-gradient-mountain {
+            background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
+        }
+        
+        /* Hero overlay */
+        .hero-overlay {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(5, 150, 105, 0.8));
+        }
+        
+        /* Hover effects */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #059669; border-radius: 4px; }
+        
+        /* Stats counter animation */
+        .counter { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='%231e3a8a'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z'/%3E%3C/svg%3E" alt="Rocky Mountain Pallet" class="h-8 w-8">
+                    <span class="ml-2 text-xl font-bold text-gray-900">Rocky Mountain Pallet</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a href="#industries" class="text-gray-700 hover:text-blue-600 transition">Industries</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#industries" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Industries</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1594571194668-7112042d8f54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rocky Mountain Pallet" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp">
+                Your Trusted Pallet Partner<br>in the Rocky Mountain Region
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fadeInUp" style="animation-delay: 0.2s;">
+                Sustainable pallet solutions, local expertise, and reliable supply chain support for Montana and Idaho businesses
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp" style="animation-delay: 0.4s;">
+                <button onclick="scrollToContact()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition">
+                    Get Free Quote
+                </button>
+                <button onclick="scrollToServices()" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition">
+                    Explore Services
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="counter text-4xl font-bold text-blue-600 mb-2" data-target="500">0</div>
+                    <p class="text-gray-600">Happy Clients</p>
+                </div>
+                <div>
+                    <div class="counter text-4xl font-bold text-blue-600 mb-2" data-target="15000">0</div>
+                    <p class="text-gray-600">Pallets Recycled</p>
+                </div>
+                <div>
+                    <div class="counter text-4xl font-bold text-blue-600 mb-2" data-target="25">0</div>
+                    <p class="text-gray-600">Years Experience</p>
+                </div>
+                <div>
+                    <div class="counter text-4xl font-bold text-blue-600 mb-2" data-target="98">0</div>
+                    <p class="text-gray-600">On-Time Delivery %</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">Comprehensive Pallet Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From new manufacturing to recycling programs, we provide complete pallet management services tailored to your needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- New Pallet Manufacturing -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hammer text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">New Pallet Manufacturing</h3>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Standard 48x40 GMA pallets</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom sizes & specifications</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Heat-treated (ISPM-15) certified</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Block & stringer construction</li>
+                    </ul>
+                    <button onclick="openQuoteModal('New Pallets')" class="text-blue-600 font-semibold hover:text-blue-700">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+                
+                <!-- Pallet Recycling -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-recycle text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pallet Recycling & Repair</h3>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Collection & sorting services</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Repair & refurbishment</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Grade A & B recycled options</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Cost-effective solutions</li>
+                    </ul>
+                    <button onclick="openQuoteModal('Recycling')" class="text-blue-600 font-semibold hover:text-blue-700">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+                
+                <!-- Custom Solutions -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom crate manufacturing</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Export documentation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>On-site sorting & repair</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Total pallet management</li>
+                    </ul>
+                    <button onclick="openQuoteModal('Custom Solutions')" class="text-blue-600 font-semibold hover:text-blue-700">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Trusted by businesses across Montana and Idaho for reliable pallet solutions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Manufacturing</h3>
+                    <p class="text-gray-600">Industrial manufacturers, food processors, and agricultural handlers</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-warehouse text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Distribution</h3>
+                    <p class="text-gray-600">3PL providers, warehouses, and e-commerce fulfillment centers</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shopping-cart text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Retail</h3>
+                    <p class="text-gray-600">Regional chains, big box retailers, and farm supply stores</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ship text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Export</h3>
+                    <p class="text-gray-600">Companies requiring ISPM-15 certified pallets for international shipping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="py-20 bg-gradient-mountain text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Committed to Sustainability</h2>
+                    <p class="text-xl mb-6">We're leading the way in environmental responsibility through comprehensive recycling programs and sustainable practices.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-leaf text-sm"></i>
+                            </div>
+                            <span>15,000+ pallets recycled annually</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-tree text-sm"></i>
+                            </div>
+                            <span>75% reduction in environmental impact</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-line text-sm"></i>
+                            </div>
+                            <span>Carbon footprint tracking & reporting</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">Sustainability Calculator</h3>
+                    <p class="mb-4">See how much you can save with our recycling program</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm mb-2">Monthly Pallet Usage</label>
+                            <input type="number" id="palletCount" class="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg" placeholder="Enter number of pallets">
+                        </div>
+                        <button onclick="calculateSavings()" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg transition">
+                            Calculate Savings
+                        </button>
+                        <div id="savingsResult" class="hidden">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-green-300">$<span id="annualSavings">0</span></div>
+                                <p class="text-sm">Annual cost savings</p>
+                                <div class="text-xl font-bold text-green-200 mt-2">Trees Saved: <span id="treesSaved">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Local Roots, Regional Reach</h2>
+                    <p class="text-xl text-gray-600 mb-6">
+                        Based in Lolo, Montana, Rocky Mountain Pallet combines 25+ years of experience with deep understanding of regional business needs. We're your neighbors, committed to supporting local industries.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Strategic Location</h4>
+                                <p class="text-gray-600">10 miles from Missoula, serving Montana and Idaho markets</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-users text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Personal Service</h4>
+                                <p class="text-gray-600">Direct owner/operator relationships with faster response times</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-dollar-sign text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Cost Efficiency</h4>
+                                <p class="text-gray-600">Lower overhead than national chains with flexible solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1601002052861-8cd1485edf1f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rocky Mountain Pallet Facility" class="rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-blue-600 text-white p-6 rounded-2xl">
+                        <div class="text-2xl font-bold">25+</div>
+                        <div class="text-sm">Years Serving<br>Montana & Idaho</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get Your Free Quote</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to optimize your pallet supply chain? Contact us for a free consultation and competitive pricing.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company *</label>
+                            <input type="text" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                            <select name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="New Pallets">New Pallets</option>
+                                <option value="Recycling">Recycling</option>
+                                <option value="Repair">Repair</option>
+                                <option value="Custom Solutions">Custom Solutions</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your pallet needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg font-semibold transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Address</h4>
+                                    <p class="text-gray-600">11055 Peninsula Place<br>Lolo, MT 59847</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-blue-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Phone</h4>
+                                    <p class="text-gray-600">(406) 555-0123</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Email</h4>
+                                    <p class="text-gray-600">info@rockymountainpallet.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-900 mb-4">Business Hours</h4>
+                            <div class="text-gray-600">
+                                <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+                                <p>Saturday: 8:00 AM - 12:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z'/%3E%3C/svg%3E" alt="Rocky Mountain Pallet" class="h-8 w-8">
+                        <span class="ml-2 text-xl font-bold">Rocky Mountain Pallet</span>
+                    </div>
+                    <p class="text-gray-300">Your trusted pallet partner in the Rocky Mountain region, providing sustainable solutions for over 25 years.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">New Pallets</a></li>
+                        <li><a href="#" class="hover:text-white transition">Recycling</a></li>
+                        <li><a href="#" class="hover:text-white transition">Repair</a></li>
+                        <li><a href="#" class="hover:text-white transition">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Industries</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Manufacturing</a></li>
+                        <li><a href="#" class="hover:text-white transition">Distribution</a></li>
+                        <li><a href="#" class="hover:text-white transition">Retail</a></li>
+                        <li><a href="#" class="hover:text-white transition">Export</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Rocky Mountain Pallet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Request Quote</h3>
+                <button onclick="closeQuoteModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="quoteForm" class="space-y-4">
+                <input type="hidden" name="serviceType" id="serviceType">
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                    <input type="text" name="quoteName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                    <input type="email" name="quoteEmail" required class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                    <input type="tel" name="quotePhone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Estimated Quantity</label>
+                    <input type="number" name="quantity" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">
+                    Get Quote
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Smooth scrolling
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.target);
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.innerText = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Intersection observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                }
+            });
+        });
+        
+        observer.observe(document.querySelector('.counter'));
+        
+        // Quote modal
+        function openQuoteModal(service) {
+            document.getElementById('serviceType').value = service;
+            document.getElementById('quoteModal').classList.remove('hidden');
+        }
+        
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').classList.add('hidden');
+        }
+        
+        // Savings calculator
+        function calculateSavings() {
+            const palletCount = parseInt(document.getElementById('palletCount').value) || 0;
+            const annualSavings = Math.round(palletCount * 12 * 3.5); // $3.50 average savings per pallet
+            const treesSaved = Math.round(palletCount * 12 * 0.02); // 0.02 trees per pallet
+            
+            document.getElementById('annualSavings').textContent = annualSavings.toLocaleString();
+            document.getElementById('treesSaved').textContent = treesSaved;
+            document.getElementById('savingsResult').classList.remove('hidden');
+        }
+        
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+            e.target.reset();
+        });
+        
+        document.getElementById('quoteForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Quote request submitted! We\'ll contact you shortly with pricing.');
+            closeQuoteModal();
+            e.target.reset();
+        });
+        
+        // Close modal on outside click
+        document.getElementById('quoteModal').addEventListener('click', (e) => {
+            if (e.target.id === 'quoteModal') {
+                closeQuoteModal();
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/rocky-mountain-pallet" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
