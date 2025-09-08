@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3 Construction LLC - Expert Exterior Construction in Bitterroot Valley</title>
+    <meta name="description" content="M3 Construction LLC - Fred Medlar's trusted exterior construction, framing, and concrete core drilling services in Corvallis, MT and Bitterroot Valley. Licensed, insured, and owner-operated.">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'earth': {
+                            50: '#f9f7f4',
+                            100: '#f2ede6',
+                            200: '#e6d9cc',
+                            300: '#d4c0a3',
+                            400: '#bfa577',
+                            500: '#a68b5b',
+                            600: '#8b7352',
+                            700: '#6f5c46',
+                            800: '#5c4d3d',
+                            900: '#4d4235',
+                        },
+                        'forest': {
+                            50: '#f0f9f4',
+                            100: '#dcf2e4',
+                            200: '#bbe5ce',
+                            300: '#8dd1b2',
+                            400: '#5bb390',
+                            500: '#369974',
+                            600: '#267a5c',
+                            700: '#1f6149',
+                            800: '#1b4f3d',
+                            900: '#184235',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Oswald', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(54,153,116,0.3) 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .before-after-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .before-after-slider img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: #369974;
+            border: 3px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: grab;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .slider-handle:active {
+            cursor: grabbing;
+        }
+        .slide-in {
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        .slide-in.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-earth-50 font-body">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-display font-bold text-earth-800">M3 Construction LLC</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-earth-700 hover:text-forest-600 transition-colors">Home</a>
+                    <a href="#about" class="text-earth-700 hover:text-forest-600 transition-colors">About</a>
+                    <a href="#services" class="text-earth-700 hover:text-forest-600 transition-colors">Services</a>
+                    <a href="#gallery" class="text-earth-700 hover:text-forest-600 transition-colors">Gallery</a>
+                    <a href="#contact" class="text-earth-700 hover:text-forest-600 transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-earth-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block py-2 text-earth-700 hover:text-forest-600">Home</a>
+                <a href="#about" class="block py-2 text-earth-700 hover:text-forest-600">About</a>
+                <a href="#services" class="block py-2 text-earth-700 hover:text-forest-600">Services</a>
+                <a href="#gallery" class="block py-2 text-earth-700 hover:text-forest-600">Gallery</a>
+                <a href="#contact" class="block py-2 text-earth-700 hover:text-forest-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Beautiful mountain home in Montana" 
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-display font-bold mb-6">
+                Expert Exterior Construction
+                <span class="block text-3xl md:text-5xl mt-2 text-forest-300">in the Bitterroot Valley</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                Fred Medlar's M3 Construction LLC - Fast, Dependable & Fair 
+                <br>
+                Servicing Corvallis, MT and surrounding areas
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                    Get Free Estimate
+                </a>
+                <a href="#services" class="bg-white/20 hover:bg-white/30 border border-white/50 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+                    View Services
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-display font-bold text-earth-800 mb-6">About M3 Construction</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Founded by Fred Medlar, M3 Construction LLC brings over a decade of specialized construction experience 
+                        to the Bitterroot Valley. As an owner-operated business, Fred personally oversees every project, 
+                        ensuring quality workmanship and clear communication throughout.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        We're fully licensed and insured, specializing in exterior construction, framing, and unique concrete 
+                        core drilling services. Our commitment to being "fast, dependable, and fair" has made us a 
+                        neighborhood favorite on Nextdoor.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-earth-50 rounded-lg">
+                            <i class="fas fa-certificate text-3xl text-forest-600 mb-2"></i>
+                            <p class="font-semibold text-earth-800">Licensed & Insured</p>
+                        </div>
+                        <div class="text-center p-4 bg-earth-50 rounded-lg">
+                            <i class="fas fa-user-tie text-3xl text-forest-600 mb-2"></i>
+                            <p class="font-semibold text-earth-800">Owner-Operated</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Construction work in progress" 
+                         class="rounded-lg shadow-xl">
+                    <div class="absolute -bottom-4 -right-4 bg-forest-600 text-white p-4 rounded-lg shadow-lg">
+                        <p class="font-semibold">Serving Corvallis &</p>
+                        <p class="text-sm">Bitterroot Valley</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-earth-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-display font-bold text-earth-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive construction solutions for your home or business</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Exterior Construction -->
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-forest-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-earth-800 mb-4">Exterior Construction</h3>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>New build exteriors</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Siding installation</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Exterior remodeling</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Windows & doors</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Transform your home's exterior with quality craftsmanship and materials built for Montana's climate.</p>
+                </div>
+                
+                <!-- Framing Services -->
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-forest-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-hammer text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-earth-800 mb-4">Framing Services</h3>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>New construction</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Additions & expansions</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Remodeling</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Custom framing</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Structural framing expertise for residential and commercial projects of all sizes.</p>
+                </div>
+                
+                <!-- Concrete Core Drilling -->
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-forest-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-circle-notch text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-earth-800 mb-4">Concrete Core Drilling</h3>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Utility installations</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>HVAC access</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Plumbing access</li>
+                        <li><i class="fas fa-check text-forest-600 mr-2"></i>Precision drilling</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Specialized concrete drilling services with precision equipment for clean, accurate holes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-display font-bold text-earth-800 mb-4">Project Gallery</h2>
+                <p class="text-xl text-gray-600">See our quality work across the Bitterroot Valley</p>
+            </div>
+            
+            <!-- Before/After Slider -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-display font-bold text-earth-800 mb-6 text-center">Exterior Transformation</h3>
+                <div class="max-w-4xl mx-auto">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Before - Old exterior" 
+                             id="before-image" 
+                             class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="After - New exterior" 
+                             id="after-image" 
+                             class="absolute inset-0 w-1/2 overflow-hidden">
+                        <div class="slider-handle" id="slider-handle"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1546552356-3fae876a61ca?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Framing project" 
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1749882120717-7187fb3838d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Siding project" 
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1612935089040-89195ef54677?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Concrete drilling" 
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="py-20 bg-earth-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-display font-bold text-earth-800 mb-4">Service Area</h2>
+                <p class="text-xl text-gray-600">Serving the Bitterroot Valley and beyond</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-display font-bold text-earth-800 mb-4">Primary Service Areas</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 mr-3"></i>
+                            <span class="text-gray-700">Corvallis, MT</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 mr-3"></i>
+                            <span class="text-gray-700">Hamilton</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 mr-3"></i>
+                            <span class="text-gray-700">Darby</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 mr-3"></i>
+                            <span class="text-gray-700">Florence</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 mr-3"></i>
+                            <span class="text-gray-700">Stevensville</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 mr-3"></i>
+                            <span class="text-gray-700">Ravalli County</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-lg font-semibold text-earth-800 mb-3">Coverage Details</h4>
+                        <p class="text-gray-600 mb-4">
+                            We proudly serve the entire Bitterroot Valley, from Missoula to the Idaho border. 
+                            For projects outside our primary area, please contact us to discuss travel considerations.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            Typical response time: 24-48 hours
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-display font-bold text-earth-800 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">Ready to start your project? Contact Fred directly</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-display font-bold text-earth-800 mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-user text-forest-600 text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold text-earth-800">Fred Medlar</p>
+                                <p class="text-gray-600">Owner/Operator</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-forest-600 text-xl mr-4"></i>
+                            <div>
+                                <a href="tel:4063708195" class="text-earth-800 hover:text-forest-600">(406) 370-8195</a>
+                                <p class="text-sm text-gray-600">Call or text</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-forest-600 text-xl mr-4"></i>
+                            <div>
+                                <p class="text-earth-800">Corvallis, MT 59828</p>
+                                <p class="text-sm text-gray-600">Serving Bitterroot Valley</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-forest-600 text-xl mr-4"></i>
+                            <div>
+                                <p class="text-earth-800">Mon - Fri: 7AM - 6PM</p>
+                                <p class="text-sm text-gray-600">Sat: By appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <p class="text-sm text-gray-600 mb-2">Licensed & Insured in Montana</p>
+                        <p class="text-sm text-gray-600">Nextdoor Neighborhood Favorite</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <form id="contact-form" class="bg-earth-50 p-8 rounded-lg shadow-lg">
+                        <h4 class="text-lg font-semibold text-earth-800 mb-4">Request a Free Estimate</h4>
+                        
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                                <input type="text" name="name" required 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-500">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                                <input type="tel" name="phone" required 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-500">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" name="email" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-500">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
+                                <select name="service" 
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-500">
+                                    <option value="">Select a service...</option>
+                                    <option value="exterior">Exterior Construction</option>
+                                    <option value="framing">Framing Services</option>
+                                    <option value="drilling">Concrete Core Drilling</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Project Description</label>
+                                <textarea name="message" rows="4" 
+                                          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-500"
+                                          placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            
+                            <button type="submit" 
+                                    class="w-full bg-forest-600 hover:bg-forest-700 text-white py-3 px-4 rounded-md font-semibold transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                        
+                        <p class="text-sm text-gray-500 mt-4">
+                            * Required fields. We'll respond within 24 hours.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-earth-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-display font-bold mb-4">M3 Construction LLC</h3>
+                    <p class="text-earth-300">
+                        Expert exterior construction, framing, and concrete core drilling services in the Bitterroot Valley.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-earth-300">
+                        <li><a href="#services" class="hover:text-white transition-colors">Exterior Construction</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Framing Services</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Concrete Core Drilling</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Service Areas</h4>
+                    <ul class="space-y-2 text-earth-300">
+                        <li>Corvallis, MT</li>
+                        <li>Hamilton</li>
+                        <li>Darby</li>
+                        <li>Bitterroot Valley</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-earth-300 mb-2">Fred Medlar</p>
+                    <a href="tel:4063708195" class="text-earth-300 hover:text-white transition-colors block">(406) 370-8195</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-earth-800 mt-8 pt-8 text-center text-earth-400">
+                <p>&copy; 2024 M3 Construction LLC. All rights reserved. Licensed & Insured in Montana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Before/After slider
+        const sliderHandle = document.getElementById('slider-handle');
+        const afterImage = document.getElementById('after-image');
+        let isDragging = false;
+        
+        sliderHandle.addEventListener('mousedown', () => {
+            isDragging = true;
+            document.addEventListener('mousemove', handleDrag);
+            document.addEventListener('mouseup', stopDrag);
+        });
+        
+        sliderHandle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            document.addEventListener('touchmove', handleTouch);
+            document.addEventListener('touchend', stopDrag);
+        });
+        
+        function handleDrag(e) {
+            if (!isDragging) return;
+            const rect = afterImage.parentElement.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+            afterImage.style.width = percentage + '%';
+            sliderHandle.style.left = percentage + '%';
+        }
+        
+        function handleTouch(e) {
+            if (!isDragging) return;
+            const rect = afterImage.parentElement.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+            afterImage.style.width = percentage + '%';
+            sliderHandle.style.left = percentage + '%';
+        }
+        
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', handleDrag);
+            document.removeEventListener('mouseup', stopDrag);
+            document.removeEventListener('touchmove', handleTouch);
+            document.removeEventListener('touchend', stopDrag);
+        }
+        
+        // Form handling
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            // For demonstration, we'll show an alert
+            alert('Thank you for your inquiry! Fred will contact you within 24 hours.');
+            contactForm.reset();
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card-hover').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/m3-construction-llc" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
