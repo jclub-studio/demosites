@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auker Builders LLC - Complete Construction & Land Management Solutions | Alberton, Montana</title>
+    <meta name="description" content="Auker Builders LLC offers comprehensive construction, excavation, forestry, and transportation services in rural Montana. SAM-registered government contractor with 7+ years experience.">
+    <meta name="keywords" content="Alberton Montana construction, Mineral County contractor, excavation services Montana, government contractor Montana, forestry services Montana">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-overlay { background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f1f5f9' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    </style>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" x-data="{ mobileMenu: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-brand-800">Auker Builders LLC</h1>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-brand-600 px-3 py-2 text-sm font-medium transition">Home</a>
+                        <a href="#about" class="text-gray-900 hover:text-brand-600 px-3 py-2 text-sm font-medium transition">About</a>
+                        <a href="#services" class="text-gray-900 hover:text-brand-600 px-3 py-2 text-sm font-medium transition">Services</a>
+                        <a href="#government" class="text-gray-900 hover:text-brand-600 px-3 py-2 text-sm font-medium transition">Government</a>
+                        <a href="#portfolio" class="text-gray-900 hover:text-brand-600 px-3 py-2 text-sm font-medium transition">Portfolio</a>
+                        <a href="#contact" class="text-brand-600 hover:text-brand-700 px-3 py-2 text-sm font-medium transition border border-brand-600 rounded-md px-4 py-2">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenu = !mobileMenu" class="text-gray-900 hover:text-brand-600 p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenu" class="md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-900 hover:text-brand-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-900 hover:text-brand-600">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-900 hover:text-brand-600">Services</a>
+                <a href="#government" class="block px-3 py-2 text-gray-900 hover:text-brand-600">Government</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-900 hover:text-brand-600">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-brand-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="text-center text-white px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">Complete Construction & Land Management Solutions</h1>
+                <p class="text-xl md:text-2xl mb-8 text-shadow">Rural Montana's Premier Full-Service Contractor</p>
+                <p class="text-lg mb-8 text-shadow opacity-90">SAM-Registered • Government Contractor • 7+ Years Experience</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">View Services</a>
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-brand-800 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Auker Builders</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Family-owned and operated since 2017, delivering excellence in construction, excavation, and land management across rural Montana.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Story</h3>
+                    <p class="text-gray-600 mb-4">Founded in 2017 by James Auker, Auker Builders LLC has grown from a local construction company to a comprehensive contractor serving both private clients and government agencies across northwestern Montana.</p>
+                    <p class="text-gray-600 mb-6">With deep roots in the Alberton community and extensive federal contracting experience, we bring together local expertise with government-grade standards to deliver exceptional results for every project.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-3xl font-bold text-brand-600">7+</div>
+                            <div class="text-gray-600">Years in Business</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-brand-600">500+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Certifications & Compliance</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-certificate text-brand-600 text-xl mr-3"></i>
+                            <div>
+                                <div class="font-semibold">SAM Registered</div>
+                                <div class="text-sm text-gray-600">Active since 2017</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-building text-brand-600 text-xl mr-3"></i>
+                            <div>
+                                <div class="font-semibold">Small Business Certified</div>
+                                <div class="text-sm text-gray-600">Federal contracting advantages</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-truck text-brand-600 text-xl mr-3"></i>
+                            <div>
+                                <div class="font-semibold">USDOT Registered</div>
+                                <div class="text-sm text-gray-600">#3023809</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-flag-usa text-brand-600 text-xl mr-3"></i>
+                            <div>
+                                <div class="font-semibold">CAGE Code</div>
+                                <div class="text-sm text-gray-600">7X5B8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Comprehensive Services</h2>
+                <p class="text-xl text-gray-600">From residential construction to federal contracts, we deliver complete solutions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Construction Services -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-2xl text-brand-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Construction Services</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Custom Home Building</li>
+                        <li>• Commercial Construction</li>
+                        <li>• Home Additions & Renovations</li>
+                        <li>• Foundation & Concrete Work</li>
+                    </ul>
+                </div>
+                
+                <!-- Excavation Services -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-digging text-2xl text-brand-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Excavation & Site Prep</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Foundation Excavation</li>
+                        <li>• Site Grading & Leveling</li>
+                        <li>• Road & Driveway Construction</li>
+                        <li>• Utility Installation</li>
+                    </ul>
+                </div>
+                
+                <!-- Septic Systems -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tint text-2xl text-brand-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Septic Systems</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• System Design & Permitting</li>
+                        <li>• Installation & Replacement</li>
+                        <li>• Maintenance & Repair</li>
+                        <li>• Compliance Inspections</li>
+                    </ul>
+                </div>
+                
+                <!-- Forestry Services -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tree text-2xl text-brand-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Forestry Services</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Selective Logging Operations</li>
+                        <li>• Vegetation Management</li>
+                        <li>• Fire Prevention & Fuels Reduction</li>
+                        <li>• Wildlife Habitat Enhancement</li>
+                    </ul>
+                </div>
+                
+                <!-- Environmental Services -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-2xl text-brand-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Environmental Services</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Site Restoration & Reclamation</li>
+                        <li>• Erosion Control & Stabilization</li>
+                        <li>• Stream Restoration Projects</li>
+                        <li>• Conservation Compliance</li>
+                    </ul>
+                </div>
+                
+                <!-- Transportation -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-2xl text-brand-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Transportation Services</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Heavy Equipment Hauling</li>
+                        <li>• Construction Material Delivery</li>
+                        <li>• Log & Timber Transport</li>
+                        <li>• Specialized Freight Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Contracting Section -->
+    <section id="government" class="py-20 bg-brand-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Government Contracting</h2>
+                <p class="text-xl opacity-90">SAM-registered contractor ready for federal opportunities</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Federal Contracting Capabilities</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-400 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold">Small Business Certified</div>
+                                <div class="text-sm opacity-80">Preferential bidding advantages</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-400 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold">Forest Service Contractor</div>
+                                <div class="text-sm opacity-80">Vegetation management & restoration</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-400 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold">DOT Registered</div>
+                                <div class="text-sm opacity-80">Federal transportation projects</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-400 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold">Buy American Act Compliant</div>
+                                <div class="text-sm opacity-80">Domestic contractor advantage</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-brand-800 p-6 rounded-lg">
+                        <h4 class="font-bold mb-4">Contractor Information</h4>
+                        <div class="space-y-2 text-sm">
+                            <div><span class="font-semibold">CAGE Code:</span> 7X5B8</div>
+                            <div><span class="font-semibold">UEI:</span> LCXYV3HMAAD5</div>
+                            <div><span class="font-semibold">DUNS:</span> 058065372</div>
+                            <div><span class="font-semibold">USDOT:</span> 3023809</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Project Portfolio</h2>
+                <p class="text-xl text-gray-600">Showcasing our expertise across residential, commercial, and federal projects</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <img src="https://images.unsplash.com/photo-1522050212171-61b01dd24579?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Custom Home" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Home Construction</h3>
+                        <p class="text-gray-600 mb-4">Complete custom home build with full site preparation and septic system installation in rural Montana.</p>
+                        <span class="inline-block bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-sm">Residential</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <img src="https://images.unsplash.com/photo-1664001260744-31306d5bafb3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Commercial Building" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Warehouse</h3>
+                        <p class="text-gray-600 mb-4">Industrial warehouse construction with specialized foundation and utility installation for local business.</p>
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Commercial</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Forest Management" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Forest Management</h3>
+                        <p class="text-gray-600 mb-4">Federal forest service contract for vegetation management and fire prevention in northwestern Montana.</p>
+                        <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Government</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">Ready to start your next project? Contact us today.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-brand-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Address</div>
+                                <div class="text-gray-600">8035 W Fork Petty Creek Rd<br>Alberton, MT 59820</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-brand-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Phone</div>
+                                <div class="text-gray-600">(406) 396-5496<br>(406) 396-7406</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-brand-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-gray-600">kyron.auker@gmail.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-brand-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Business Hours</div>
+                                <div class="text-gray-600">Monday - Friday: 7:00 AM - 6:00 PM<br>Saturday: 8:00 AM - 4:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <form class="space-y-6" id="contactForm">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+                            <select name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                                <option value="">Select a service</option>
+                                <option value="construction">Construction Services</option>
+                                <option value="excavation">Excavation & Site Prep</option>
+                                <option value="septic">Septic Systems</option>
+                                <option value="forestry">Forestry Services</option>
+                                <option value="environmental">Environmental Services</option>
+                                <option value="transportation">Transportation Services</option>
+                                <option value="government">Government Contracting</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Auker Builders LLC</h3>
+                    <p class="text-gray-400">Complete construction and land management solutions in rural Montana. SAM-registered government contractor.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition">Construction</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Excavation</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Forestry</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Transportation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#government" class="hover:text-white transition">Government</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Certifications</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>CAGE Code: 7X5B8</li>
+                        <li>SAM Registered</li>
+                        <li>Small Business Certified</li>
+                        <li>USDOT #3023809</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Auker Builders LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you shortly.');
+            this.reset();
+        });
+
+        // Add active class to navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-brand-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-brand-600');
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/auker-builders-llc" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
