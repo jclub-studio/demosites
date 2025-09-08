@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Forest Wedding Venue | Prosser, WA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-accent {
+            background: #f5eee6;
+        }
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .map-container {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .hero-button {
+            transition: all 0.3s ease;
+        }
+        .hero-button:hover {
+            background: #fff;
+            color: #c77d64 !important;
+            transform: translateY(-2px);
+        }
+        .floating-vine {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.05;
+            max-width: 10%;
+        }
+        .floating-vine.top-left {
+            top: -100px;
+            left: -50px;
+            transform: rotate(90deg);
+        }
+        .floating-vine.top-right {
+            top: -100px;
+            right: -50px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-green-700 flex items-center justify-center">
+                    <i class="fas fa-tree text-white text-2xl"></i>
+                </div>
+                <h1 class="ml-3 text-xl font-semibold serif text-gray-800">The Forest Wedding Venue</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-green-700 transition">About</a>
+                <a href="#features" class="text-gray-600 hover:text-green-700 transition">Features</a>
+                <a href="#services" class="text-gray-600 hover:text-green-700 transition">Services</a>
+                <a href="#gallery" class="text-gray-600 hover:text-green-700 transition">Gallery</a>
+                <a href="#contact" class="text-gray-600 hover:text-green-700 transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="tel:5097814242" class="hidden md:block text-green-700 hover:text-green-800">
+                    <i class="fas fa-phone-alt mr-2"></i>(509) 781-4242
+                </a>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero h-screen flex items-center relative">
+        <svg class="floating-vine top-left" viewBox="0 0 100 100">
+            <path fill="#587a5d" d="M21.3,10.1c2,1.5,5.6,4.5,8.4,4.5c3.5,0,3.7-0.3,4.5-0.3c0.8,0,2.2,1.5,4.3,4.4c2.3,3.1,4,4.3,6.5,4.3c2.4,0,3.3-1.2,3.8-2.3c0.4-0.9-0.1-3.2-1.8-3.5c-2.4-0.4-3.7,0.6-5.5-1.5c-1.5-1.8-1.9-4.1-2.8-5c-0.9-0.9-4.2,0.1-6.3-1.5c-1.9-1.5-1.5-3.2-3-5.1c-1-1.3-3.4-2.3-5.3-1.8c-1.2,0.3-2.1,1.5-2.5,2.8c-0.3,1.3-0.7,2.9-1.4,4.1c-0.7,1-2.3,0.7-3.3-0.3C13,12.7,14.4,6,18,4.7c3-1.1,7.5,4.2,6.9,6.9C24.4,13.1,22.5,12.1,21.3,10.1z"/>
+        </svg>
+        <svg class="floating-vine top-right" viewBox="0 0 100 100">
+            <path fill="#587a5d" d="M21.3,10.1c2,1.5,5.6,4.5,8.4,4.5c3.5,0,3.7-0.3,4.5-0.3c0.8,0,2.2,1.5,4.3,4.4c2.3,3.1,4,4.3,6.5,4.3c2.4,0,3.3-1.2,3.8-2.3c0.4-0.9-0.1-3.2-1.8-3.5c-2.4-0.4-3.7,0.6-5.5-1.5c-1.5-1.8-1.9-4.1-2.8-5c-0.9-0.9-4.2,0.1-6.3-1.5c-1.9-1.5-1.5-3.2-3-5.1c-1-1.3-3.4-2.3-5.3-1.8c-1.2,0.3-2.1,1.5-2.5,2.8c-0.3,1.3-0.7,2.9-1.4,4.1c-0.7,1-2.3,0.7-3.3-0.3C13,12.7,14.4,6,18,4.7c3-1.1,7.5,4.2,6.9,6.9C24.4,13.1,22.5,12.1,21.3,10.1z"/>
+        </svg>
+        <div class="container mx-auto px-6 z-10 text-white text-center">
+            <p class="cursive text-3xl md:text-6xl mb-2">The Forest Wedding Venue</p>
+            <h2 class="serif text-4xl md:text-7xl font-bold mb-8">A Dream Wedding Set in Nature</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-12">
+                Experience your perfect day surrounded by 26 acres of breathtaking forest in the heart of Washington's wine country
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="hero-button bg-green-700 border-2 border-green-700 hover:bg-white hover:text-green-700 text-white py-3 px-8 rounded-full font-semibold text-lg transition duration-300 inline-block">
+                    Book a Tour
+                </a>
+                <a href="#gallery" class="hero-button bg-white bg-opacity-20 border-2 border-white hover:bg-white hover:text-green-700 py-3 px-8 rounded-full font-semibold text-lg transition duration-300 inline-block">
+                    View Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-accent">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2">
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-full h-full border-4 border-green-300 rounded-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Wedding venue entrance" class="rounded-lg relative w-full object-cover">
+                </div>
+            </div>
+            <div class="lg:w-1/2 lg:pl-16 mt-12 lg:mt-0">
+                <h2 class="serif text-4xl font-bold mb-6">Our Story</h2>
+                <p class="text-lg mb-4">
+                    Welcome to The Forest Wedding Venue, nestled in the heart of Washington's renowned wine country near the charming town of Prosser. For over a decade, we've been crafting unforgettable wedding experiences amidst our 26-acre forest estate.
+                </p>
+                <p class="text-lg mb-6">
+                    We pride ourselves on being more than just a venue. As a premier cultural hub in the hospitality industry, our dedicated team of 3 professionals delivers exceptional service to approximately 120 couples each year, generating $1.6M in annual revenue while maintaining the intimate charm that sets us apart.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-green-700 text-lg">Established</h3>
+                        <p>2008</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-green-700 text-lg">Location</h3>
+                        <p>Prosser, WA</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-green-700 text-lg">Property Size</h3>
+                        <p>26 Acres</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-green-700 text-lg">Annual Events</h3>
+                        <p>120+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="serif text-4xl font-bold mb-4">Venue Features & Amenities</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our enchanting 26-acre property with amenities designed to make your special day flawless</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-700">
+                    <i class="fas fa-tree text-4xl text-green-700 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Scenic Natural Setting</h3>
+                    <p class="text-gray-600">Nestled in Washington wine country with beautiful forest and garden surroundings creating the perfect backdrop for your wedding photos and ceremony.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-700">
+                    <i class="fas fa-glass-cheers text-4xl text-green-700 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Full-Service Facilities</h3>
+                    <p class="text-gray-600">Comprehensive banquet catering and meeting facilities with professional staff to handle every detail, ensuring your celebration is seamless.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-700">
+                    <i class="fas fa-expand-alt text-4xl text-green-700 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Versatile Event Space</h3>
+                    <p class="text-gray-600">Customizable spaces suitable for both intimate gatherings and larger celebrations, accommodating from 20 to 200 guests with elegance.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-700">
+                    <i class="fas fa-heart text-4xl text-green-700 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Romantic Atmosphere</h3>
+                    <p class="text-gray-600">Intimate forest backdrop perfect for your ceremony and reception, featuring twinkling lights and natural beauty to enchant you and your guests.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-700">
+                    <i class="fas fa-lock text-4xl text-green-700 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Exclusive Privacy</h3>
+                    <p class="text-gray-600">With 26 acres of private grounds, your event becomes a secluded celebration just for your special guests, free from outside distractions.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-700">
+                    <i class="fas fa-wine-glass-alt text-4xl text-green-700 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Wine Country Highlight</h3>
+                    <p class="text-gray-600">Showcase local wines from Washington's prestigious vineyards, with custom wine pairing experiences available for your reception.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="serif text-4xl font-bold mb-4">Our Wedding Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive offerings to make your wedding day perfect from start to finish</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-ring text-2xl text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Venue Rental</h3>
+                    <p class="text-gray-600">Beautiful ceremony and reception spaces with all-day access for you and your vendors.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-utensils text-2xl text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Catering</h3>
+                    <p class="text-gray-600">Customizable menus with locally-sourced ingredients, including wine pairing options.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Event Coordination</h3>
+                    <p class="text-gray-600">Dedicated coordinator to handle timelines, vendor relations, and day-of execution.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-2xl text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Accommodations</h3>
+                    <p class="text-gray-600">Partner properties for guest lodging with special wedding party discounts.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 p-8 bg-green-700 text-white rounded-lg">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0 md:w-2/3">
+                        <h3 class="serif text-2xl font-bold mb-2">Premier Venue in Washington Wine Country</h3>
+                        <p>The perfect blend of natural beauty and sophisticated service creates unforgettable experiences.</p>
+                    </div>
+                    <a href="#contact" class="bg-white text-green-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition">
+                        Inquire Availability
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="serif text-4xl font-bold mb-4">Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Step into the enchanting beauty of The Forest Wedding Venue through our galleries</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Placeholder gallery images -->
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4a48cfc1ae66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" alt="Forest ceremony site" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1625242427898-cea8b0152c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Reception area" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1440010558475-9a2294e6adc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Forest pathway" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1599465706262-2a0ced0efd9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Wedding dinner" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Trees and lights" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509924613845-4fec70abdce2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Decor details" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1532634922-8fe425d4e1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1752&q=80" alt="Bridal preparations" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Forest scenery" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-green-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="serif text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ready to start planning your dream wedding? Reach out to our team today</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="serif text-2xl font-bold mb-6">Get In Touch</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="event-date">Wedding Date (Estimated)</label>
+                                <input type="date" id="event-date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="message">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300"></textarea>
+                            </div>
+                            <button class="w-full bg-green-700 hover:bg-green-800 text-white py-3 px-8 rounded-full font-semibold transition">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 mt-8 lg:mt-0">
+                    <div class="bg-green-700 text-white p-8 rounded-lg shadow-lg">
+                        <h3 class="serif text-2xl font-bold mb-6">Location & Hours</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold mb-3">Address</h4>
+                            <p class="mb-2">The Forest Wedding Venue</p>
+                            <p>58302 N Crosby Rd, Prosser, WA 99350</p>
+                            <p class="mt-2">Cross Streets: Between W Snipes Rd NW and W Kuhlman Rd NW</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold mb-3">Contact Information</h4>
+                            <p class="mb-2"><i class="fas fa-phone-alt mr-3"></i> (509) 781-4242</p>
+                            <p><i class="fas fa-envelope mr-3"></i> klewis417@gmail.com</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold mb-3">Business Hours</h4>
+                            <p class="mb-2">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p>Saturday - Sunday: Closed (except for events)</p>
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-4">Find Us</h4>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172139.05393298297!2d-119.786861!3d46.2049612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5498f76d8e8aaaab%3A0x4eafdb5ae8b5a4b!2sProsser%2C%20WA%2099350%2C%20USA!5e0!3m2!1sen!2s!4v1689209795012!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center">
+                            <i class="fas fa-tree text-white text-xl"></i>
+                        </div>
+                        <h3 class="ml-3 text-xl serif">The Forest Wedding Venue</h3>
+                    </div>
+                    <p class="max-w-sm text-gray-400">Premier wedding venue located in the heart of Washington's beautiful wine country. Specializing in romantic forest weddings for unforgettable celebrations.</p>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#features" class="hover:text-white transition">Venue Features</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Our Services</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-wedding"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="text-green-400 font-medium hover:text-green-300 transition">Privacy Policy</a>
+                    <span class="mx-2">•</span>
+                    <a href="#" class="text-green-400 font-medium hover:text-green-300 transition">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-gray-400 text-center">
+                <p>&copy; 2023 The Forest Wedding Venue. All rights reserved.</p>
+                <p class="mt-2">58302 N Crosby Rd, Prosser, WA 99350 | (509) 781-4242</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form validation
+        const form = document.querySelector('form');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                if(name && email) {
+                    alert('Your inquiry has been submitted! We will contact you shortly to discuss your special day.');
+                    form.reset();
+                } else {
+                    alert('Please fill in your name and email address');
+                }
+            });
+        }
+
+        // Responsive menu toggle (if we had the mobile menu)
+        const menuBtn = document.querySelector('.md\\:hidden');
+        menuBtn.addEventListener('click', function() {
+            alert("For simplicity, this demo shows the contact alert. In a complete implementation, a mobile menu would appear.");
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/the-forest-venue" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
