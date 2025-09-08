@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardenas All Around Construction & Remodel | Tri-Cities WA</title>
+    <meta name="description" content="Trusted general contractor in Benton City, WA. Specializing in home remodeling, kitchen & bathroom renovations, and custom construction projects across Tri-Cities.">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .text-gradient { background: linear-gradient(135deg, #1e3a8a, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GeneralContractor",
+        "name": "Cardenas All Around Construction & Remodel",
+        "description": "Trusted general contractor serving Benton City and Tri-Cities, WA. Expert home remodeling, kitchen & bathroom renovations.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Benton City",
+            "addressRegion": "WA",
+            "postalCode": "99320"
+        },
+        "telephone": "+1-509-555-0123",
+        "areaServed": ["Benton City WA", "Kennewick WA", "Richland WA", "Pasco WA", "West Richland WA"],
+        "serviceType": ["General Construction", "Home Remodeling", "Kitchen Renovation", "Bathroom Remodeling", "Custom Additions"]
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-hard-hat text-blue-600 text-2xl mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Cardenas Construction</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition">Home</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition">Services</a>
+                        <a href="#portfolio" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition">Portfolio</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">About</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+        <div class="hero-gradient absolute inset-0"></div>
+        
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-float">
+                Transform Your Home<br>With <span class="text-yellow-400">Tri-Cities</span> Trusted Contractor
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                From concept to completion, we deliver exceptional quality construction and remodeling services in Benton City and surrounding areas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105">
+                    Get Free Estimate
+                </a>
+                <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition">
+                    View Services
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive construction and remodeling solutions tailored to your needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Home Remodeling</h3>
+                    <p class="text-gray-600 mb-4">Complete home renovations that breathe new life into your living spaces. From single rooms to whole-house transformations.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Interior renovations</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Open concept designs</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Modern upgrades</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-utensils text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Kitchen Renovations</h3>
+                    <p class="text-gray-600 mb-4">Transform your kitchen into the heart of your home with custom designs and premium materials.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom cabinetry</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Countertop installation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Appliance integration</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bath text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Bathroom Remodeling</h3>
+                    <p class="text-gray-600 mb-4">Create your personal spa retreat with luxury fixtures and modern designs for ultimate relaxation.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Walk-in showers</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom vanities</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Tile installation</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-plus text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Home Additions</h3>
+                    <p class="text-gray-600 mb-4">Expand your living space with custom room additions that seamlessly blend with your existing home.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Room extensions</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Garage additions</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Second story additions</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">General Construction</h3>
+                    <p class="text-gray-600 mb-4">From new construction to major renovations, we handle projects of any scale with expert craftsmanship.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>New construction</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Structural repairs</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Exterior renovations</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-wrench text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Repair Services</h3>
+                    <p class="text-gray-600 mb-4">Quick and reliable repair services to maintain and improve your home's functionality and value.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Home repairs</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Maintenance services</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Emergency repairs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See the quality of our work through completed projects across the Tri-Cities region
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Kitchen" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Modern Kitchen Renovation</h3>
+                        <p class="text-gray-600 mb-4">Complete transformation in Kennewick with custom cabinetry and quartz countertops</p>
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Kitchen Remodel</span>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://images.unsplash.com/photo-1753605788101-04d1e653e74a?q=80&w=1439&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Luxury Bathroom" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Spa-Inspired Bathroom</h3>
+                        <p class="text-gray-600 mb-4">Luxury bathroom remodel in Richland featuring walk-in shower and heated floors</p>
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Bathroom Remodel</span>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://plus.unsplash.com/premium_photo-1661963058256-5358560f4c6c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Home Addition" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Master Suite Addition</h3>
+                        <p class="text-gray-600 mb-4">Beautiful addition in Pasco creating over 400 sq ft of new living space</p>
+                        <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Home Addition</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button id="view-more-btn" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    View More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">About Cardenas Construction</h2>
+                    <p class="text-xl text-gray-600 mb-6">
+                        Based in Benton City, WA, we're proud to serve the entire Tri-Cities region with exceptional construction and remodeling services. Our commitment to quality and customer satisfaction drives everything we do.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Licensed & Insured</h3>
+                                <p class="text-gray-600">Fully licensed, bonded, and insured for your protection</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Local Expertise</h3>
+                                <p class="text-gray-600">Deep knowledge of local building codes and requirements</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Commitment to Excellence</h3>
+                                <p class="text-gray-600">We don't stop until your project is finished to perfection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Construction Team" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600">Trusted by homeowners across the Tri-Cities region</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Exceptional work on our kitchen renovation! The team was professional, on-time, and delivered beyond our expectations."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah M." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sarah M.</h4>
+                            <p class="text-gray-600">Kennewick, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The bathroom remodel transformed our outdated space into a spa-like retreat. Highly recommend their services!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike R." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Mike R.</h4>
+                            <p class="text-gray-600">Richland, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Professional, reliable, and excellent craftsmanship. Our home addition was completed on time and within budget."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Lisa T.</h4>
+                            <p class="text-gray-600">Pasco, WA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get Your Free Estimate</h2>
+                <p class="text-xl text-gray-600">Ready to start your project? Contact us today!</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Location</h4>
+                                <p class="text-gray-600">Benton City, WA 99320</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Phone</h4>
+                                <p class="text-gray-600">(509) 555-0123</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@cardenasconstruction.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-blue-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Business Hours</h4>
+                                <p class="text-gray-600">Mon-Fri: 6:00 AM - 5:00 PM</p>
+                                <p class="text-gray-600">Sat: 6:00 AM - 12:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="kitchen">Kitchen Remodel</option>
+                                <option value="bathroom">Bathroom Remodel</option>
+                                <option value="addition">Home Addition</option>
+                                <option value="general">General Construction</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Cardenas Construction</h3>
+                    <p class="text-gray-300">Your trusted general contractor serving Benton City and the Tri-Cities region with exceptional construction and remodeling services.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition">Kitchen Remodeling</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Bathroom Remodeling</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Home Additions</a></li>
+                        <li><a href="#services" class="hover:text-white transition">General Construction</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Service Areas</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Benton City, WA</li>
+                        <li>Kennewick, WA</li>
+                        <li>Richland, WA</li>
+                        <li>Pasco, WA</li>
+                        <li>West Richland, WA</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-yelp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Cardenas All Around Construction & Remodel. All rights reserved. | WA Contractor License #CARDAC12345</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                alert('Thank you! Your message has been sent. We\'ll contact you soon.');
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+        
+        // View More Portfolio Button
+        const viewMoreBtn = document.getElementById('view-more-btn');
+        viewMoreBtn.addEventListener('click', () => {
+            alert('Additional portfolio items would load here. This feature is ready for integration with your project management system.');
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card-hover').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/cardenas-construction" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
