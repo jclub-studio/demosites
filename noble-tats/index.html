@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble Tats | Family-First Tattoo Shop in Richland, WA</title>
+    <meta name="description" content="Noble Tats - Where art meets family values. Professional tattoo services in Richland, WA with an inspiring personal story behind every design.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563305589-e4995799dba3?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .accent-bg {
+            background-color: #8B0000;
+        }
+        
+        .accent-text {
+            color: #8B0000;
+        }
+        
+        .accent-border {
+            border-color: #8B0000;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay {
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold accent-text flex items-center">
+                <i class="fas fa-draw-polygon mr-2"></i> NOBLE TATS
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:accent-text transition">Home</a>
+                <a href="#about" class="hover:accent-text transition">About</a>
+                <a href="#portfolio" class="hover:accent-text transition">Portfolio</a>
+                <a href="#services" class="hover:accent-text transition">Services</a>
+                <a href="#contact" class="hover:accent-text transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4">
+            <a href="#home" class="block py-2 hover:accent-text transition">Home</a>
+            <a href="#about" class="block py-2 hover:accent-text transition">About</a>
+            <a href="#portfolio" class="block py-2 hover:accent-text transition">Portfolio</a>
+            <a href="#services" class="block py-2 hover:accent-text transition">Services</a>
+            <a href="#contact" class="block py-2 hover:accent-text transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Where Art Meets Family Values</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Transforming lives through ink and inspiration at Noble Tats in Richland, WA</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-white accent-text font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">Book Now</a>
+                <a href="#portfolio" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:accent-text transition duration-300">View Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 md:py-24 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Work</h2>
+                <div class="w-24 h-1 accent-bg mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Each tattoo tells a unique story. Browse our portfolio to see examples of our custom designs and artistic style.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1714996073606-576df88a10ef?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Floral tattoo" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Floral Sleeve</h3>
+                            <p>Custom designed floral pattern</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1547754145-ef9ff306e3f3?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Minimalist tattoo" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Minimalist Design</h3>
+                            <p>Delicate line work</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1585745422697-1b42b98aac14?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Portrait tattoo" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Portrait Work</h3>
+                            <p>Detailed realism</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://plus.unsplash.com/premium_photo-1707398501439-e329b6908ba5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Geometric tattoo" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Geometric Design</h3>
+                            <p>Precision line work</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1604374376934-2df6fad6519b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Black and grey tattoo" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Black & Grey</h3>
+                            <p>Shading mastery</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://plus.unsplash.com/premium_photo-1726862879476-3a26b6b92268?q=80&w=1578&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Watercolor tattoo" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Watercolor Style</h3>
+                            <p>Vibrant color blending</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="mb-6">See more of our work on Instagram</p>
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="inline-flex items-center bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition">
+                    <i class="fab fa-instagram mr-2"></i> @nobletats
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                <div class="w-24 h-1 accent-bg mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">We offer custom tattoo designs tailored to your personal story and style</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-amber-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 accent-bg text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-pencil-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Custom Design</h3>
+                    <p class="text-center">Work with Jenna to create a completely original tattoo that reflects your personal story and aesthetic preferences.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-amber-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 accent-bg text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-comments text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Consultation</h3>
+                    <p class="text-center">Comprehensive pre-tattoo consultation to discuss design, placement, care, and answer all your questions.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-amber-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 accent-bg text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-calendar-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Appointment Booking</h3>
+                    <p class="text-center">Flexible scheduling with a 48-hour response time to accommodate your availability.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-amber-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 accent-bg text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-redo text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Touch-Ups</h3>
+                    <p class="text-center">Complimentary touch-up service within 3 months of your original tattoo to ensure lasting quality.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-amber-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 accent-bg text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Artist Referrals</h3>
+                    <p class="text-center">If your style requires a specialist, we'll connect you with trusted artists in our network.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-amber-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 accent-bg text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Memorial Tattoos</h3>
+                    <p class="text-center">Special care and attention for tattoos honoring loved ones or significant life events.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-amber-100 p-8 rounded-lg max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-center accent-text">Our Process</h3>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex-1 text-center">
+                        <div class="w-12 h-12 accent-bg text-white rounded-full flex items-center justify-center mb-2 mx-auto">1</div>
+                        <p>Contact us to discuss your idea</p>
+                    </div>
+                    <i class="fas fa-arrow-right accent-text hidden md:block"></i>
+                    <div class="flex-1 text-center">
+                        <div class="w-12 h-12 accent-bg text-white rounded-full flex items-center justify-center mb-2 mx-auto">2</div>
+                        <p>Schedule a consultation</p>
+                    </div>
+                    <i class="fas fa-arrow-right accent-text hidden md:block"></i>
+                    <div class="flex-1 text-center">
+                        <div class="w-12 h-12 accent-bg text-white rounded-full flex items-center justify-center mb-2 mx-auto">3</div>
+                        <p>Design finalization</p>
+                    </div>
+                    <i class="fas fa-arrow-right accent-text hidden md:block"></i>
+                    <div class="flex-1 text-center">
+                        <div class="w-12 h-12 accent-bg text-white rounded-full flex items-center justify-center mb-2 mx-auto">4</div>
+                        <p>Tattoo session</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Stories</h2>
+                <div class="w-24 h-1 accent-bg mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Hear from those who've trusted us with their ink</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <div class="flex accent-text">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Jenna took my vague idea and turned it into the most beautiful memorial tattoo for my mother. Her attention to detail and care throughout the process was incredible."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <div class="flex accent-text">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"The family atmosphere at Noble Tats made my first tattoo experience comfortable and memorable. Jenna's skill is matched only by her kindness."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily R." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emily R.</h4>
+                            <div class="flex accent-text">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"I've been to several shops in the Tri-Cities area, but Noble Tats stands out for their professionalism and unique approach. My sleeve is coming along beautifully!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 accent-bg mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Ready to start your tattoo journey? Reach out to schedule a consultation.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 accent-text">Contact Information</h3>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 accent-text"></i> Location
+                            </h4>
+                            <p>614 The Parkway, Richland, WA 99352</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-phone-alt mr-3 accent-text"></i> Phone
+                            </h4>
+                            <a href="tel:509-616-0298" class="hover:underline">(509) 616-0298</a>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fab fa-instagram mr-3 accent-text"></i> Instagram
+                            </h4>
+                            <a href="https://www.instagram.com/nobletats" target="_blank" class="hover:underline">@nobletats</a>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-clock mr-3 accent-text"></i> Hours
+                            </h4>
+                            <p>Tuesday - Saturday: 11am - 7pm</p>
+                            <p>Sunday - Monday: Closed</p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.107248434464!2d-119.2847229235375!3d46.28587185590252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549877e3a6f7f3d1%3A0x549a8f0a6e8a5b1d!2s614%20The%20Pkwy%2C%20Richland%2C%20WA%2099352%2C%20USA!5e0!3m2!1sen!2s!4v1689876543210!5m2!1sen!2s" 
+                                    width="100%" 
+                                    height="300" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="rounded-lg shadow"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 accent-text">Book Your Consultation</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-1 font-medium">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-800">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block mb-1 font-medium">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-800">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block mb-1 font-medium">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-800">
+                            </div>
+                            
+                            <div>
+                                <label for="tattoo-type" class="block mb-1 font-medium">Tattoo Type</label>
+                                <select id="tattoo-type" name="tattoo-type" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-800">
+                                    <option value="">Select an option</option>
+                                    <option value="custom">Custom Design</option>
+                                    <option value="cover-up">Cover Up</option>
+                                    <option value="memorial">Memorial</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block mb-1 font-medium">Tell Us About Your Idea</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-800"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full accent-bg text-white font-bold py-3 px-4 rounded-lg hover:bg-red-900 transition duration-300">
+                                Submit Request
+                            </button>
+                        </form>
+                        
+                        <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i> Thank you! Your message has been sent. We'll respond within 48 hours.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <div class="w-24 h-1 accent-bg mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>How much does a tattoo cost?</span>
+                        <i class="fas fa-plus accent-text"></i>
+                    </button>
+                    <div class="faq-content hidden mt-2">
+                        <p>Pricing varies based on size, complexity, and placement. During your consultation, we'll provide an estimate based on your specific design. As a general guideline, small tattoos start at $80, medium pieces range $150-300, and larger custom work is priced by the hour at $150/hour.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>How should I prepare for my tattoo appointment?</span>
+                        <i class="fas fa-plus accent-text"></i>
+                    </button>
+                    <div class="faq-content hidden mt-2">
+                        <p>We recommend:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Get a good night's sleep before your appointment</li>
+                            <li>Eat a substantial meal 1-2 hours before</li>
+                            <li>Stay hydrated in the days leading up</li>
+                            <li>Wear comfortable clothing that allows access to the tattoo area</li>
+                            <li>Avoid alcohol 24 hours before</li>
+                            <li>Bring any reference materials you have</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>What's your cancellation policy?</span>
+                        <i class="fas fa-plus accent-text"></i>
+                    </button>
+                    <div class="faq-content hidden mt-2">
+                        <p>We require 48 hours notice for cancellations or rescheduling. Last-minute cancellations may require a non-refundable deposit for future bookings. We understand emergencies happen and will work with you in those situations.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>How do I care for my new tattoo?</span>
+                        <i class="fas fa-plus accent-text"></i>
+                    </button>
+                    <div class="faq-content hidden mt-2">
+                        <p>We provide detailed aftercare instructions with each tattoo, but general guidelines include:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Keep the bandage on for 2-4 hours</li>
+                            <li>Wash gently with mild, fragrance-free soap</li>
+                            <li>Apply a thin layer of recommended ointment</li>
+                            <li>Avoid swimming, soaking, or direct sunlight for 2 weeks</li>
+                            <li>Don't pick at scabs</li>
+                            <li>Keep moisturized during healing</li>
+                        </ul>
+                        <p class="mt-2">We offer free touch-ups within 3 months if needed.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>Do you do walk-ins or only appointments?</span>
+                        <i class="fas fa-plus accent-text"></i>
+                    </button>
+                    <div class="faq-content hidden mt-2">
+                        <p>We primarily work by appointment to ensure each client receives the time and attention their tattoo deserves. However, we occasionally accept walk-ins when availability permits. It's always best to call ahead to check same-day availability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Follow Our Journey</h2>
+                <div class="w-24 h-1 accent-bg mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">See our latest work and behind-the-scenes on Instagram</p>
+            </div>
+            
+            <!-- Instagram feed placeholder - in a real implementation, you would use the Instagram API -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="aspect-square bg-gray-200 flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                </a>
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="aspect-square bg-gray-200 flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                </a>
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="aspect-square bg-gray-200 flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                </a>
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="aspect-square bg-gray-200 flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                </a>
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="aspect-square bg-gray-200 flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                </a>
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="aspect-square bg-gray-200 flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                </a>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="https://www.instagram.com/nobletats" target="_blank" class="inline-flex items-center bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition">
+                    <i class="fab fa-instagram mr-2"></i> Follow @nobletats
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div class="md:w-1/3">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-draw-polygon mr-2"></i> NOBLE TATS
+                    </h3>
+                    <p class="mb-4">Where art meets family values. Transforming lives through ink and inspiration in Richland, WA.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/nobletats" target="_blank" class="text-white hover:text-pink-400 transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white hover:text-blue-400 transition">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:underline">Home</a></li>
+                        <li><a href="#about" class="hover:underline">About</a></li>
+                        <li><a href="#portfolio" class="hover:underline">Portfolio</a></li>
+                        <li><a href="#services" class="hover:underline">Services</a></li>
+                        <li><a href="#contact" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <address class="not-italic">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 614 The Parkway, Richland, WA 99352</p>
+                        <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i> <a href="tel:509-616-0298" class="hover:underline">+1 (509) 918-7999</a></p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@nobletats.com" class="hover:underline">info@nobletats.com</a></p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Noble Tats. All rights reserved.</p>
+                <p class="mt-2 text-sm">Licensed tattoo studio in Richland, Washington</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For this demo, we'll just show a success message
+            document.getElementById('form-success').classList.remove('hidden');
+            this.reset();
+            
+            // Scroll to show the success message
+            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Close mobile menu if open
+                    if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/noble-tats" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
