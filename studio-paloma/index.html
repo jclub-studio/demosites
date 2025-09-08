@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Paloma - Beauty Collective | Tri-Cities WA</title>
+    <meta name="description" content="Studio Paloma - A collective of master artists offering permanent makeup, areola restoration, tiny tattoos, luxury spray tans & more in Richland, WA.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-color: #7C9885;
+            --secondary-color: #F5E6D3;
+            --accent-color: #A8BFA3;
+            --text-dark: #2C1810;
+            --text-light: #6B5B47;
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 90, 60, 0.1) 0%, rgba(212, 165, 116, 0.1) 100%);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 90, 60, 0.15);
+        }
+        
+        .booking-btn {
+            background: linear-gradient(135deg, #7C9885, #A8BFA3);
+            transition: all 0.3s ease;
+        }
+        
+        .booking-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(124, 152, 133, 0.4);
+        }
+        
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .instagram-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="serif-font text-2xl font-bold text-black">Studio Paloma</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-stone-600 hover:text-stone-900 transition-colors">About</a>
+                        <a href="#services" class="text-stone-600 hover:text-stone-900 transition-colors">Services</a>
+                        <a href="#portfolio" class="text-stone-600 hover:text-stone-900 transition-colors">Portfolio</a>
+                        <a href="#contact" class="text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
+                        <button onclick="openBooking()" class="booking-btn text-white px-6 py-2 rounded-full text-sm font-medium">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-stone-600 hover:text-stone-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-0 bg-white z-40 pt-16">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#about" onclick="closeMobileMenu()" class="block text-lg text-stone-600 hover:text-stone-900">About Us</a>
+                <a href="#services" onclick="closeMobileMenu()" class="block text-lg text-stone-600 hover:text-stone-900">Services</a>
+                <a href="#portfolio" onclick="closeMobileMenu()" class="block text-lg text-stone-600 hover:text-stone-900">Portfolio</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="block text-lg text-stone-600 hover:text-stone-900">Contact</a>
+                <button onclick="openBooking()" class="booking-btn text-white px-6 py-3 rounded-full text-lg font-medium w-full">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1713558014346-ceddc512a616?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0');"></div>
+        <div class="hero-gradient absolute inset-0"></div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h1 class="serif-font text-5xl md:text-7xl font-bold text-white mb-6 fade-in">
+                Transforming Beauty In
+                <span class="text-white">The Heart Of Tri Cities</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-600 mb-8 fade-in" style="animation-delay: 0.2s;">
+               
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in" style="animation-delay: 0.4s;">
+                <button onclick="openBooking()" class="booking-btn text-white px-8 py-4 rounded-full text-lg font-medium">
+                    Book Your Experience
+                </button>
+                <button onclick="scrollToServices()" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:border-stone-300 hover:text-stone-300 transition-colors">
+                    Explore Services
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-stone-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="serif-font text-4xl md:text-5xl font-bold text-stone-800 mb-4 fade-in">
+                    Our Services
+                </h2>
+                <p class="text-xl text-stone-600 max-w-2xl mx-auto fade-in">
+                    From permanent makeup to luxury spray tans, our collective of artists brings you the finest beauty services in the Tri-Cities.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-200 fade-in">
+                    <h3 class="serif-font text-2xl font-semibold text-stone-800 mb-3">Permanent Makeup</h3>
+                    <p class="text-stone-600 mb-4">Expert microblading, lip blush, and eyeliner that enhances your natural beauty.</p>
+                    <button onclick="openService('permanent-makeup')" class="text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-200 fade-in">
+                    <h3 class="serif-font text-2xl font-semibold text-stone-800 mb-3">Areola Restoration</h3>
+                    <p class="text-stone-600 mb-4">Compassionate, medical-grade areola restoration for post-mastectomy clients.</p>
+                    <button onclick="openService('areola-restoration')" class="text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-200 fade-in">
+                    <h3 class="serif-font text-2xl font-semibold text-stone-800 mb-3">Luxury Spray Tans</h3>
+                    <p class="text-stone-600 mb-4">Custom-formulated, streak-free tanning for a natural, sun-kissed glow.</p>
+                    <button onclick="openService('spray-tans')" class="text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-200 fade-in">
+                    <h3 class="serif-font text-2xl font-semibold text-stone-800 mb-3">Tiny Tattoos & Fine Line</h3>
+                    <p class="text-stone-600 mb-4">Delicate, artistic tiny tattoos and fine line work for subtle expression.</p>
+                    <button onclick="openService('tiny-tattoos')" class="text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-200 fade-in">
+                    <h3 class="serif-font text-2xl font-semibold text-stone-800 mb-3">Lash Extensions</h3>
+                    <p class="text-stone-600 mb-4">Custom lash extensions and lifts for dramatic or natural enhancement.</p>
+                    <button onclick="openService('lash-extensions')" class="text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-200 fade-in">
+                    <h3 class="serif-font text-2xl font-semibold text-stone-800 mb-3">Bridal Makeup</h3>
+                    <p class="text-stone-600 mb-4">Luxury bridal makeup services for your special day in Tri-Cities.</p>
+                    <button onclick="openService('bridal-makeup')" class="text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                        Learn More →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="serif-font text-4xl md:text-5xl font-bold text-stone-800 mb-6 fade-in">
+                        About Studio Paloma
+                    </h2>
+                    <div class="space-y-4 text-stone-600 leading-relaxed fade-in">
+                        <p>
+                            Founded in 2020, Studio Paloma is more than a beauty collective — we're a sanctuary where artistry meets transformation. 
+                            Our name, inspired by the Spanish word for "dove," symbolizes peace, renewal, and the gentle beauty we help create.
+                        </p>
+                        <p>
+                            Nestled in the heart of Richland, Washington, our studio brings together master artists specializing in permanent makeup, 
+                            areola restoration, tiny tattoos, and luxury beauty services. Each artist brings their unique expertise, creating a 
+                            collaborative environment where innovation thrives.
+                        </p>
+                        <p>
+                            We believe beauty is deeply personal. Every service is tailored to enhance your natural features, boost confidence, 
+                            and celebrate your individual story. From delicate microblading to compassionate areola restoration, we approach each 
+                            client with expertise, empathy, and artistic vision.
+                        </p>
+                    </div>
+                    <div class="mt-8 fade-in">
+                        <button onclick="scrollToContact()" class="booking-btn text-white px-8 py-4 rounded-full text-lg font-medium">
+                            Book Your Experience
+                        </button>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1626379501846-0df4067b8bb9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                             alt="Studio Interior" 
+                             class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+                <div class="text-center fade-in">
+                    <div class="text-4xl serif-font font-bold text-stone-800 mb-2">500+</div>
+                    <div class="text-stone-600">Happy Clients</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl serif-font font-bold text-stone-800 mb-2">4</div>
+                    <div class="text-stone-600">Master Artists</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl serif-font font-bold text-stone-800 mb-2">5★</div>
+                    <div class="text-stone-600">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="serif-font text-4xl md:text-5xl font-bold text-stone-800 mb-4 fade-in">
+                    Our Work
+                </h2>
+                <p class="text-xl text-stone-600 max-w-2xl mx-auto fade-in">
+                    Real transformations from our talented collective of artists.
+                </p>
+            </div>
+            
+            <div class="instagram-grid">
+                <div class="instagram-item fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-700 to-stone-500 opacity-90"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-4xl"></i>
+                    </div>
+                </div>
+                <div class="instagram-item fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-600 to-stone-400 opacity-90"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-4xl"></i>
+                    </div>
+                </div>
+                <div class="instagram-item fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-500 to-stone-300 opacity-90"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-4xl"></i>
+                    </div>
+                </div>
+                <div class="instagram-item fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-700 to-stone-500 opacity-90"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-4xl"></i>
+                    </div>
+                </div>
+                <div class="instagram-item fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-600 to-stone-400 opacity-90"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-4xl"></i>
+                    </div>
+                </div>
+                <div class="instagram-item fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-500 to-stone-300 opacity-90"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://instagram.com/thestudiopaloma" target="_blank" class="inline-flex items-center text-stone-700 font-medium hover:text-stone-900 transition-colors">
+                    <i class="fab fa-instagram mr-2"></i>
+                    Follow us on Instagram @thestudiopaloma
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="serif-font text-4xl md:text-5xl font-bold text-stone-800 mb-6 fade-in">
+                        Visit Us
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="fade-in">
+                            <h3 class="text-xl font-semibold text-stone-800 mb-2">Location</h3>
+                            <p class="text-stone-600">601 Amon Park Drive<br>Richland, WA 99352</p>
+                        </div>
+                        <div class="fade-in">
+                            <h3 class="text-xl font-semibold text-stone-800 mb-2">Contact</h3>
+                            <p class="text-stone-600">
+                                <a href="tel:5097135561" class="hover:text-stone-900 transition-colors">(509) 713-5561</a><br>
+                                <a href="mailto:thestudiopaloma@gmail.com" class="hover:text-stone-900 transition-colors">thestudiopaloma@gmail.com</a>
+                            </p>
+                        </div>
+                        <div class="fade-in">
+                            <h3 class="text-xl font-semibold text-stone-800 mb-2">Hours</h3>
+                            <p class="text-stone-600">
+                                Tuesday - Saturday: 9:00 AM - 6:00 PM<br>
+                                Sunday & Monday: Closed
+                            </p>
+                        </div>
+                        <div class="fade-in">
+                            <h3 class="text-xl font-semibold text-stone-800 mb-2">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/thestudiopaloma" target="_blank" class="text-stone-600 hover:text-stone-900 transition-colors">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" class="text-stone-600 hover:text-stone-900 transition-colors">
+                                    <i class="fab fa-facebook text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <form class="space-y-6" onsubmit="handleContactForm(event)">
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-stone-500 focus:border-stone-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Email *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-stone-500 focus:border-stone-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Service Interest</label>
+                            <select name="service" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-stone-500 focus:border-stone-500">
+                                <option value="">Select a service</option>
+                                <option value="permanent-makeup">Permanent Makeup</option>
+                                <option value="areola-restoration">Areola Restoration</option>
+                                <option value="spray-tans">Luxury Spray Tans</option>
+                                <option value="tiny-tattoos">Tiny Tattoos</option>
+                                <option value="lash-extensions">Lash Extensions</option>
+                                <option value="bridal-makeup">Bridal Makeup</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-stone-500 focus:border-stone-500"></textarea>
+                        </div>
+                        <button type="submit" class="booking-btn text-white px-8 py-3 rounded-full text-lg font-medium w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: #7C9885;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="serif-font text-2xl font-bold mb-4 text-white">Studio Paloma</h3>
+                    <p class="text-stone-100">
+                        A collective of master artists dedicated to enhancing your natural beauty through expert techniques and personalized care.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-stone-100">
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/thestudiopaloma" target="_blank" class="text-stone-100 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="text-stone-100 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-200 mt-8 pt-8 text-center text-stone-100">
+                <p>&copy; 2024 Studio Paloma. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="serif-font text-2xl font-bold text-stone-800">Book Appointment</h3>
+                    <button onclick="closeBooking()" class="text-stone-400 hover:text-stone-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <form class="space-y-4" onsubmit="handleBooking(event)">
+                    <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border border-stone-300 rounded-lg">
+                    <input type="email" placeholder="Email Address" required class="w-full px-4 py-3 border border-stone-300 rounded-lg">
+                    <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border border-stone-300 rounded-lg">
+                    <select required class="w-full px-4 py-3 border border-stone-300 rounded-lg">
+                        <option value="">Select Service</option>
+                        <option value="permanent-makeup">Permanent Makeup</option>
+                        <option value="areola-restoration">Areola Restoration</option>
+                        <option value="spray-tans">Luxury Spray Tans</option>
+                        <option value="tiny-tattoos">Tiny Tattoos</option>
+                        <option value="lash-extensions">Lash Extensions</option>
+                        <option value="bridal-makeup">Bridal Makeup</option>
+                    </select>
+                    <input type="date" required class="w-full px-4 py-3 border border-stone-300 rounded-lg">
+                    <textarea placeholder="Additional Notes" rows="3" class="w-full px-4 py-3 border border-stone-300 rounded-lg"></textarea>
+                    <button type="submit" class="booking-btn text-white px-6 py-3 rounded-full w-full">
+                        Confirm Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.remove('active');
+        }
+
+        // Booking modal
+        function openBooking() {
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeBooking() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        // Service details
+        function openService(service) {
+            alert(`Opening ${service} details...`);
+            // In a real app, this would open a detailed service page
+        }
+
+        // Artist portfolio
+        function viewArtist(artist) {
+            alert(`Opening ${artist} portfolio...`);
+            // In a real app, this would open the artist's portfolio
+        }
+
+        // Form handlers
+        function handleContactForm(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            event.target.reset();
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            alert('Thank you! Your booking request has been submitted. We\'ll contact you shortly to confirm.');
+            closeBooking();
+            event.target.reset();
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close modal on outside click
+        document.getElementById('booking-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'booking-modal') {
+                closeBooking();
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/studio-paloma" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
