@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply the Best Roofing LLC | Lolo & Missoula's Premier Roofing Contractor</title>
+    <meta name="description" content="Top-rated roofing contractor serving Lolo, Missoula & western Montana. Licensed, insured & locally owned. Free estimates, storm damage repair, metal & shingle roofing.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --brand-blue: #1e3a8a;
+            --brand-gold: #f59e0b;
+            --brand-gray: #6b7280;
+            --brand-dark: #111827;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.7) 50%, rgba(245, 158, 11, 0.8) 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .weather-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-blue-900 font-display">Simply the Best Roofing LLC</h1>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gallery</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40">
+            <div class="p-4">
+                <button id="close-menu" class="text-gray-700 hover:text-blue-900 mb-4">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <div class="space-y-4">
+                    <a href="#home" class="block text-gray-700 hover:text-blue-900 font-medium mobile-link">Home</a>
+                    <a href="#services" class="block text-gray-700 hover:text-blue-900 font-medium mobile-link">Services</a>
+                    <a href="#about" class="block text-gray-700 hover:text-blue-900 font-medium mobile-link">About</a>
+                    <a href="#gallery" class="block text-gray-700 hover:text-blue-900 font-medium mobile-link">Gallery</a>
+                    <a href="#contact" class="block text-gray-700 hover:text-blue-900 font-medium mobile-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1673645652590-9d21295bf4ac?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0');"></div>
+        <div class="hero-gradient absolute inset-0"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-display text-shadow">
+                Simply the Best Roofing Solutions
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow">
+                Lolo & Missoula's Premier Roofing Contractor<br>
+                Licensed, Insured & Locally Owned
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToContact()" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-lg text-lg btn-hover transition-all duration-300">
+                    <i class="fas fa-calculator mr-2"></i>Free Estimate
+                </button>
+                <button onclick="callNow()" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-4 px-8 rounded-lg text-lg btn-hover transition-all duration-300">
+                    <i class="fas fa-phone mr-2"></i>Emergency: (406) 241-8475
+                </button>
+            </div>
+            
+            <!-- Weather Widget -->
+            <div class="mt-12 flex justify-center space-x-8 text-center">
+                <div class="weather-icon">
+                    <i class="fas fa-snowflake text-4xl mb-2"></i>
+                    <p class="text-sm">Winter Ready</p>
+                </div>
+                <div class="weather-icon" style="animation-delay: 0.5s;">
+                    <i class="fas fa-sun text-4xl mb-2"></i>
+                    <p class="text-sm">Summer Strong</p>
+                </div>
+                <div class="weather-icon" style="animation-delay: 1s;">
+                    <i class="fas fa-wind text-4xl mb-2"></i>
+                    <p class="text-sm">Storm Proof</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Comprehensive Roofing Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From minor repairs to complete roof replacements, we handle every project with expertise and care. No job too big or small.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Residential Roofing -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover transition-all duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Residential Roofing</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Asphalt shingles</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Metal roofing systems</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Flat roof solutions</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Complete replacements</li>
+                    </ul>
+                </div>
+                
+                <!-- Commercial Roofing -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover transition-all duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Commercial Roofing</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Low-slope systems</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Metal roofing</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Preventive maintenance</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Emergency services</li>
+                    </ul>
+                </div>
+                
+                <!-- Storm Damage -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover transition-all duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Storm Damage</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Insurance claims</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Emergency repairs</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Hail damage</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Wind damage</li>
+                    </ul>
+                </div>
+                
+                <!-- Repairs & Maintenance -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover transition-all duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Repairs & Maintenance</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Leak detection</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Shingle replacement</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Gutter services</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Ventilation</li>
+                    </ul>
+                </div>
+                
+                <!-- Metal Roofing -->
+                <div class="bg-gray-50 rounded-xl p-8 card-hover transition-all duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Metal Roofing</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Standing seam</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Metal panels</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>Agricultural buildings</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i>50+ year warranty</li>
+                    </ul>
+                </div>
+                
+                <!-- Free Inspection -->
+                <div class="bg-yellow-500 rounded-xl p-8 text-white card-hover transition-all duration-300">
+                    <div class="mb-4">
+                        <i class="fas fa-search text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Free Inspection</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-check mr-2"></i>Comprehensive assessment</li>
+                        <li><i class="fas fa-check mr-2"></i>Detailed report</li>
+                        <li><i class="fas fa-check mr-2"></i>Honest recommendations</li>
+                        <li><i class="fas fa-check mr-2"></i>No obligation</li>
+                    </ul>
+                    <button onclick="scrollToContact()" class="mt-4 bg-white text-blue-900 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                        Schedule Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display">Your Local Roofing Partner</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Based in Lolo, Montana, we understand the unique challenges of Montana weather. From heavy snow loads to summer storms, we've been protecting homes and businesses across western Montana with quality roofing solutions.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Licensed & Insured Contractor</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Local Lolo Business</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Serving Western Montana</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">$100 Referral Program</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-blue-900 rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Why Choose Us?</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-yellow-500">Montana Weather Experts</h4>
+                                <p class="text-gray-300">We know how to build roofs that withstand Montana's extreme conditions.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-yellow-500">Quality Materials</h4>
+                                <p class="text-gray-300">Only the best materials proven to perform in our climate.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-yellow-500">Fair Pricing</h4>
+                                <p class="text-gray-300">Quality work at prices that won't break the bank.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-yellow-500">Local Commitment</h4>
+                                <p class="text-gray-300">We're your neighbors, invested in our community's success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">Trusted by Lolo & Missoula Homeowners</p>
+            </div>
+            
+            <div class="relative overflow-hidden">
+                <div id="testimonial-slider" class="testimonial-slider">
+                    <div class="min-w-full px-4">
+                        <div class="bg-white rounded-xl p-8 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                "Simply the Best Roofing lived up to their name! They replaced our roof after storm damage and worked directly with our insurance company. The crew was professional and the results are outstanding."
+                            </p>
+                            <div>
+                                <p class="font-bold text-gray-900">Sarah M.</p>
+                                <p class="text-gray-600">Lolo, MT</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="min-w-full px-4">
+                        <div class="bg-white rounded-xl p-8 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                "Fast response when we had a leak during a storm. They came out the same day and had it fixed before more damage could occur. Highly recommend their emergency services!"
+                            </p>
+                            <div>
+                                <p class="font-bold text-gray-900">Mike T.</p>
+                                <p class="text-gray-600">Missoula, MT</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="min-w-full px-4">
+                        <div class="bg-white rounded-xl p-8 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                "Great value for the quality of work. We got multiple quotes and Simply the Best Roofing offered the best price without compromising on materials or workmanship."
+                            </p>
+                            <div>
+                                <p class="font-bold text-gray-900">Jennifer L.</p>
+                                <p class="text-gray-600">Lolo, MT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button onclick="prevTestimonial()" class="bg-blue-900 text-white p-3 rounded-full hover:bg-blue-800 transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextTestimonial()" class="bg-blue-900 text-white p-3 rounded-full hover:bg-blue-800 transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Area Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Serving Western Montana</h2>
+                <p class="text-xl text-gray-600">Local expertise you can trust</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <i class="fas fa-map-marker-alt text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Primary Service Area</h3>
+                    <p class="text-gray-600">Lolo, MT</p>
+                </div>
+                
+                <div class="text-center">
+                    <i class="fas fa-expand-arrows-alt text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Extended Coverage</h3>
+                    <p class="text-gray-600">Greater Missoula Area</p>
+                </div>
+                
+                <div class="text-center">
+                    <i class="fas fa-mountain text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Region</h3>
+                    <p class="text-gray-600">Western Montana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 font-display">Get Your Free Estimate</h2>
+                <p class="text-xl text-gray-300">Contact us today for a no-obligation quote</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-white mb-2">Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white mb-2">Email *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white mb-2">Phone *</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white mb-2">Service Needed</label>
+                            <select name="service" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none">
+                                <option>Roof Replacement</option>
+                                <option>Roof Repair</option>
+                                <option>New Roof Installation</option>
+                                <option>Storm Damage Assessment</option>
+                                <option>Gutter Services</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-6 rounded-lg transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Request
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-500 mb-4">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-yellow-500 text-xl mr-4"></i>
+                                    <div>
+                                        <p class="text-white">Phone</p>
+                                        <p class="text-gray-300">(406) 241-8475</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-yellow-500 text-xl mr-4"></i>
+                                    <div>
+                                        <p class="text-white">Email</p>
+                                        <p class="text-gray-300">info@simplythebestroofing.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-yellow-500 text-xl mr-4"></i>
+                                    <div>
+                                        <p class="text-white">Address</p>
+                                        <p class="text-gray-300">12125 US Highway 93 S<br>Lolo, MT 59847</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock text-yellow-500 text-xl mr-4"></i>
+                                    <div>
+                                        <p class="text-white">Hours</p>
+                                        <p class="text-gray-300">24/7 Emergency Service Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-500 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">
+                                    <i class="fab fa-facebook text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">
+                                    <i class="fab fa-google text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">
+                                    <i class="fab fa-yelp text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">&copy; 2024 Simply the Best Roofing LLC. All rights reserved.</p>
+                <p class="text-gray-400 mt-2">Licensed • Insured • Locally Owned</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth Scroll
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function callNow() {
+            window.location.href = 'tel:4062418475';
+        }
+        
+        // Fade In Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Testimonial Slider
+        let currentSlide = 0;
+        const slider = document.getElementById('testimonial-slider');
+        const slides = slider.children.length;
+        
+        function nextTestimonial() {
+            currentSlide = (currentSlide + 1) % slides;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        function prevTestimonial() {
+            currentSlide = (currentSlide - 1 + slides) % slides;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        // Auto-advance testimonials
+        setInterval(nextTestimonial, 5000);
+        
+        // Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, this would send data to a server
+            alert('Thank you for your inquiry! We will contact you within 24 hours.');
+            this.reset();
+        });
+        
+        // Add fade-in class to elements
+        document.querySelectorAll('.card-hover').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/simply-the-best-roofing-llc" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
