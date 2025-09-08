@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly Donkey Tea & Coffee - Artisan Beverages at Palm Springs VillageFest</title>
+    <meta name="description" content="Silly Donkey Tea & Coffee serves artisan beverages every Thursday at Palm Springs VillageFest. Call 310-357-7200 for the best coffee in the desert!">
+    <meta name="keywords" content="Palm Springs coffee, VillageFest coffee vendor, Thursday night coffee Palm Springs, artisan coffee Palm Springs, specialty tea Palm Springs, mobile coffee service">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "MobileFoodService"],
+        "name": "Silly Donkey Tea & Coffee",
+        "description": "Artisan coffee and tea vendor at Palm Springs VillageFest",
+        "url": "https://sillydonkeycoffee.com",
+        "telephone": "310-357-7200",
+        "email": "brendhan.springe@gmail.com",
+        "founder": {
+            "@type": "Person",
+            "name": "Brendhan Springe"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palm Springs",
+            "addressRegion": "CA",
+            "streetAddress": "Palm Canyon Drive"
+        },
+        "openingHours": "Th 17:00-22:00",
+        "servesCuisine": ["Coffee", "Tea", "Specialty Beverages"]
+    }
+    </script>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'donkey-brown': '#8B4513',
+                        'donkey-cream': '#F5F5DC',
+                        'donkey-orange': '#FF8C00',
+                        'desert-sand': '#D2B48C',
+                        'coffee-dark': '#3C2414'
+                    },
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'body': ['"Open Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(60, 36, 20, 0.8) 100%);
+        }
+        .menu-card {
+            transition: all 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+            }
+        }
+        .donkey-icon {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .steam {
+            animation: steam 3s ease-in-out infinite;
+        }
+        @keyframes steam {
+            0% { opacity: 0.6; transform: translateY(0) scale(1); }
+            50% { opacity: 0.3; transform: translateY(-20px) scale(1.1); }
+            100% { opacity: 0.6; transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body class="font-body bg-donkey-cream text-coffee-dark">
+    <!-- Navigation -->
+    <nav class="bg-coffee-dark text-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-coffee text-donkey-orange text-2xl mr-2 donkey-icon"></i>
+                    <span class="font-display font-bold text-xl">Silly Donkey Tea & Coffee</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:bg-donkey-orange transition-colors">Home</a>
+                        <a href="#menu" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:bg-donkey-orange transition-colors">Menu</a>
+                        <a href="#location" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:bg-donkey-orange transition-colors">Location</a>
+                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:bg-donkey-orange transition-colors">About</a>
+                        <a href="#catering" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:bg-donkey-orange transition-colors">Catering</a>
+                        <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:bg-donkey-orange transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-donkey-orange">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-coffee-dark">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#menu" class="block px-3 py-2 text-base font-medium">Menu</a>
+                <a href="#location" class="block px-3 py-2 text-base font-medium">Location</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium">About</a>
+                <a href="#catering" class="block px-3 py-2 text-base font-medium">Catering</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="parallax h-full" style="background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1956&q=80');"></div>
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+                Silly Donkey Tea & Coffee
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Crafting Perfect Brews in the Heart of Palm Springs
+            </p>
+            <p class="text-lg md:text-xl mb-8">
+                Find us every Thursday evening at Palm Springs VillageFest on Palm Canyon Drive
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#location" class="bg-donkey-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors">
+                    Visit Us This Thursday
+                </a>
+                <a href="tel:310-357-7200" class="bg-transparent border-2 border-white hover:bg-white hover:text-coffee-dark text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors">
+                    Call for Catering: 310-357-7200
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-coffee-dark mb-4">Our Menu</h2>
+                <p class="text-xl text-gray-600">Artisan beverages crafted with passion in the desert</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Coffee -->
+                <div class="menu-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-coffee-dark to-donkey-brown relative">
+                        <i class="fas fa-coffee absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl"></i>
+                        <div class="steam absolute top-8 right-8">
+                            <i class="fas fa-cloud text-white text-2xl opacity-40"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-bold mb-3">Specialty Coffee</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Espresso - $3.50</li>
+                            <li>Americano - $4.00</li>
+                            <li>Latte - $5.50</li>
+                            <li>Cappuccino - $5.50</li>
+                            <li>Macchiato - $4.50</li>
+                            <li>Cold Brew - $5.00</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tea -->
+                <div class="menu-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 relative">
+                        <i class="fas fa-leaf absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-bold mb-3">Artisan Tea</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Earl Grey - $4.00</li>
+                            <li>Green Tea - $3.50</li>
+                            <li>Chai Latte - $5.50</li>
+                            <li>Herbal Infusion - $4.50</li>
+                            <li>Matcha - $5.00</li>
+                            <li>Iced Tea - $3.50</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Specials -->
+                <div class="menu-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-donkey-orange to-orange-600 relative">
+                        <i class="fas fa-star absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-bold mb-3">Seasonal Specials</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Desert Spice Cold Brew - $6.00</li>
+                            <li>Palm Springs Sunset Tea - $5.50</li>
+                            <li>Cactus Honey Latte - $6.50</li>
+                            <li>Date Smoothie - $5.00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 bg-donkey-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-coffee-dark mb-4">Find Us at VillageFest</h2>
+                <p class="text-xl text-gray-600">Your Thursday evening coffee destination</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="font-display text-2xl font-bold mb-4 text-coffee-dark">Location & Hours</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-donkey-orange text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Palm Springs VillageFest</p>
+                                    <p class="text-gray-600">Palm Canyon Drive, Palm Springs, CA</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-donkey-orange text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Every Thursday Evening</p>
+                                    <p class="text-gray-600">5:00 PM - 10:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-parking text-donkey-orange text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Parking</p>
+                                    <p class="text-gray-600">Street parking available along Palm Canyon Drive</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-semibold mb-2">Weather Contingency</h4>
+                            <p class="text-gray-600">We serve rain or shine! Look for our white canopy with the Silly Donkey logo.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="font-display text-2xl font-bold mb-4 text-coffee-dark">Directions</h3>
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.123456789!2d-116.5456!3d33.8303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ5JzQ5LjEiTiAxMTbCsDMyJzQ0LjIiVw!5e0!3m2!1sen!2sus!4v1234567890123"
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="https://maps.google.com/?q=Palm+Canyon+Drive+Palm+Springs+CA" 
+                               class="inline-block bg-donkey-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                               target="_blank">
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-coffee-dark mb-4">The Silly Donkey Story</h2>
+                <p class="text-xl text-gray-600">Serious coffee with a playful spirit</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c9cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Brendhan Springe at VillageFest" 
+                         class="rounded-xl shadow-lg w-full">
+                </div>
+                
+                <div>
+                    <h3 class="font-display text-3xl font-bold mb-4 text-coffee-dark">Meet Brendhan Springe</h3>
+                    <p class="text-gray-700 mb-4">
+                        What started as a passion for perfect coffee has grown into Silly Donkey Tea & Coffee - 
+                        Palm Springs' favorite Thursday evening destination. Brendhan brings years of coffee expertise 
+                        and a commitment to quality that you can taste in every cup.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        The name "Silly Donkey" reflects our playful approach to serious coffee. We're not pretentious 
+                        about our craft - just passionate about bringing exceptional beverages to our community.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Every Thursday, rain or shine, you'll find us at VillageFest, serving the same quality 
+                        you'd expect from a brick-and-mortar café, but with the freedom and flexibility that 
+                        comes from being mobile.
+                    </p>
+                    
+                    <blockquote class="border-l-4 border-donkey-orange pl-4 italic text-lg text-coffee-dark">
+                        "Coffee is more than a drink - it's a moment of connection in our busy lives."
+                        <footer class="text-sm mt-2">- Brendhan Springe</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering" class="py-20 bg-donkey-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-coffee-dark mb-4">Mobile Catering Services</h2>
+                <p class="text-xl text-gray-600">Bring the Silly Donkey experience to your event</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <i class="fas fa-briefcase text-donkey-orange text-4xl mb-4"></i>
+                    <h3 class="font-display text-2xl font-bold mb-4">Corporate Events</h3>
+                    <p class="text-gray-600 mb-4">Elevate your office meetings, conferences, and team events with premium coffee service.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>Office catering</li>
+                        <li>Conference services</li>
+                        <li>Product launches</li>
+                        <li>Team celebrations</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <i class="fas fa-heart text-donkey-orange text-4xl mb-4"></i>
+                    <h3 class="font-display text-2xl font-bold mb-4">Weddings</h3>
+                    <p class="text-gray-600 mb-4">Make your special day even more memorable with our mobile coffee and tea bar.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>Coffee and tea stations</li>
+                        <li>Signature drinks</li>
+                        <li>Evening receptions</li>
+                        <li>Custom menus</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <i class="fas fa-star text-donkey-orange text-4xl mb-4"></i>
+                    <h3 class="font-display text-2xl font-bold mb-4">Private Parties</h3>
+                    <p class="text-gray-600 mb-4">Birthday parties, anniversaries, or any celebration - we bring the coffee to you.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>Birthday celebrations</li>
+                        <li>Anniversary parties</li>
+                        <li>Holiday gatherings</li>
+                        <li>Home events</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-donkey-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+                    Book Your Event
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-coffee-dark mb-4">Get in Touch</h2>
+                <p class="text-xl text-gray-600">Questions, bookings, or just want to say hi!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-donkey-cream rounded-xl shadow-lg p-8">
+                        <h3 class="font-display text-2xl font-bold mb-6 text-coffee-dark">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-donkey-orange text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <a href="tel:310-357-7200" class="text-gray-600 hover:text-donkey-orange">310-357-7200</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-donkey-orange text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <a href="mailto:brendhan.springe@gmail.com" class="text-gray-600 hover:text-donkey-orange">brendhan.springe@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar text-donkey-orange text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Weekly Hours</p>
+                                    <p class="text-gray-600">Thursdays 5:00 PM - 10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-600 hover:text-donkey-orange">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-donkey-orange">
+                                    <i class="fab fa-facebook text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-donkey-orange">
+                                    <i class="fab fa-twitter text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form" class="bg-donkey-cream rounded-xl shadow-lg p-8">
+                        <h3 class="font-display text-2xl font-bold mb-6 text-coffee-dark">Send us a Message</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" name="name" required 
+                                       class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-donkey-orange focus:border-donkey-orange">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" name="email" required 
+                                       class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-donkey-orange focus:border-donkey-orange">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message Type</label>
+                                <select name="type" 
+                                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-donkey-orange focus:border-donkey-orange">
+                                    <option>General Inquiry</option>
+                                    <option>Catering Request</option>
+                                    <option>Private Event</option>
+                                    <option>Feedback</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea name="message" rows="4" required 
+                                          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-donkey-orange focus:border-donkey-orange"></textarea>
+                            </div>
+                            
+                            <button type="submit" 
+                                    class="w-full bg-donkey-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-4">
+                    <i class="fas fa-coffee text-donkey-orange text-3xl donkey-icon"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-2">Silly Donkey Tea & Coffee</h3>
+                <p class="text-gray-300 mb-4">Serious coffee with a smile</p>
+                <p class="text-sm text-gray-400">
+                    © 2024 Silly Donkey Tea & Coffee. All rights reserved. | 
+                    <a href="tel:310-357-7200" class="hover:text-donkey-orange">310-357-7200</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            // For this demo, we'll just show an alert
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            contactForm.reset();
+        });
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-coffee-dark');
+                nav.classList.remove('bg-coffee-dark/95');
+            } else {
+                nav.classList.remove('bg-coffee-dark');
+                nav.classList.add('bg-coffee-dark/95');
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/sillydonkeytea-coffee" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
