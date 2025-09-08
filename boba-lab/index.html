@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Lab - Kennewick's Best Bubble Tea</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧋</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6',
+                        secondary: '#FBBF24',
+                        accent: '#EC4899',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #8B5CF6, #EC4899, #FBBF24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .boba-bubble {
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #4B5563, #1F2937);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-pink-50 font-sans">
+    <!-- Header -->
+    <header class="fixed w-full z-50 glass-effect py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">🧋</span>
+                </div>
+                <h1 class="text-2xl font-tech font-bold gradient-text">BOBA LAB</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-dark font-medium hover:text-primary transition">Home</a>
+                <a href="#menu" class="text-dark font-medium hover:text-primary transition">Menu</a>
+                <a href="#about" class="text-dark font-medium hover:text-primary transition">About</a>
+                <a href="#contact" class="text-dark font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="tel:5093967389" class="bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-purple-700 transition flex items-center">
+                    <i data-feather="phone" class="mr-2"></i> Order Now
+                </a>
+                <button id="menu-toggle" class="md:hidden text-dark">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark bg-opacity-90 z-40 hidden flex-col items-center justify-center space-y-8">
+        <button id="close-menu" class="absolute top-6 right-6 text-white">
+            <i data-feather="x"></i>
+        </button>
+        <a href="#home" class="text-2xl text-white font-medium">Home</a>
+        <a href="#menu" class="text-2xl text-white font-medium">Menu</a>
+        <a href="#about" class="text-2xl text-white font-medium">About</a>
+        <a href="#contact" class="text-2xl text-white font-medium">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16 pb-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="text-5xl md:text-7xl font-bold text-dark mb-6 font-tech">
+                    EXPERIMENT WITH <span class="gradient-text">FLAVOR</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Family-owned boba laboratory crafting the perfect blend of science and taste. 
+                    Fresh ingredients, creative concoctions, and a welcoming atmosphere await you.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#menu" class="bg-primary text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-purple-700 transition text-center">
+                        Explore Menu
+                    </a>
+                    <a href="https://www.doordash.com" target="_blank" class="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-medium hover:bg-primary hover:text-white transition text-center">
+                        Order Delivery
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center">
+                    <div class="flex">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-white"></div>
+                        <div class="w-10 h-10 rounded-full bg-gray-400 border-2 border-white -ml-3"></div>
+                        <div class="w-10 h-10 rounded-full bg-gray-500 border-2 border-white -ml-3"></div>
+                    </div>
+                    <div class="ml-4">
+                        <div class="flex items-center">
+                            <i data-feather="star" class="text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600">4.8/5 from 100+ reviews</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary to-accent absolute -top-6 -left-6 opacity-20"></div>
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-accent to-secondary absolute -bottom-6 -right-6 opacity-20"></div>
+                    <div class="relative bg-white rounded-3xl shadow-xl p-2">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 md:h-[450px] bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020');"></div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 boba-bubble floating"></div>
+                <div class="absolute top-10 -left-6 w-16 h-16 boba-bubble floating" style="animation-delay: 1s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-dark mb-4 font-tech">LAB <span class="gradient-text">CREATIONS</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Our signature drinks crafted with precision and creativity. Each sip is a scientific masterpiece.
+                </p>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="mb-12">
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="category-btn active px-6 py-3 rounded-full bg-primary text-white font-medium">All Drinks</button>
+                    <button class="category-btn px-6 py-3 rounded-full bg-white text-dark font-medium border border-gray-200 hover:bg-gray-50">Milk Teas</button>
+                    <button class="category-btn px-6 py-3 rounded-full bg-white text-dark font-medium border border-gray-200 hover:bg-gray-50">Specialty</button>
+                    <button class="category-btn px-6 py-3 rounded-full bg-white text-dark font-medium border border-gray-200 hover:bg-gray-50">Lab Creations</button>
+                    <button class="category-btn px-6 py-3 rounded-full bg-white text-dark font-medium border border-gray-200 hover:bg-gray-50">Energy Drinks</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-r from-primary to-accent relative">
+                            <div class="absolute top-4 right-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-bold">POPULAR</div>
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-dark">Elmo's World</h3>
+                                <span class="text-primary font-bold">$5.99</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Dragonfruit green tea with strawberry popping boba</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Fruity</span>
+                                <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded ml-2">Refreshing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 2 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-r from-accent to-secondary">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-dark">Pacific Sunrise</h3>
+                                <span class="text-primary font-bold">$6.49</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Butterfly tea with guava lemonade & crystal boba</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Tropical</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-2">Unique</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 3 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-r from-secondary to-primary">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-dark">Lychee Berry Bomb</h3>
+                                <span class="text-primary font-bold">$6.99</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Blended ice drink with berries and lychee jelly</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Blended</span>
+                                <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded ml-2">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 4 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-dark">Lightning McQueen</h3>
+                                <span class="text-primary font-bold">$6.29</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Red velvet blend with cream cheese foam</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Creamy</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded ml-2">Rich</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 5 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-r from-pink-400 to-purple-500">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-dark">Hello Kitty</h3>
+                                <span class="text-primary font-bold">$6.79</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Strawberry milk with heart-shaped boba</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded">Cute</span>
+                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded ml-2">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 6 -->
+                    <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-500">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-dark">Squirtle</h3>
+                                <span class="text-primary font-bold">$6.49</span>
+                            </div>
+                            <p class="text-gray-600 mt-2">Blueberry matcha with blue boba</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Matcha</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded ml-2">Berry</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center text-primary font-bold text-lg group">
+                    View Full Menu
+                    <i data-feather="arrow-right" class="ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPg8mM3b8d1xKyRn9sncEcyH82ryRti1jUX0OV2=s1360-w1360-h1020'); background-size: cover; background-position: center;"></div>
+                        <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-r from-primary to-accent rounded-2xl shadow-xl"></div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-4xl font-bold text-dark mb-6 font-tech">OUR <span class="gradient-text">LAB STORY</span></h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Since April 21, 2023, Boba Lab has been Kennewick's premier destination for innovative bubble tea experiences. 
+                        As a family-owned establishment, we blend traditional techniques with modern creativity.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Our welcoming space features a modern grass wall backdrop, entertainment options including games and TV, 
+                        and an atmosphere designed for both casual hangouts and special moments.
+                    </p>
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4 text-primary">
+                            <i data-feather="award" class="w-10 h-10"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Chamber Member</h3>
+                            <p class="text-gray-600">Tri-City Regional Chamber of Commerce</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/the_bobalab.co" target="_blank" class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white hover:scale-110 transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@the.bobalab.co" target="_blank" class="w-12 h-12 rounded-full bg-gradient-to-r from-accent to-secondary flex items-center justify-center text-white hover:scale-110 transition">
+                            <i data-feather="music"></i>
+                        </a>
+                        <a href="https://www.doordash.com" target="_blank" class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white hover:scale-110 transition">
+                            <i data-feather="shopping-bag"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-dark mb-4 font-tech">VISIT OUR <span class="gradient-text">LAB</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Ready to experiment with flavor? Visit us or get in touch for orders and inquiries.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-dark mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary mt-1">
+                                    <i data-feather="map-pin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Location</h4>
+                                    <p class="text-gray-600">4827 W Clearwater Ave<br>Kennewick, WA 99336</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary mt-1">
+                                    <i data-feather="phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Phone</h4>
+                                    <p class="text-gray-600"><a href="tel:5093967389">(509) 396-7389</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary mt-1">
+                                    <i data-feather="clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Hours</h4>
+                                    <p class="text-gray-600">
+                                        Monday - Thursday: 12pm - 9pm<br>
+                                        Friday - Saturday: 12pm - 10pm<br>
+                                        Sunday: 1pm - 8pm
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://maps.google.com" target="_blank" class="w-full bg-primary text-white py-3 rounded-full font-medium text-center block hover:bg-purple-700 transition">
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-dark mb-6">Send us a Message</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-full font-medium hover:bg-purple-700 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">🧋</span>
+                        </div>
+                        <h2 class="text-2xl font-tech font-bold">BOBA LAB</h2>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Experiment with flavor at Kennewick's premier family-owned boba tea laboratory.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/the_bobalab.co" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@the.bobalab.co" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="music"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Menu Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Milk Teas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Specialty Drinks</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Lab Creations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Energy Drinks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe for exclusive offers and new drink announcements.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-dark">
+                        <button class="bg-primary px-4 py-2 rounded-r-lg hover:bg-purple-700 transition">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Boba Lab. All rights reserved. | Family-owned since April 21, 2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Category Filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Floating bubbles animation
+        document.addEventListener('DOMContentLoaded', function() {
+            anime({
+                targets: '.floating',
+                translateY: [
+                    { value: -10, duration: 1500 },
+                    { value: 0, duration: 1500 }
+                ],
+                loop: true,
+                easing: 'easeInOutSine'
+            });
+        });
+    </script>
+</body>
+</html>
