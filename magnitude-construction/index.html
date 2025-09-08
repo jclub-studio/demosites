@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnitude Construction LLC | Licensed & Insured Tri-Cities General Contractor</title>
+  <meta name="description" content="Magnitude Construction LLC is your trusted, licensed & insured general contractor in the Tri-Cities (Kennewick, Richland, Pasco). Specializing in kitchen, bathroom, basement remodels, home additions and whole-home renovations. Call (509) 366-1053 for a free estimate.">
+  <meta name="keywords" content="General contractor Tri-Cities WA, Kitchen remodeling Kennewick, Bathroom renovation Richland, Home additions Pasco WA, Licensed contractor Tri-Cities">
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .hero-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    }
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    }
+    .gallery-item {
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .sticky-header {
+      transition: all 0.3s ease;
+    }
+    .sticky-header.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    .form-input:focus {
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Sticky Header -->
+  <header id="header" class="fixed top-0 w-full z-50 py-4 px-4 md:px-8 transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-bold text-white tracking-tight">Magnitude Construction LLC</a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#hero" class="text-white hover:text-sky-400 transition">Home</a>
+        <a href="#services" class="text-white hover:text-sky-400 transition">Services</a>
+        <a href="#gallery" class="text-white hover:text-sky-400 transition">Gallery</a>
+        <a href="#about" class="text-white hover:text-sky-400 transition">About</a>
+        <a href="#contact" class="text-white hover:text-sky-400 transition">Contact</a>
+      </nav>
+      <a href="tel:+15099759798" class="hidden md:block bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded-md text-sm font-semibold transition">Call Now</a>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-slate-900 text-center space-y-4 py-4 hidden">
+      <a href="#hero" class="block text-white hover:text-sky-400">Home</a>
+      <a href="#services" class="block text-white hover:text-sky-400">Services</a>
+      <a href="#gallery" class="block text-white hover:text-sky-400">Gallery</a>
+      <a href="#about" class="block text-white hover:text-sky-400">About</a>
+      <a href="#contact" class="block text-white hover:text-sky-400">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-bg min-h-screen flex items-center justify-center text-center text-white px-4">
+    <div data-aos="fade-up" class="max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Licensed & Insured General Contractor in the Tri-Cities</h1>
+      <p class="text-lg md:text-xl mb-8 text-gray-300">Transforming homes with quality craftsmanship. Specializing in kitchen, bathroom, basement remodels, and home additions.</p>
+      <a href="#contact" class="btn-primary inline-block bg-sky-500 hover:bg-sky-600 text-white py-3 px-8 rounded-md text-lg font-semibold">Request a Free Estimate</a>
+      <p class="mt-4 text-sm text-gray-400">Available 24/7 | Call <a href="tel:+15099759798" class="text-sky-400 hover:underline">(509) 366-1053</a></p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">We specialize in residential remodeling projects that enhance your living space and increase your home's value.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Kitchen Remodels -->
+        <div data-aos="fade-up" data-aos-delay="100" class="service-card bg-gray-50 rounded-lg p-6">
+          <div class="text-3xl mb-4 text-sky-500">🍽️</div>
+          <h3 class="text-2xl font-semibold mb-2">Kitchen Remodels</h3>
+          <p class="text-gray-600 mb-4">Transform your kitchen into a modern, functional space perfect for cooking and entertaining.</p>
+          <a href="#contact" class="text-sky-500 font-semibold">Get a Quote →</a>
+        </div>
+        <!-- Bathroom Remodels -->
+        <div data-aos="fade-up" data-aos-delay="200" class="service-card bg-gray-50 rounded-lg p-6">
+          <div class="text-3xl mb-4 text-sky-500">🛁</div>
+          <h3 class="text-2xl font-semibold mb-2">Bathroom Remodels</h3>
+          <p class="text-gray-600 mb-4">Create a spa-like retreat with luxurious fixtures and finishes tailored to your lifestyle.</p>
+          <a href="#contact" class="text-sky-500 font-semibold">Get a Quote →</a>
+        </div>
+        <!-- Basement Finishing -->
+        <div data-aos="fade-up" data-aos-delay="300" class="service-card bg-gray-50 rounded-lg p-6">
+          <div class="text-3xl mb-4 text-sky-500">🏠</div>
+          <h3 class="text-2xl font-semibold mb-2">Basement Finishing</h3>
+          <p class="text-gray-600 mb-4">Maximize your home's potential by turning an unfinished basement into a livable space.</p>
+          <a href="#contact" class="text-sky-500 font-semibold">Get a Quote →</a>
+        </div>
+        <!-- Whole-Home Renovations -->
+        <div data-aos="fade-up" data-aos-delay="400" class="service-card bg-gray-50 rounded-lg p-6">
+          <div class="text-3xl mb-4 text-sky-500">🏡</div>
+          <h3 class="text-2xl font-semibold mb-2">Whole-Home Renovations</h3>
+          <p class="text-gray-600 mb-4">Comprehensive remodeling solutions to modernize and enhance your entire home.</p>
+          <a href="#contact" class="text-sky-500 font-semibold">Get a Quote →</a>
+        </div>
+        <!-- Home Additions -->
+        <div data-aos="fade-up" data-aos-delay="500" class="service-card bg-gray-50 rounded-lg p-6">
+          <div class="text-3xl mb-4 text-sky-500">➕</div>
+          <h3 class="text-2xl font-semibold mb-2">Home Additions</h3>
+          <p class="text-gray-600 mb-4">Expand your living space with expertly designed and constructed home additions.</p>
+          <a href="#contact" class="text-sky-500 font-semibold">Get a Quote →</a>
+        </div>
+        <!-- Custom Solutions -->
+        <div data-aos="fade-up" data-aos-delay="600" class="service-card bg-gray-50 rounded-lg p-6">
+          <div class="text-3xl mb-4 text-sky-500">🔨</div>
+          <h3 class="text-2xl font-semibold mb-2">Custom Solutions</h3>
+          <p class="text-gray-600 mb-4">Have a unique project in mind? We provide tailored remodeling solutions to fit your needs.</p>
+          <a href="#contact" class="text-sky-500 font-semibold">Get a Quote →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Project Gallery</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our portfolio of completed projects showcasing our craftsmanship and attention to detail.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Gallery Item 1 -->
+        <div data-aos="fade-up" data-aos-delay="100" class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://plus.unsplash.com/premium_photo-1664303816628-2c3f28be369d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Modern Kitchen Remodel" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Modern Kitchen Remodel</h3>
+            <p class="text-sm text-gray-600">Kennewick, WA</p>
+          </div>
+        </div>
+        <!-- Gallery Item 2 -->
+        <div data-aos="fade-up" data-aos-delay="200" class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1521783593447-5702b9bfd267?q=80&w=1504&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Luxury Bathroom Renovation" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Luxury Bathroom Renovation</h3>
+            <p class="text-sm text-gray-600">Richland, WA</p>
+          </div>
+        </div>
+        <!-- Gallery Item 3 -->
+        <div data-aos="fade-up" data-aos-delay="300" class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1646592474103-cfd22d1d9e34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Finished Basement" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Finished Basement</h3>
+            <p class="text-sm text-gray-600">Pasco, WA</p>
+          </div>
+        </div>
+        <!-- Gallery Item 4 -->
+        <div data-aos="fade-up" data-aos-delay="400" class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1611066415884-1eca899980ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Whole-Home Renovation" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Whole-Home Renovation</h3>
+            <p class="text-sm text-gray-600">Kennewick, WA</p>
+          </div>
+        </div>
+        <!-- Gallery Item 5 -->
+        <div data-aos="fade-up" data-aos-delay="500" class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1656733911001-16912b79d2bf?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Home Addition" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Home Addition</h3>
+            <p class="text-sm text-gray-600">Richland, WA</p>
+          </div>
+        </div>
+        <!-- Gallery Item 6 -->
+        <div data-aos="fade-up" data-aos-delay="600" class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1669736659471-b91f9bb70940?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Custom Remodeling" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Custom Remodeling</h3>
+            <p class="text-sm text-gray-600">Pasco, WA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Magnitude Construction LLC</h2>
+          <p class="text-lg text-gray-600 mb-6">We are a licensed and insured general contractor based in Kennewick, WA, proudly serving the Tri-Cities region. Our mission is to deliver high-quality remodeling services that enhance the beauty and functionality of your home.</p>
+          <p class="text-lg text-gray-600 mb-6">With years of experience in residential remodeling, we specialize in kitchen, bathroom, basement, and whole-home renovations. Our commitment to customer satisfaction and craftsmanship sets us apart from the competition.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center"><span class="text-sky-500 mr-2">✓</span> Licensed & Insured</li>
+            <li class="flex items-center"><span class="text-sky-500 mr-2">✓</span> Local Tri-Cities Expertise</li>
+            <li class="flex items-center"><span class="text-sky-500 mr-2">✓</span> Quality Craftsmanship</li>
+            <li class="flex items-center"><span class="text-sky-500 mr-2">✓</span> Customer Satisfaction</li>
+          </ul>
+        </div>
+        <div data-aos="fade-left">
+          <img src="https://s3-media0.fl.yelpcdn.com/bphoto/tmppCRLPGkG3YGzG0slliA/l.jpg" alt="Magnitude Construction Team" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Don't just take our word for it—see what our satisfied clients have to say about our work.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-lg shadow-lg p-6">
+          <p class="text-gray-600 mb-4">"Magnitude Construction transformed our outdated kitchen into a modern, functional space. Their team was professional, punctual, and the quality of work was outstanding. Highly recommend!"</p>
+          <div class="flex items-center">
+            <div class="text-yellow-400 mr-2">★★★★★</div>
+            <p class="font-semibold">Sarah M.</p>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-lg shadow-lg p-6">
+          <p class="text-gray-600 mb-4">"We hired them for a bathroom renovation and are extremely happy with the results. The attention to detail and customer service exceeded our expectations."</p>
+          <div class="flex items-center">
+            <div class="text-yellow-400 mr-2">★★★★★</div>
+            <p class="font-semibold">John D.</p>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-lg shadow-lg p-6">
+          <p class="text-gray-600 mb-4">"The team at Magnitude Construction finished our basement beautifully. They kept us informed throughout the process and delivered on time and budget. Great job!"</p>
+          <div class="flex items-center">
+            <div class="text-yellow-400 mr-2">★★★★★</div>
+            <p class="font-semibold">Lisa R.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-slate-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div data-aos="fade-right">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+          <p class="text-lg text-gray-300 mb-6">Ready to start your next remodeling project? Contact us today for a free estimate. We're here to help you transform your home.</p>
+          <div class="space-y-4">
+          
+            <div>
+              <h3 class="font-semibold text-xl mb-1">Phone</h3>
+              <p class="text-gray-300"><a href="tel:+15099759798" class="hover:text-sky-400">(509) 975-9798</a></p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-xl mb-1">Service Area</h3>
+              <p class="text-gray-300">Kennewick, Richland, Pasco, and surrounding areas</p>
+            </div>
+          </div>
+        </div>
+        <!-- Contact Form -->
+        <div data-aos="fade-left">
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label for="name" class="block mb-1 font-medium">Name</label>
+              <input type="text" id="name" name="name" required class="form-input w-full px-4 py-2 rounded-md text-gray-800" placeholder="Your Name">
+            </div>
+            <div>
+              <label for="email" class="block mb-1 font-medium">Email</label>
+              <input type="email" id="email" name="email" required class="form-input w-full px-4 py-2 rounded-md text-gray-800" placeholder="your@email.com">
+            </div>
+            <div>
+              <label for="phone" class="block mb-1 font-medium">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-2 rounded-md text-gray-800" placeholder="(509) 555-1234">
+            </div>
+            <div>
+              <label for="service" class="block mb-1 font-medium">Service Needed</label>
+              <select id="service" name="service" class="form-input w-full px-4 py-2 rounded-md text-gray-800">
+                <option value="Kitchen Remodel">Kitchen Remodel</option>
+                <option value="Bathroom Remodel">Bathroom Remodel</option>
+                <option value="Basement Finishing">Basement Finishing</option>
+                <option value="Whole-Home Renovation">Whole-Home Renovation</option>
+                <option value="Home Addition">Home Addition</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block mb-1 font-medium">Message</label>
+              <textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-2 rounded-md text-gray-800" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-md font-semibold transition">Send Message</button>
+          </form>
+          <div id="form-success" class="hidden mt-4 text-green-400">
+            Thank you! Your message has been sent. We'll get back to you shortly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 py-8 text-center text-gray-300">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2024 Magnitude Construction LLC. All rights reserved.</p>
+      <p>Kennewick, WA 99338 | <a href="tel:+15099759798" class="text-sky-400 hover:underline">(509) 366-1053</a></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 800, once: true });
+
+    // Sticky Header
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Simulate form submission
+      contactForm.style.display = 'none';
+      formSuccess.classList.remove('hidden');
+    });
+  </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/magnitude-construction-llc" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
