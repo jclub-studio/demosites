@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big River Pets | Aquatic Life & Pet Supplies in Richland, WA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aqua-blue': '#0ea5e9',
+                        'deep-blue': '#0369a1',
+                        'coral': '#f97316',
+                        'sea-green': '#0d9488',
+                        'sand': '#fde68a',
+                    },
+                    fontFamily: {
+                        'heading': ['Quicksand', 'sans-serif'],
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e0f2fe, #f0f9ff);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230ea5e9' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            animation: float 15s infinite ease-in-out;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(2, 132, 199, 0.8), rgba(3, 105, 161, 0.9)), url('https://images.unsplash.com/photo-1524704654690-b56c05c78a00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fish-animation {
+            position: absolute;
+            animation: swim 25s linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes swim {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100vw); }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #0ea5e9;
+        }
+        
+        .hours-table tr:nth-child(even) {
+            background-color: #f0f9ff;
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wave-divider {
+            position: relative;
+            height: 50px;
+            overflow: hidden;
+        }
+        
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800">
+    <!-- Bubble background effect -->
+    <div id="bubbles"></div>
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="bg-sea-green text-white p-2 rounded-lg mr-3">
+                        <i class="fa-solid fa-fish fa-lg"></i>
+                    </div>
+                    <h1 class="text-2xl font-heading font-bold text-deep-blue">Big River Pets</h1>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-deep-blue hover:text-coral font-medium">Home</a>
+                    <a href="#products" class="text-deep-blue hover:text-coral font-medium">Products</a>
+                    <a href="#testimonials" class="text-deep-blue hover:text-coral font-medium">Testimonials</a>
+                    <a href="#hours" class="text-deep-blue hover:text-coral font-medium">Hours</a>
+                    <a href="#contact" class="text-deep-blue hover:text-coral font-medium">Contact</a>
+                </nav>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-deep-blue">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-deep-blue hover:text-coral font-medium">Home</a>
+                    <a href="#products" class="text-deep-blue hover:text-coral font-medium">Products</a>
+                    <a href="#testimonials" class="text-deep-blue hover:text-coral font-medium">Testimonials</a>
+                    <a href="#hours" class="text-deep-blue hover:text-coral font-medium">Hours</a>
+                    <a href="#contact" class="text-deep-blue hover:text-coral font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-20 md:py-28 text-white">
+        <div class="container mx-auto px-4 text-center relative">
+            <!-- Animated fish -->
+            <div class="fish-animation" style="top: 20%;">
+                <i class="fa-solid fa-fish fa-2x text-sand"></i>
+            </div>
+            <div class="fish-animation" style="top: 50%; animation-delay: -7s;">
+                <i class="fa-solid fa-fish fa-lg text-orange-200"></i>
+            </div>
+            <div class="fish-animation" style="top: 80%; animation-delay: -15s;">
+                <i class="fa-solid fa-fish fa-xl text-cyan-200"></i>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-4">Your One-Stop Shop for Aquatic Life & Pet Supplies</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Richland's largest variety of aquatic life and pet essentials</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-coral hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                    Explore Our Products
+                </a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-deep-blue text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                    Visit Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="fill-current text-aqua-blue"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="fill-current text-aqua-blue"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="fill-current text-white"></path>
+        </svg>
+    </div>
+    
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-deep-blue mb-4">Our Products & Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover Richland's largest selection of aquatic life and pet essentials</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="p-5 bg-sea-green text-white text-center">
+                        <i class="fas fa-fish fa-3x mb-4"></i>
+                        <h3 class="text-xl font-heading font-bold">Aquatic Life</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Freshwater and saltwater fish, exotic amphibians, and reptiles</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-sea-green mr-2"></i>
+                                Tropical fish
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-sea-green mr-2"></i>
+                                Exotic amphibians
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-sea-green mr-2"></i>
+                                Aquatic plants
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="p-5 bg-coral text-white text-center">
+                        <i class="fas fa-paw fa-3x mb-4"></i>
+                        <h3 class="text-xl font-heading font-bold">Pet Supplies</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Everything you need for cats, dogs, and small animals</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-coral mr-2"></i>
+                                Premium pet food
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-coral mr-2"></i>
+                                Toys and accessories
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-coral mr-2"></i>
+                                Health care products
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="p-5 bg-aqua-blue text-white text-center">
+                        <i class="fas fa-water fa-3x mb-4"></i>
+                        <h3 class="text-xl font-heading font-bold">Aquarium Accessories</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Everything to create your perfect underwater world</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aqua-blue mr-2"></i>
+                                Filters and pumps
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aqua-blue mr-2"></i>
+                                Decorative items
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aqua-blue mr-2"></i>
+                                Lighting systems
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="p-5 bg-deep-blue text-white text-center">
+                        <i class="fas fa-robot fa-3x mb-4"></i>
+                        <h3 class="text-xl font-heading font-bold">Unique Decor</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Specialty items to make your aquarium stand out</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-deep-blue mr-2"></i>
+                                Themed displays
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-deep-blue mr-2"></i>
+                                Custom backgrounds
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-deep-blue mr-2"></i>
+                                Spaceship/UFO decor
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gradient-to-b from-cyan-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-deep-blue mb-4">Customer Testimonials</h2>
+                <div class="flex items-center justify-center">
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-lg font-bold text-gray-700">3.5 Stars (21 reviews)</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-sea-green text-white flex items-center justify-center mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-deep-blue">Sarah J.</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Big River Pets has the most impressive variety of fish and amphibians I've ever seen! Their staff helped me set up my first saltwater tank and everything is thriving."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-coral text-white flex items-center justify-center mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-deep-blue">Mike T.</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I was amazed by their large selection of supplies for all pets. Found everything I needed for my aquarium, plus supplies for my dog and cat. Truly a one-stop shop!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-aqua-blue text-white flex items-center justify-center mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-deep-blue">Lisa R.</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The themed aquarium decorations are incredible! I bought the UFO spaceship for my son's tank and it's the centerpiece of his room. Great quality and fair prices."</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-deep-blue font-bold hover:text-coral">
+                    <i class="fab fa-facebook mr-2"></i>
+                    Visit us on Facebook (Finatics Tropical Fish Shop)
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hours & Location Section -->
+    <section id="hours" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-deep-blue mb-4">Store Hours & Location</h2>
+                <p class="text-lg text-gray-600">Visit us at our Richland location</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+                        <h3 class="text-2xl font-heading font-bold text-deep-blue mb-6">Opening Hours</h3>
+                        
+                        <div class="mb-6 p-4 bg-sea-green text-white rounded-lg">
+                            <p class="font-bold">Today's Hours:</p>
+                            <p class="text-xl">10:00 AM – 6:00 PM (Open Now)</p>
+                        </div>
+                        
+                        <table class="w-full hours-table">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="py-3 px-4 text-left">Day</th>
+                                    <th class="py-3 px-4 text-right">Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Monday</td>
+                                    <td class="py-3 px-4 text-right">10:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Tuesday</td>
+                                    <td class="py-3 px-4 text-right">10:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Wednesday</td>
+                                    <td class="py-3 px-4 text-right">10:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Thursday</td>
+                                    <td class="py-3 px-4 text-right">10:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Friday</td>
+                                    <td class="py-3 px-4 text-right">10:00 AM - 7:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Saturday</td>
+                                    <td class="py-3 px-4 text-right">9:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Sunday</td>
+                                    <td class="py-3 px-4 text-right">10:00 AM - 4:00 PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+                        <h3 class="text-2xl font-heading font-bold text-deep-blue mb-6">Our Location</h3>
+                        
+                        <div class="mb-6">
+                            <p class="flex items-center text-lg mb-2">
+                                <i class="fas fa-map-marker-alt text-coral mr-3"></i>
+                                1374 Jadwin Ave, Richland, WA 99354
+                            </p>
+                            <p class="flex items-center text-lg">
+                                <i class="fas fa-phone text-sea-green mr-3"></i>
+                                +1 (509) 943-9777
+                            </p>
+                        </div>
+                        
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.202238184111!2d-119.27820368450015!3d46.23014127912305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549877f4cdf58a0d%3A0x4a1a1a1a1a1a1a1a!2s1374%20Jadwin%20Ave%2C%20Richland%2C%20WA%2099354!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                class="rounded-lg"
+                            ></iframe>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <a href="https://goo.gl/maps/ABC123" target="_blank" class="inline-block bg-deep-blue hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                <i class="fas fa-directions mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-sea-green to-deep-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Visit Big River Pets Today!</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Expert advice, premium pet supplies, and a stunning selection of aquatic life. Open Thursday 10 AM–6 PM—stop by today!</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+15099439777" class="bg-white text-deep-blue hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                    <i class="fas fa-phone mr-2"></i> Call Us Now
+                </a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-deep-blue text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact" class="bg-deep-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Big River Pets</h3>
+                    <p class="mb-4">Your one-stop shop for aquatic life and pet supplies in Richland, WA.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-coral">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-coral">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-coral">
+                            <i class="fab fa-yelp fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-coral">Home</a></li>
+                        <li><a href="#products" class="hover:text-coral">Products</a></li>
+                        <li><a href="#testimonials" class="hover:text-coral">Testimonials</a></li>
+                        <li><a href="#hours" class="hover:text-coral">Store Hours</a></li>
+                        <li><a href="#contact" class="hover:text-coral">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            1374 Jadwin Ave, Richland, WA 99354
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <a href="tel:+15099439777" class="hover:text-coral">+1 (509) 943-9777</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            info@bigriverpets.com
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Share Feedback</h3>
+                    <p class="mb-4">We value your opinion! Let us know about your experience.</p>
+                    <button class="bg-coral hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-comment-alt mr-2"></i> Leave a Review
+                    </button>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 pt-8 text-center text-blue-300">
+                <p>&copy; 2025 Big River Pets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Create bubble background effect
+        function createBubbles() {
+            const bubblesContainer = document.getElementById('bubbles');
+            const bubbleCount = 20;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                // Random size
+                const size = Math.random() * 60 + 10;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                // Random position
+                bubble.style.left = `${Math.random() * 100}%`;
+                
+                // Random animation delay
+                bubble.style.animationDelay = `${Math.random() * 15}s`;
+                
+                bubblesContainer.appendChild(bubble);
+            }
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createBubbles();
+            
+            // Update today's hours dynamically
+            const today = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayName = days[today.getDay()];
+            
+            // In a real implementation, you would fetch this from a database or API
+            const hoursData = {
+                'Sunday': '10:00 AM - 4:00 PM',
+                'Monday': '10:00 AM - 6:00 PM',
+                'Tuesday': '10:00 AM - 6:00 PM',
+                'Wednesday': '10:00 AM - 6:00 PM',
+                'Thursday': '10:00 AM - 6:00 PM',
+                'Friday': '10:00 AM - 7:00 PM',
+                'Saturday': '9:00 AM - 6:00 PM'
+            };
+            
+            document.querySelector('.bg-sea-green p:last-child').textContent = hoursData[dayName];
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/big-river-pets" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
