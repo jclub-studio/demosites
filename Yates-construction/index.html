@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yates Construction LLC - Building Dreams in Drummond, MT</title>
+    <meta name="description" content="Yates Construction LLC - Your trusted local construction partner in Drummond, Montana. Quality residential, commercial, and infrastructure construction services.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saddle-brown: #8B4513;
+            --forest-green: #228B22;
+            --rust-red: #B22222;
+            --cream: #F5F5DC;
+            --charcoal: #36454F;
+        }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.85) 0%, rgba(34, 139, 34, 0.75) 100%);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(245, 245, 220, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--saddle-brown) 0%, var(--rust-red) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, var(--saddle-brown) 50%, transparent 100%);
+            height: 2px;
+        }
+        
+        .project-overlay {
+            background: linear-gradient(to top, rgba(139, 69, 19, 0.9) 0%, transparent 50%);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(245, 245, 220, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+            border-left: 4px solid var(--saddle-brown);
+        }
+        
+        .contact-form {
+            background: linear-gradient(135deg, rgba(245, 245, 220, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+        }
+        
+        .nav-scroll {
+            background: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-cream text-charcoal">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-hammer text-saddle-brown text-2xl mr-2"></i>
+                    <span class="font-display font-bold text-xl text-saddle-brown">Yates Construction LLC</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-saddle-brown hover:text-rust-red transition-colors">Home</a>
+                    <a href="#about" class="text-saddle-brown hover:text-rust-red transition-colors">About</a>
+                    <a href="#services" class="text-saddle-brown hover:text-rust-red transition-colors">Services</a>
+                    <a href="#projects" class="text-saddle-brown hover:text-rust-red transition-colors">Projects</a>
+                    <a href="#contact" class="text-saddle-brown hover:text-rust-red transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-saddle-brown">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-saddle-brown hover:bg-saddle-brown hover:text-cream rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-saddle-brown hover:bg-saddle-brown hover:text-cream rounded-md">About</a>
+                <a href="#services" class="block px-3 py-2 text-saddle-brown hover:bg-saddle-brown hover:text-cream rounded-md">Services</a>
+                <a href="#projects" class="block px-3 py-2 text-saddle-brown hover:bg-saddle-brown hover:text-cream rounded-md">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-saddle-brown hover:bg-saddle-brown hover:text-cream rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center parallax" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IGZpbGw9IiNmNWY1ZGMiIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiLz48cmVjdCBmaWxsPSIjOGI0NTEzIiBvcGFjaXR5PSIwLjEiIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiLz48L3N2Zz4=');">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+                Building Dreams in Drummond
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in">
+                Your trusted local construction partner serving Drummond, Granite County, and surrounding Montana communities with quality craftsmanship and Montana-tough construction
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+                <button onclick="scrollToSection('services')" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                    View Our Services
+                </button>
+                <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-saddle-brown transition-all">
+                    Get Free Estimate
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-saddle-brown mb-4">About Yates Construction</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Rooted in the heart of Montana, we bring over a decade of construction expertise to every project, big or small.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Yates Construction Team" class="rounded-xl shadow-2xl w-full">
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Local Expertise, Professional Results</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            As a locally-owned and operated business in Drummond, MT, we understand the unique challenges of Montana construction. From harsh winters to rocky terrain, we build structures that stand the test of time.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Our Commitment</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Every project receives our full attention and expertise. We're not just building structures; we're building relationships with our neighbors and strengthening our community.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-saddle-brown">10+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-saddle-brown">500+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-br from-cream to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive construction services tailored for Montana's unique environment and your specific needs.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Residential Construction -->
+                <div class="service-card rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-saddle-brown rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Residential Construction</h3>
+                    <p class="text-gray-600 mb-6">From custom homes to renovations, we create living spaces that reflect your lifestyle and withstand Montana's extreme conditions.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Custom Home Building</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Kitchen & Bathroom Remodels</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Room Additions</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Basement Finishing</li>
+                    </ul>
+                </div>
+
+                <!-- Commercial Construction -->
+                <div class="service-card rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-forest-green rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Commercial Construction</h3>
+                    <p class="text-gray-600 mb-6">Professional commercial spaces that enhance your business operations and create lasting impressions on your customers.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Office Buildings</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Retail Spaces</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Restaurant Construction</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Tenant Improvements</li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure Projects -->
+                <div class="service-card rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-rust-red rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-road text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Infrastructure & Excavation</h3>
+                    <p class="text-gray-600 mb-6">Essential groundwork and infrastructure development for residential, commercial, and public projects throughout Montana.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Site Preparation</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Utility Installation</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Concrete Work</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Grading & Drainage</li>
+                    </ul>
+                </div>
+
+                <!-- Roofing Services -->
+                <div class="service-card rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-saddle-brown rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hammer text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Roofing & Siding</h3>
+                    <p class="text-gray-600 mb-6">Protect your investment with quality roofing and siding solutions designed for Montana's extreme weather conditions.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Roof Installation</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Roof Repair & Maintenance</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Siding Installation</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Storm Damage Repair</li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Services -->
+                <div class="service-card rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-rust-red rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Emergency Services</h3>
+                    <p class="text-gray-600 mb-6">When disaster strikes, we're here 24/7 to provide rapid response and professional restoration services.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>24/7 Emergency Response</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Storm Damage Repair</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Water Damage Restoration</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Structural Repairs</li>
+                    </ul>
+                </div>
+
+                <!-- Maintenance Services -->
+                <div class="service-card rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-forest-green rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-4">Maintenance & Repair</h3>
+                    <p class="text-gray-600 mb-6">Keep your property in top condition with our comprehensive maintenance and repair services for residential and commercial properties.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Seasonal Maintenance</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>General Repairs</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Preventive Maintenance</li>
+                        <li><i class="fas fa-check text-forest-green mr-2"></i>Inspection Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-saddle-brown mb-4">Featured Projects</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A showcase of our recent work across residential, commercial, and infrastructure projects in Montana.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Country Home Renovation" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="project-overlay absolute inset-0 flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="font-display text-xl font-bold mb-2">Country Home Renovation</h3>
+                            <p class="text-sm">Complete renovation of a 1940s farmhouse in Granite County</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Commercial Building" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="project-overlay absolute inset-0 flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="font-display text-xl font-bold mb-2">Downtown Office Building</h3>
+                            <p class="text-sm">New commercial construction in Drummond's business district</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://plus.unsplash.com/premium_photo-1685133855379-711aa008f7ba?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Roofing Project" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="project-overlay absolute inset-0 flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="font-display text-xl font-bold mb-2">Historic Roof Restoration</h3>
+                            <p class="text-sm">Complete roof restoration using modern materials and techniques</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://plus.unsplash.com/premium_photo-1661943489715-ea5e9dac7852?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Infrastructure Work" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="project-overlay absolute inset-0 flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="font-display text-xl font-bold mb-2">Road Construction</h3>
+                            <p class="text-sm">Infrastructure development for new subdivision access</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1616130184231-19dd5f2d9592?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Farm Building" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="project-overlay absolute inset-0 flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="font-display text-xl font-bold mb-2">Agricultural Building</h3>
+                            <p class="text-sm">Modern farm building construction with steel frame</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1634750009079-6bf7bede038b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Storm Damage" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="project-overlay absolute inset-0 flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="font-display text-xl font-bold mb-2">Storm Damage Repair</h3>
+                            <p class="text-sm">Emergency restoration after severe weather event</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gradient-to-br from-saddle-brown to-rust-red text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
+                <div class="w-24 h-px bg-cream mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-saddle-brown rounded-full flex items-center justify-center text-white font-bold mr-4">J</div>
+                        <div>
+                            <h4 class="font-bold text-saddle-brown">John Morrison</h4>
+                            <p class="text-sm text-gray-600">Drummond, MT</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Yates Construction transformed our 1950s farmhouse into a modern dream home. Their attention to detail and knowledge of local building codes was invaluable."</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-forest-green rounded-full flex items-center justify-center text-white font-bold mr-4">S</div>
+                        <div>
+                            <h4 class="font-bold text-saddle-brown">Sarah Williams</h4>
+                            <p class="text-sm text-gray-600">Granite County</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"When our roof was damaged in a storm, Yates Construction responded immediately and had us protected within 24 hours. Exceptional emergency service!"</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-rust-red rounded-full flex items-center justify-center text-white font-bold mr-4">M</div>
+                        <div>
+                            <h4 class="font-bold text-saddle-brown">Mike Thompson</h4>
+                            <p class="text-sm text-gray-600">Drummond, MT</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The commercial building they constructed for my business exceeded all expectations. Professional, reliable, and built to last in Montana's tough climate."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-saddle-brown mb-4">Get In Touch</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to start your next project? Contact us for a free estimate and consultation.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="contact-form rounded-xl p-8 shadow-lg">
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-6">Request a Free Estimate</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-saddle-brown focus:border-saddle-brown">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-saddle-brown focus:border-saddle-brown">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-saddle-brown focus:border-saddle-brown">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                            <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-saddle-brown focus:border-saddle-brown">
+                                <option value="">Select a service</option>
+                                <option value="residential">Residential Construction</option>
+                                <option value="commercial">Commercial Construction</option>
+                                <option value="roofing">Roofing & Siding</option>
+                                <option value="infrastructure">Infrastructure & Excavation</option>
+                                <option value="emergency">Emergency Services</option>
+                                <option value="maintenance">Maintenance & Repair</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-saddle-brown focus:border-saddle-brown"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold w-full">
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="font-display text-2xl font-bold text-saddle-brown mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-saddle-brown mb-2">Address</h4>
+                            <p class="text-gray-600">Drummond, MT 59832-0344</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-saddle-brown mb-2">Phone</h4>
+                            <p class="text-gray-600">(406) XXX-XXXX</p>
+                            <p class="text-sm text-gray-500">Emergency: (406) XXX-XXXX (24/7)</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-saddle-brown mb-2">Email</h4>
+                            <p class="text-gray-600">info@yatesconstructionmt.com</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-saddle-brown mb-2">Service Area</h4>
+                            <p class="text-gray-600">Drummond, Granite County, and surrounding Montana communities</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-saddle-brown mb-4">Business Hours</h4>
+                        <div class="space-y-2 text-gray-600">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>7:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span>8:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>Emergency Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hammer text-saddle-brown text-2xl mr-2"></i>
+                        <span class="font-display font-bold text-xl">Yates Construction LLC</span>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Your trusted local construction partner in Drummond, Montana. Quality craftsmanship built to last.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li><a href="#services" class="hover:text-cream transition-colors">Residential Construction</a></li>
+                        <li><a href="#services" class="hover:text-cream transition-colors">Commercial Construction</a></li>
+                        <li><a href="#services" class="hover:text-cream transition-colors">Roofing & Siding</a></li>
+                        <li><a href="#services" class="hover:text-cream transition-colors">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>Drummond, MT 59832-0344</li>
+                        <li>(406) XXX-XXXX</li>
+                        <li>info@yatesconstructionmt.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-saddle-brown rounded-full flex items-center justify-center hover:bg-rust-red transition-colors">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-saddle-brown rounded-full flex items-center justify-center hover:bg-rust-red transition-colors">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-saddle-brown rounded-full flex items-center justify-center hover:bg-rust-red transition-colors">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 text-sm">
+                <p>&copy; 2025 Yates Construction LLC. All rights reserved. | Licensed & Insured Montana Contractor</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scroll');
+            } else {
+                navbar.classList.remove('nav-scroll');
+            }
+        });
+
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            const navHeight = 80;
+            const elementPosition = element.offsetTop - navHeight;
+            
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send the data to your server
+            // For demo purposes, we'll just show an alert
+            alert('Thank you for your inquiry! We will contact you within 24 hours to schedule your free estimate.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add scroll event listeners to navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and project items
+        document.querySelectorAll('.service-card, #projects .group').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/yates-construction" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
