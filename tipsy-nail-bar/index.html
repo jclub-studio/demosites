@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipsy Nail Bar Kennewick | Award-Winning Nail Salon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e6007e',
+                        secondary: '#f8f4f0',
+                        accent: '#ffd1dc',
+                        dark: '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff9fb;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #e6007e;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .booking-form input, .booking-form select, .booking-form textarea {
+            transition: all 0.3s ease;
+        }
+        .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+            border-color: #e6007e;
+            box-shadow: 0 0 0 3px rgba(230, 0, 126, 0.2);
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .team-member {
+            transition: all 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-secondary">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-glass-martini-alt text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-primary">Tipsy Nail Bar</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-dark hover:text-primary font-medium">Home</a>
+                    <a href="#services" class="nav-link text-dark hover:text-primary font-medium">Services</a>
+                    <a href="#gallery" class="nav-link text-dark hover:text-primary font-medium">Gallery</a>
+                    <a href="#about" class="nav-link text-dark hover:text-primary font-medium">About</a>
+                    <a href="#reviews" class="nav-link text-dark hover:text-primary font-medium">Reviews</a>
+                    <a href="#contact" class="nav-link text-dark hover:text-primary font-medium">Contact</a>
+                    <a href="#booking" class="bg-primary hover:bg-pink-700 text-white px-5 py-2 rounded-full font-medium transition duration-300">Book Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-4 px-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-dark hover:text-primary font-medium">Home</a>
+                <a href="#services" class="text-dark hover:text-primary font-medium">Services</a>
+                <a href="#gallery" class="text-dark hover:text-primary font-medium">Gallery</a>
+                <a href="#about" class="text-dark hover:text-primary font-medium">About</a>
+                <a href="#reviews" class="text-dark hover:text-primary font-medium">Reviews</a>
+                <a href="#contact" class="text-dark hover:text-primary font-medium">Contact</a>
+                <a href="#booking" class="bg-primary hover:bg-pink-700 text-white px-5 py-2 rounded-full font-medium text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-24 pb-16 md:pt-32 md:pb-24 text-center">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="animate-on-scroll">
+                <div class="bg-white inline-block px-4 py-1 rounded-full mb-4 shadow-lg">
+                    <span class="text-primary font-bold">🏆 VOTED #1 NAIL SALON 2023 & 2024</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Elevate Your Nails, Elevate Your Mood</h1>
+                <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Kennewick's premier nail bar combining expert craftsmanship with a fun, relaxing atmosphere</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#booking" class="bg-primary hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg transform hover:scale-105">Book Now</a>
+                    <a href="#services" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Premium Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Experience the Tipsy difference with our wide range of professional nail services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-secondary rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-primary w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-paper text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Manicures</h3>
+                    <p class="text-gray-600 mb-4">Classic, gel, or shellac polish with our signature hand massage and beverage service</p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Spa manicure with scrub & mask</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Gel polish application</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Complimentary beverage service</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg text-dark">From $35</span>
+                        <a href="#booking" class="text-primary font-medium hover:underline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-secondary rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-primary w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shoe-prints text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Pedicures</h3>
+                    <p class="text-gray-600 mb-4">Luxurious foot care treatment with exfoliation, massage, and polish</p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Foot soak with essential oils</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Callus removal & exfoliation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Extended hydrating massage</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg text-dark">From $45</span>
+                        <a href="#booking" class="text-primary font-medium hover:underline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-secondary rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-primary w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Nail Art</h3>
+                    <p class="text-gray-600 mb-4">Custom designs, hand-painted art, or intricate patterns to express your style</p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Simple designs from $5</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Complex artistic creations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Seasonal and themed art</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg text-dark">From $10</span>
+                        <a href="#booking" class="text-primary font-medium hover:underline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-secondary rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-primary w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-wine-bottle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Dip Powder</h3>
+                    <p class="text-gray-600 mb-4">Long-lasting, chip-resistant manicure perfect for active lifestyles</p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>No UV light required</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Nourishing vitamin-infused formula</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Perfect for natural or extended nails</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg text-dark">From $50</span>
+                        <a href="#booking" class="text-primary font-medium hover:underline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-secondary rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-primary w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-magic text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Acrylic Nails</h3>
+                    <p class="text-gray-600 mb-4">Expertly sculpted extensions for longer, bolder nails</p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Custom shapes & lengths</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Full set or fill-ins available</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Natural nail enhancement</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg text-dark">From $55</span>
+                        <a href="#booking" class="text-primary font-medium hover:underline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-secondary rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-primary w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-gift text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Special Occasions</h3>
+                    <p class="text-gray-600 mb-4">Bridal parties, birthdays, and group events with private bookings</p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Private party rooms</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Group discounts available</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span>Custom packages for events</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg text-dark">From $250</span>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Browse our latest nail art creations and inspiration</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://plus.unsplash.com/premium_photo-1670348051093-a3f94b408bcb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Nail Art Design" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$00" alt="Marbled Nails" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$00" alt="Glitter Nails" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1572743686183-729b40b9230e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="French Manicure" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Chrome Nails" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1559006045-d34d415b2cff?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Minimalist Nails" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1601244668565-afba8cbd2b51?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Holographic Nails" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1633955726992-2b7c0d2d2a69?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Natural Nails" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1598104358543-2fdc2cfde345?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Tipsy Nail Bar Interior" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">About Tipsy Nail Bar</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2023, Tipsy Nail Bar has quickly become Kennewick's premier destination for exceptional nail care. Our family-owned salon is committed to "raising the bar in the nail industry" through superior service and a welcoming atmosphere.</p>
+                    <p class="text-gray-600 mb-6">What sets us apart is our unique combination of professional expertise, a fun beverage service, and unwavering commitment to hygiene. We believe that nail care should be an enjoyable, relaxing experience that leaves you feeling confident and beautiful.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span>Family-owned since 2023</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span>Voted Best Nail Salon 2023 & 2024</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span>Individual tool packaging</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span>Pedicure liners for every client</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-dark">Our Mission</h3>
+                        <p class="text-gray-600">To provide a premium nail care experience that combines exceptional service with a fun, relaxing atmosphere where every client feels valued and pampered.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our happy customers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="testimonial-card bg-white rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Best nail salon in Kennewick! The service here is incredible - they took their time and really made sure I was happy with the results. Plus the wine selection is a nice touch!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12 mr-3"></div>
+                        <div>
+                            <h4 class="font-bold text-dark">Emily R.</h4>
+                            <p class="text-gray-500 text-sm">Regular Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="testimonial-card bg-white rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I had my bridal party here and it was perfect! The team worked seamlessly to get us all ready in time. The private room was beautiful and the service was impeccable."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12 mr-3"></div>
+                        <div>
+                            <h4 class="font-bold text-dark">Sarah T.</h4>
+                            <p class="text-gray-500 text-sm">Bride</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="testimonial-card bg-white rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Love that they use individual tool packages - it gives me peace of mind about hygiene. The nail artists are so talented and the atmosphere is relaxing yet fun. Will definitely be back!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12 mr-3"></div>
+                        <div>
+                            <h4 class="font-bold text-dark">Michael K.</h4>
+                            <p class="text-gray-500 text-sm">First-Time Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-primary font-bold hover:underline">
+                    See all 127 reviews
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Book Your Appointment</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Reserve your spot for a relaxing nail experience with our talented team</p>
+            </div>
+            
+            <div class="bg-secondary rounded-2xl shadow-xl p-6 md:p-8">
+                <form class="booking-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="name">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="(509) 000-0000">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="service">Service</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Select a service</option>
+                                <option>Manicure - Classic</option>
+                                <option>Manicure - Gel Polish</option>
+                                <option>Pedicure - Basic</option>
+                                <option>Pedicure - Luxury</option>
+                                <option>Acrylic Extensions</option>
+                                <option>Dip Powder</option>
+                                <option>Nail Art</option>
+                                <option>Bridal Party</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="date">Preferred Date</label>
+                            <input type="date" id="date" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-medium mb-2" for="message">Special Requests</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Any special requests or notes for your appointment"></textarea>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-primary rounded">
+                            <span class="ml-2 text-gray-700">I agree to the <a href="#" class="text-primary hover:underline">terms and conditions</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-pink-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition duration-300">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Visit Our Salon</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We're conveniently located in the heart of Kennewick</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dark mb-4">Our Location</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                                    <span>5215 W Clearwater Ave, Suite 109<br>Kennewick, WA 99336</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-phone-alt text-primary mr-3"></i>
+                                    <span>(509) 619-0744</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-envelope text-primary mr-3"></i>
+                                    <span>info@tipsynailbar.com</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-primary mt-1 mr-3"></i>
+                                    <div>
+                                        <p><span class="font-medium">Monday - Saturday:</span> 9:30 AM - 7:00 PM</p>
+                                        <p><span class="font-medium">Sunday:</span> Closed</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-dark mb-6">Get In Touch</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2" for="contact-name">Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your name">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2" for="contact-email">Email</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="your@email.com">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2" for="contact-subject">Subject</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="How can we help?">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2" for="contact-message">Message</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-glass-martini-alt text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl">Tipsy Nail Bar</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Kennewick's award-winning nail bar combining expert craftsmanship with a fun, relaxing atmosphere.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-yelp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition">Reviews</a></li>
+                        <li><a href="#booking" class="text-gray-400 hover:text-white transition">Book Online</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Manicures</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Pedicures</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Nail Art</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Acrylic Extensions</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Dip Powder</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Special Occasions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span>5215 W Clearwater Ave, Suite 109<br>Kennewick, WA 99336</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-primary mr-3"></i>
+                            <span>(509) 619-0744</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span>info@tipsynailbar.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500">© 2023 Tipsy Nail Bar Kennewick. All rights reserved.</p>
+                <p class="text-gray-600 mt-2">Voted Tri-Cities Best Nail Salon 2023 & 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Form submission
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! We will get back to you soon.');
+                form.reset();
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/tipsy-nail-bar" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
