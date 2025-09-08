@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thayne's Prime Cuts - Lolo's Master Barber for 40+ Years</title>
+    <meta name="description" content="Lolo's trusted barber for over 40 years. Master barber Thayne specializes in men's, women's, and children's haircuts. Walk-ins welcome.">
+    <meta name="keywords" content="Lolo barber, Lolo haircuts, Montana barbershop, children's haircuts Lolo, family barber Montana">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Barber pole animation */
+        .barber-pole {
+            background: linear-gradient(90deg, 
+                #e5e5e5 0%, #e5e5e5 25%, 
+                #dc2626 25%, #dc2626 50%, 
+                #1e293b 50%, #1e293b 75%, 
+                #e5e5e5 75%, #e5e5e5 100%);
+            background-size: 200% 100%;
+            animation: barber-pole 2s linear infinite;
+        }
+        
+        @keyframes barber-pole {
+            0% { background-position: 0 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Hover effects */
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        
+        /* Review card styling */
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Google Maps responsive */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-cut text-red-500 text-2xl mr-3"></i>
+                    <h1 class="text-xl font-bold">Thayne's Prime Cuts</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-red-400 transition">Home</a>
+                    <a href="#about" class="hover:text-red-400 transition">About</a>
+                    <a href="#services" class="hover:text-red-400 transition">Services</a>
+                    <a href="#testimonials" class="hover:text-red-400 transition">Reviews</a>
+                    <a href="#contact" class="hover:text-red-400 transition">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 hover:text-red-400">Home</a>
+                <a href="#about" class="block py-2 hover:text-red-400">About</a>
+                <a href="#services" class="block py-2 hover:text-red-400">Services</a>
+                <a href="#testimonials" class="block py-2 hover:text-red-400">Reviews</a>
+                <a href="#contact" class="block py-2 hover:text-red-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-in-up">Lolo's Master Barber</h1>
+                <p class="text-xl md:text-2xl mb-6 fade-in-up" style="animation-delay: 0.2s">
+                    40+ Years of Excellence • Walk-ins Welcome • Family-Friendly
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up" style="animation-delay: 0.4s">
+                    <a href="tel:4062730248" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                    <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-full transition">
+                        View Services
+                    </a>
+                </div>
+                <div class="mt-8 fade-in-up" style="animation-delay: 0.6s">
+                    <p class="text-lg">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        4.9/5 from 66+ reviews
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barber Pole Divider -->
+    <div class="h-3 barber-pole"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">About Thayne</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://plus.unsplash.com/premium_photo-1661380558859-40df8dd91dfd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Thayne - Master Barber" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div>
+                        <p class="text-lg mb-4 text-gray-700">
+                            For over 40 years, Thayne has been the heart of hair care in Lolo, Montana. What started as a small barbershop has grown into a beloved community institution where generations of families come for master-level craftsmanship and genuine personal care.
+                        </p>
+                        <p class="text-lg mb-4 text-gray-700">
+                            Known as "The Child Whisperer," Thayne has a special gift for making children comfortable during their haircuts. Parents often share stories of how their children, who once feared haircuts, now look forward to their visits.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            With a commitment to excellence and honest pricing, Thayne continues to serve the Lolo community with the same dedication that has earned him 4.9 stars from 66+ satisfied customers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Services & Pricing</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Men's Services -->
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-center">
+                            <i class="fas fa-male text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Men's Services</h3>
+                            <ul class="text-lg space-y-2">
+                                <li>Haircuts - $22</li>
+                                <li>Beard Trims - $15</li>
+                                <li>Hot Towel Shaves - $20</li>
+                                <li>Scalp Treatments - $18</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Women's Services -->
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-center">
+                            <i class="fas fa-female text-4xl text-pink-600 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Women's Services</h3>
+                            <ul class="text-lg space-y-2">
+                                <li>Haircuts - $24</li>
+                                <li>Styling - $20</li>
+                                <li>Perms - $45+</li>
+                                <li>Consultations - Free</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Children's Services -->
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-center">
+                            <i class="fas fa-child text-4xl text-green-600 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Children's Services</h3>
+                            <ul class="text-lg space-y-2">
+                                <li>Haircuts (under 12) - $17</li>
+                                <li>First Haircuts - $20</li>
+                                <li>Family Discounts - Available</li>
+                                <li>Patient, Gentle Care</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-lg text-gray-600">Walk-ins welcome • Cash & Check only • No appointment necessary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">What Our Customers Say</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Review 1 -->
+                    <div class="review-card bg-gray-50 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            "Thayne has been cutting hair in Lolo for over 40 years. He's a master with clippers and scissors. The child whisperer indeed!"
+                        </p>
+                        <p class="font-semibold text-gray-800">- Sarah M.</p>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card bg-gray-50 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            "Thayne is everything you could want in a barber: pleasant, precise, meticulous, knowledgeable, and experienced."
+                        </p>
+                        <p class="font-semibold text-gray-800">- John D.</p>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="review-card bg-gray-50 rounded-lg p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            "My son's first haircut was amazing! Thayne was so patient and made it a wonderful experience for both of us."
+                        </p>
+                        <p class="font-semibold text-gray-800">- Lisa R.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="https://g.page/r/CQ2xXxXxXxX/review" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">
+                        <i class="fab fa-google mr-2"></i>Read More Reviews
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Visit Us</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Location & Hours -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Location & Hours</h3>
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <p class="text-lg mb-2">
+                                <i class="fas fa-map-marker-alt text-red-600 mr-2"></i>
+                                103 Tyler Way<br>
+                                Lolo, MT 59847
+                            </p>
+                            <p class="text-lg mb-2">
+                                <i class="fas fa-phone text-red-600 mr-2"></i>
+                                (406) 273-0248
+                            </p>
+                            <div class="mt-4">
+                                <h4 class="font-bold mb-2">Business Hours</h4>
+                                <ul class="space-y-1">
+                                    <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+                                    <li>Saturday: Closed</li>
+                                    <li>Sunday: Closed</li>
+                                </ul>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-600">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    Walk-ins welcome • Cash & Check only
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Find Us</h3>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.123456789!2d-114.123456!3d46.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDA3JzI0LjQiTiAxMTTCsDA3JzI1LjQiVw!5e0!3m2!1sen!2sus!4v1234567890123" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <i class="fas fa-cut text-red-500 text-3xl mb-2"></i>
+                <p class="text-xl font-bold">Thayne's Prime Cuts</p>
+            </div>
+            <div class="mb-4">
+                <p>103 Tyler Way, Lolo, MT 59847</p>
+                <p>(406) 273-0248</p>
+            </div>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="tel:4062730248" class="hover:text-red-400 transition">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+                <a href="https://g.page/r/CQ2xXxXxXxX" target="_blank" class="hover:text-red-400 transition">
+                    <i class="fab fa-google text-xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">&copy; 2024 Thayne's Prime Cuts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .review-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Click-to-call functionality
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Track call clicks (you can add analytics here)
+                console.log('Phone call initiated');
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/shayne-s-prime-cuts" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
