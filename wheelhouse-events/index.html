@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheelhouse Events LLC | Columbia River Event Venue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d3b1e',
+                        secondary: '#c19a6b',
+                        accent: '#8d6e63',
+                        light: '#f5f1e6'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Raleway', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(13, 59, 30, 0.5), rgba(13, 59, 30, 0.5)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .contact-map {
+            background-image: url('https://images.unsplash.com/photo-1543785734-4b6e564642f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-scroll {
+            background-color: rgba(13, 59, 30, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-light font-body text-gray-700">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-secondary rounded-full p-2 mr-3">
+                    <i class="fa-solid fa-anchor text-primary text-xl"></i>
+                </div>
+                <a href="#" class="text-2xl font-bold text-white font-heading">WHEELHOUSE<span class="text-secondary"> Events</span></a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-secondary transition">Home</a>
+                <a href="#about" class="text-white hover:text-secondary transition">About</a>
+                <a href="#amenities" class="text-white hover:text-secondary transition">Amenities</a>
+                <a href="#pricing" class="text-white hover:text-secondary transition">Pricing</a>
+                <a href="#gallery" class="text-white hover:text-secondary transition">Gallery</a>
+                <a href="#contact" class="text-white hover:text-secondary transition">Contact</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary py-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="#home" class="text-light hover:text-secondary transition">Home</a>
+                <a href="#about" class="text-light hover:text-secondary transition">About</a>
+                <a href="#amenities" class="text-light hover:text-secondary transition">Amenities</a>
+                <a href="#pricing" class="text-light hover:text-secondary transition">Pricing</a>
+                <a href="#gallery" class="text-light hover:text-secondary transition">Gallery</a>
+                <a href="#contact" class="text-light hover:text-secondary transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">Your Perfect Event Destination</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-10">A stunning 1,700 sq. ft. venue overlooking the Columbia River, perfect for gatherings of up to 70 guests.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-primary font-bold py-3 px-8 rounded-full transition transform hover:scale-105">Book Now</a>
+                <a href="#gallery" class="border-2 border-secondary hover:bg-secondary hover:bg-opacity-20 text-white font-bold py-3 px-8 rounded-full transition">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">About Us</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full border-4 border-secondary z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Wheelhouse Events Venue" class="relative z-10 w-full h-auto object-cover">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-heading font-bold text-primary mb-4">Welcome to Wheelhouse Events</h3>
+                    <p class="mb-6">Nestled in the heart of Pasco, Washington, Wheelhouse Events offers a premier event space overlooking the majestic Columbia River. Our venue combines modern elegance with warm, inviting spaces perfect for any occasion.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-primary rounded-full p-3 mr-4">
+                                <i class="fas fa-ruler-combined text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">1,700 Sq. Ft.</h4>
+                                <p class="text-sm">Spacious interior</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary rounded-full p-3 mr-4">
+                                <i class="fas fa-users text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">70 Guests</h4>
+                                <p class="text-sm">Comfortable capacity</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary rounded-full p-3 mr-4">
+                                <i class="fas fa-utensils text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Kitchenette</h4>
+                                <p class="text-sm">Food prep area</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary rounded-full p-3 mr-4">
+                                <i class="fas fa-umbrella-beach text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">River View</h4>
+                                <p class="text-sm">Stunning Columbia River</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary hover:bg-opacity-90 text-light font-bold py-3 px-8 rounded-full transition">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-20 bg-primary bg-opacity-5">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Our Amenities</h2>
+                <p class="max-w-2xl mx-auto">Everything you need for a successful event in one beautiful location</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Amenity Cards -->
+                <div class="amenity-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Furniture Included</h3>
+                    <p>Tables and chairs for up to 70 guests, plus comfortable patio seating.</p>
+                </div>
+                
+                <div class="amenity-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">High-Speed WiFi</h3>
+                    <p>Reliable internet access throughout the venue for presentations and streaming.</p>
+                </div>
+                
+                <div class="amenity-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Coffee Service</h3>
+                    <p>Commercial coffee maker and supplies to keep your guests refreshed.</p>
+                </div>
+                
+                <div class="amenity-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">AV Equipment</h3>
+                    <p>Projector screen and audio system for presentations and entertainment.</p>
+                </div>
+                
+                <div class="amenity-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Kitchenette</h3>
+                    <p>Fully equipped food prep area with refrigerator and microwave.</p>
+                </div>
+                
+                <div class="amenity-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-restroom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Restrooms</h3>
+                    <p>Two clean, well-maintained restrooms for guest convenience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Simple Pricing</h2>
+                <p class="max-w-2xl mx-auto">Transparent pricing for your event planning</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="bg-white border-2 border-secondary rounded-xl overflow-hidden shadow-lg">
+                    <div class="bg-primary text-white text-center py-6">
+                        <h3 class="text-2xl font-heading font-bold">Weekday Rental</h3>
+                        <p class="opacity-80">Monday - Thursday</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-primary">$650</span>
+                            <span class="text-gray-500"> + tax</span>
+                            <p class="text-sm mt-2">Full day access (8 AM - Midnight)</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary mr-3"></i>
+                                <span>All amenities included</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary mr-3"></i>
+                                <span>Tables & chairs for 70 guests</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary mr-3"></i>
+                                <span>Outdoor patio access</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-secondary hover:bg-opacity-90 text-primary text-center font-bold py-3 px-6 rounded-full transition">Book Weekday</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white border-2 border-secondary rounded-xl overflow-hidden shadow-lg">
+                    <div class="bg-primary text-white text-center py-6">
+                        <h3 class="text-2xl font-heading font-bold">Weekend Rental</h3>
+                        <p class="opacity-80">Friday - Sunday</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-primary">$900</span>
+                            <span class="text-gray-500"> + tax</span>
+                            <p class="text-sm mt-2">Full day access (8 AM - Midnight)</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary mr-3"></i>
+                                <span>All amenities included</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary mr-3"></i>
+                                <span>Tables & chairs for 70 guests</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary mr-3"></i>
+                                <span>Priority booking options</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-secondary hover:bg-opacity-90 text-primary text-center font-bold py-3 px-6 rounded-full transition">Book Weekend</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-xl p-8 max-w-4xl mx-auto shadow-md">
+                <h3 class="text-2xl font-heading font-bold text-primary mb-4 text-center">Additional Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-clock text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Hourly Rates</h4>
+                            <p>Available upon request for smaller events</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-shield-alt text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Security Deposit</h4>
+                            <p>$500 required with booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-primary bg-opacity-5">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Gallery</h2>
+                <p class="max-w-2xl mx-auto">Take a visual tour of our beautiful venue</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Images -->
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Venue Interior" class="w-full h-64 object-cover transition transform hover:scale-110 duration-500">
+                </div>
+                
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1550305080-4e029753bcf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Event Setup" class="w-full h-64 object-cover transition transform hover:scale-110 duration-500">
+                </div>
+                
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="River View" class="w-full h-64 object-cover transition transform hover:scale-110 duration-500">
+                </div>
+                
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1550305080-4e029753bcf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Patio Area" class="w-full h-64 object-cover transition transform hover:scale-110 duration-500">
+                </div>
+                
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kitchenette" class="w-full h-64 object-cover transition transform hover:scale-110 duration-500">
+                </div>
+                
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Event in Progress" class="w-full h-64 object-cover transition transform hover:scale-110 duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Contact Us</h2>
+                <p class="max-w-2xl mx-auto">Reach out to book your event or schedule a tour</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-heading font-bold text-primary mb-6">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full p-3 mr-4">
+                                    <i class="fas fa-map-marker-alt text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Our Location</h4>
+                                    <p>1350 SE RD 20 E. PASCO, WA 99301</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full p-3 mr-4">
+                                    <i class="fas fa-phone-alt text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Call Us</h4>
+                                    <p>Corina Manzano: (509) 845-5123</p>
+                                    <p>Joey Jordan: (509) 366-8200</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full p-3 mr-4">
+                                    <i class="fas fa-envelope text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Email</h4>
+                                    <p>wheelhouseeventcenter@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full p-3 mr-4">
+                                    <i class="fab fa-facebook-f text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Social Media</h4>
+                                    <p>Follow us on Facebook: @wheelhouse.event.center</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-lg mb-4">Business Hours</h4>
+                            <p>Monday - Sunday: 8:00 AM - 10:00 PM</p>
+                            <p class="text-sm mt-2">Tours available by appointment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="contact-map h-full rounded-xl shadow-lg overflow-hidden">
+                        <div class="bg-primary bg-opacity-90 h-full text-white p-8">
+                            <h3 class="text-2xl font-heading font-bold mb-6">Schedule a Tour</h3>
+                            <form class="space-y-4">
+                                <div>
+                                    <label class="block mb-2">Full Name</label>
+                                    <input type="text" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                </div>
+                                
+                                <div>
+                                    <label class="block mb-2">Email Address</label>
+                                    <input type="email" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                </div>
+                                
+                                <div>
+                                    <label class="block mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                </div>
+                                
+                                <div>
+                                    <label class="block mb-2">Event Date</label>
+                                    <input type="date" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                </div>
+                                
+                                <div>
+                                    <label class="block mb-2">Message</label>
+                                    <textarea rows="4" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-primary font-bold py-3 px-8 rounded-full transition">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary rounded-full p-2 mr-3">
+                            <i class="fa-solid fa-anchor text-primary text-xl"></i>
+                        </div>
+                        <a href="#" class="text-2xl font-bold font-heading">WHEELHOUSE<span class="text-secondary"> Events</span></a>
+                    </div>
+                    <p class="opacity-80">Premier event venue overlooking the Columbia River</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-2xl hover:text-secondary transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-secondary transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-secondary transition">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                </div>
+                
+                <div>
+                    <p>© 2023 Wheelhouse Events LLC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scroll');
+            } else {
+                navbar.classList.remove('nav-scroll');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/wheelhouse-events" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
