@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguililla Banquet Hall - Yakima's Premier Latino Cultural Event Center</title>
+    <meta name="description" content="Celebrate life's most important moments at Aguililla Banquet Hall. Specializing in quinceañeras, weddings, baptisms & birthday parties in downtown Yakima.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #B91C1C;
+            --gold: #F59E0B;
+            --cream: #FEF7ED;
+            --rose: #F87171;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.9) 0%, rgba(245, 158, 11, 0.8) 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-red), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border-radius: 50px;
+            padding: 8px 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.05);
+            background: var(--rose);
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, var(--cream), white);
+            border-left: 4px solid var(--gold);
+        }
+        
+        .form-input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-red), var(--rose));
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(185, 28, 28, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+            
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langToggle" class="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">
+            <i class="fas fa-globe mr-1"></i>
+            <span id="langText">Español</span>
+        </button>
+    </div>
+
+    <!-- Floating CTA -->
+    <a href="#contact" class="floating-cta">
+        <i class="fas fa-calendar-alt mr-2"></i>
+        <span data-en="Book Now" data-es="Reservar">Book Now</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-display font-bold text-gradient">Aguililla Banquet Hall</div>
+                    <span class="ml-2 text-sm text-gray-600 hidden sm:block"></span>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-gray-800 text-xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-red-600 transition-colors">
+                        <span data-en="Services" data-es="Servicios">Services</span>
+                    </a>
+                    <a href="#gallery" class="text-gray-700 hover:text-red-600 transition-colors">
+                        <span data-en="Gallery" data-es="Galería">Gallery</span>
+                    </a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-red-600 transition-colors">
+                        <span data-en="Reviews" data-es="Reseñas">Reviews</span>
+                    </a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 transition-colors">
+                        <span data-en="Contact" data-es="Contacto">Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden pb-4" id="mobileMenu">
+                <a href="#services" class="block py-2 text-gray-700">
+                    <span data-en="Services" data-es="Servicios">Services</span>
+                </a>
+                <a href="#gallery" class="block py-2 text-gray-700">
+                    <span data-en="Gallery" data-es="Galería">Gallery</span>
+                </a>
+                <a href="#testimonials" class="block py-2 text-gray-700">
+                    <span data-en="Reviews" data-es="Reseñas">Reviews</span>
+                </a>
+                <a href="#contact" class="block py-2 text-gray-700">
+                    <span data-en="Contact" data-es="Contacto">Contact</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="Aguililla Banquet Hall" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-display font-bold mb-4">
+                <span data-en="Where Traditions" data-es="Donde las Tradiciones">Where Traditions</span>
+                <br>
+                <span class="text-yellow-300" data-en="Come to Life" data-es="Vienen a la Vida">Come to Life</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-en="Yakima's Premier Latino Cultural Event Center" data-es="El Centro de Eventos Culturales Latinos Premier de Yakima">
+                Yakima's Premier Latino Cultural Event Center
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#services" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold">
+                    <span data-en="Explore Our Services" data-es="Explorar Servicios">Explore Our Services</span>
+                </a>
+                <a href="#contact" class="btn-secondary px-8 py-3 rounded-full text-lg font-semibold">
+                    <span data-en="Book a Tour" data-es="Agendar Visita">Book a Tour</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-display font-bold text-gray-900 mb-6">
+                        <span data-en="Celebrating" data-es="Celebrando">Celebrating</span>
+                        <span class="text-gradient"> 15+ Years</span>
+                        <br>
+                        <span data-en="of Latino Heritage" data-es="de Herencia Latina">of Latino Heritage</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6" data-en="Since 2007, Aguililla Banquet Hall has been the heart of Yakima's Latino community celebrations. We understand that every quinceañera, wedding, and baptism is more than an event - it's a tradition passed down through generations." data-es="Desde 2007, Aguililla Banquet Hall ha sido el corazón de las celebraciones de la comunidad latina en Yakima. Entendemos que cada quinceañera, boda y bautizo es más que un evento - es una tradición transmitida por generaciones.">
+                        Since 2007, Aguililla Banquet Hall has been the heart of Yakima's Latino community celebrations. We understand that every quinceañera, wedding, and baptism is more than an event - it's a tradition passed down through generations.
+                    </p>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-600">500+</div>
+                            <div class="text-sm text-gray-600" data-en="Events Hosted" data-es="Eventos Realizados">Events Hosted</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-600">15</div>
+                            <div class="text-sm text-gray-600" data-en="Years Experience" data-es="Años de Experiencia">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-600">100%</div>
+                            <div class="text-sm text-gray-600" data-en="Satisfaction" data-es="Satisfacción">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Quinceañera celebration" 
+                         class="rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Wedding reception" 
+                         class="rounded-lg shadow-lg mt-8">
+                    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Birthday celebration" 
+                         class="rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Family gathering" 
+                         class="rounded-lg shadow-lg mt-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    <span data-en="Our Services" data-es="Nuestros Servicios">Our Services</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <span data-en="Tailored celebrations that honor your culture and create lasting memories" data-es="Celebraciones personalizadas que honran tu cultura y crean recuerdos duraderos">Tailored celebrations that honor your culture and create lasting memories</span>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Quinceañeras -->
+                <div class="bg-white rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-crown text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Quinceañeras" data-es="Quinceañeras">Quinceañeras</h3>
+                    <p class="text-gray-600 mb-4" data-en="Transform her special day into an unforgettable celebration of tradition and transition into womanhood." data-es="Transforma su día especial en una celebración inolvidable de tradición y transición a la mujer.">
+                        Transform her special day into an unforgettable celebration of tradition.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• <span data-en="Traditional court presentation" data-es="Presentación tradicional de cortejo">Traditional court presentation</span></li>
+                        <li>• <span data-en="Cultural ceremony setup" data-es="Ceremonia cultural">Cultural ceremony setup</span></li>
+                        <li>• <span data-en="Professional coordination" data-es="Coordinación profesional">Professional coordination</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Weddings -->
+                <div class="bg-white rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Weddings" data-es="Bodas">Weddings</h3>
+                    <p class="text-gray-600 mb-4" data-en="Create the perfect backdrop for your love story with elegant Latino wedding traditions." data-es="Crea el escenario perfecto para tu historia de amor con elegantes tradiciones de boda latinas.">
+                        Create the perfect backdrop for your love story with elegant Latino wedding traditions.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• <span data-en="Reception setup" data-es="Preparación de recepción">Reception setup</span></li>
+                        <li>• <span data-en="Traditional décor" data-es="Decoración tradicional">Traditional décor</span></li>
+                        <li>• <span data-en="Full coordination" data-es="Coordinación completa">Full coordination</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Baptisms -->
+                <div class="bg-white rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-child text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Baptisms" data-es="Bautizos">Baptisms</h3>
+                    <p class="text-gray-600 mb-4" data-en="Celebrate your child's spiritual journey with family-centered reception and traditional blessings." data-es="Celebra el viaje espiritual de tu hijo con recepción centrada en la familia y bendiciones tradicionales.">
+                        Celebrate your child's spiritual journey with family-centered reception and traditional blessings.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• <span data-en="Family gathering space" data-es="Espacio para reunión familiar">Family gathering space</span></li>
+                        <li>• <span data-en="Traditional menu" data-es="Menú tradicional">Traditional menu</span></li>
+                        <li>• <span data-en="Blessing ceremony" data-es="Ceremonia de bendición">Blessing ceremony</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Birthdays -->
+                <div class="bg-white rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-birthday-cake text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Birthdays" data-es="Cumpleaños">Birthdays</h3>
+                    <p class="text-gray-600 mb-4" data-en="From first birthdays to golden anniversaries, we make every milestone special." data-es="Desde primeros cumpleaños hasta aniversarios dorados, hacemos que cada hito sea especial.">
+                        From first birthdays to golden anniversaries, we make every milestone special.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• <span data-en="All ages welcome" data-es="Todas las edades bienvenidas">All ages welcome</span></li>
+                        <li>• <span data-en="Themed decorations" data-es="Decoraciones temáticas">Themed decorations</span></li>
+                        <li>• <span data-en="Entertainment ready" data-es="Listo para entretenimiento">Entertainment ready</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    <span data-en="Gallery" data-es="Galería">Gallery</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span data-en="See how we've helped families create magical moments" data-es="Mira cómo hemos ayudado a las familias a crear momentos mágicos">See how we've helped families create magical moments</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Quinceañera celebration" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Wedding reception" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1729877099756-4633adfedffc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" 
+                         alt="Birthday party" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Family celebration" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Baptism celebration" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Cultural event" 
+                         class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    <span data-en="What Our Families Say" data-es="Lo Que Dicen Nuestras Familias">What Our Families Say</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span data-en="Real stories from families who trusted us with their special moments" data-es="Historias reales de familias que confiaron en nosotros sus momentos especiales">Real stories from families who trusted us with their special moments</span>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-star text-red-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Maria Rodriguez</h4>
+                            <p class="text-sm text-gray-600">Quinceañera</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        <span data-en="Aguililla made my daughter's quinceañera absolutely magical. They understood every cultural tradition and made her feel like a princess." data-es="Aguililla hizo la quinceañera de mi hija absolutamente mágica. Entendieron cada tradición cultural y la hicieron sentir como una princesa.">
+                            Aguililla made my daughter's quinceañera absolutely magical. They understood every cultural tradition and made her feel like a princess.
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-heart text-red-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Jose & Carmen Martinez</h4>
+                            <p class="text-sm text-gray-600">Wedding</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        <span data-en="Our wedding was perfect thanks to Aguililla. They handled everything with such care and respect for our traditions. Our families were so happy!" data-es="Nuestra boda fue perfecta gracias a Aguililla. Manejaron todo con tanto cuidado y respeto por nuestras tradiciones. ¡Nuestras familias estaban muy felices!">
+                            Our wedding was perfect thanks to Aguililla. They handled everything with such care and respect for our traditions.
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-child text-red-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ana Gonzalez</h4>
+                            <p class="text-sm text-gray-600">Baptism</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        <span data-en="The team at Aguililla made our son's baptism celebration beautiful. They created a warm, family atmosphere that honored our faith and culture." data-es="El equipo de Aguililla hizo hermosa la celebración del bautizo de nuestro hijo. Crearon un ambiente familiar cálido que honró nuestra fe y cultura.">
+                            The team at Aguililla made our son's baptism celebration beautiful. They created a warm, family atmosphere.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    <span data-en="Let's Plan Your Perfect Event" data-es="Planemos Tu Evento Perfecto">Let's Plan Your Perfect Event</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span data-en="Ready to create unforgettable memories? Get in touch with us today." data-es="¿Listo para crear recuerdos inolvidables? Contáctanos hoy.">Ready to create unforgettable memories? Get in touch with us today.</span>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4" data-en="Visit Us" data-es="Visítanos">Visit Us</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-red-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Aguililla Banquet Hall</p>
+                                    <p class="text-gray-600">28 S 2nd Ave, Yakima, WA 98902</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-red-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold" data-en="Call Us" data-es="Llámanos">Call Us</p>
+                                    <p class="text-gray-600">(509) 480-9106</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-red-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold" data-en="Hours" data-es="Horarios">Hours</p>
+                                    <p class="text-gray-600" data-en="Always Open - By Appointment" data-es="Siempre Abierto - Con Cita">Always Open - By Appointment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-xl p-6">
+                        <h4 class="font-semibold mb-2" data-en="Special Offer" data-es="Oferta Especial">Special Offer</h4>
+                        <p class="text-gray-700" data-en="Book your 2024 event now and receive 15% off your total package!" data-es="¡Reserva tu evento 2024 ahora y recibe 15% de descuento en tu paquete total!">
+                            Book your 2024 event now and receive 15% off your total package!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span data-en="Name" data-es="Nombre">Name</span> <span class="text-red-600">*</span>
+                            </label>
+                            <input type="text" name="name" required 
+                                   class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span data-en="Email" data-es="Correo">Email</span> <span class="text-red-600">*</span>
+                            </label>
+                            <input type="email" name="email" required 
+                                   class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span data-en="Phone" data-es="Teléfono">Phone</span>
+                            </label>
+                            <input type="tel" name="phone" 
+                                   class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span data-en="Event Type" data-es="Tipo de Evento">Event Type</span>
+                            </label>
+                            <select name="eventType" 
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                <option value="" data-en="Select Event Type" data-es="Seleccionar Tipo de Evento">Select Event Type</option>
+                                <option value="quinceanera" data-en="Quinceañera" data-es="Quinceañera">Quinceañera</option>
+                                <option value="wedding" data-en="Wedding" data-es="Boda">Wedding</option>
+                                <option value="baptism" data-en="Baptism" data-es="Bautizo">Baptism</option>
+                                <option value="birthday" data-en="Birthday" data-es="Cumpleaños">Birthday</option>
+                                <option value="other" data-en="Other" data-es="Otro">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span data-en="Message" data-es="Mensaje">Message</span>
+                            </label>
+                            <textarea name="message" rows="4" 
+                                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                                      placeholder="Tell us about your special event..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="btn-primary w-full py-3 rounded-lg text-white font-semibold text-lg">
+                            <span data-en="Send Message" data-es="Enviar Mensaje">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Aguililla</h3>
+                    <p class="text-gray-300">
+                        <span data-en="Yakima's Premier Latino Cultural Event Center since 2007" data-es="El Centro de Eventos Culturales Latinos Premier de Yakima desde 2007">Yakima's Premier Latino Cultural Event Center since 2007</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-en="Services" data-es="Servicios">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-red-400 transition-colors" data-en="Quinceañeras" data-es="Quinceañeras">Quinceañeras</a></li>
+                        <li><a href="#services" class="hover:text-red-400 transition-colors" data-en="Weddings" data-es="Bodas">Weddings</a></li>
+                        <li><a href="#services" class="hover:text-red-400 transition-colors" data-en="Baptisms" data-es="Bautizos">Baptisms</a></li>
+                        <li><a href="#services" class="hover:text-red-400 transition-colors" data-en="Birthdays" data-es="Cumpleaños">Birthdays</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-en="Contact" data-es="Contacto">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>28 S 2nd Ave, Yakima, WA 98902</li>
+                        <li>(509) 480-9106</li>
+                        <li data-en="Always Open - By Appointment" data-es="Siempre Abierto - Con Cita">Always Open - By Appointment</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-en="Connect" data-es="Conecta">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-red-400 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-red-400 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-red-400 transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Aguililla Banquet Hall. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Language Toggle
+        const langToggle = document.getElementById('langToggle');
+        const langText = document.getElementById('langText');
+        const elements = document.querySelectorAll('[data-en][data-es]');
+        let currentLang = 'en';
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            langText.textContent = currentLang === 'en' ? 'Español' : 'English';
+            
+            elements.forEach(el => {
+                el.textContent = el.dataset[currentLang];
+            });
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your backend
+            // For demo purposes, we'll show a success message
+            alert(currentLang === 'en' ? 
+                'Thank you for your interest! We will contact you within 24 hours.' : 
+                '¡Gracias por tu interés! Nos pondremos en contacto contigo dentro de 24 horas.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // WhatsApp integration
+        const whatsappBtn = document.querySelector('.floating-cta');
+        whatsappBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const phone = '15094809106';
+            const message = currentLang === 'en' ? 
+                'Hello! I would like to book an event at Aguililla Banquet Hall.' : 
+                '¡Hola! Me gustaría reservar un evento en Aguililla Banquet Hall.';
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/aguililla-banquet-hall" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
