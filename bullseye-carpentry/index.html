@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullseye Carpentry LLC - Yakima, WA</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1645651964715-d200ce0939cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0') no-repeat center center;
+            background-size: cover;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .wood-texture {
+            background-image: url('http://static.photos/wood/640x360/88');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-amber-800 playfair">Bullseye Carpentry</div>
+                    <div class="ml-2 text-sm text-gray-600">LLC</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-amber-700 font-medium">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-amber-700 font-medium">Portfolio</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-amber-700 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-700 font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <i data-feather="phone" class="text-amber-700 mr-2"></i>
+                    <span class="font-bold text-gray-800">(509) 249-1040</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white playfair mb-6" data-aos="fade-up">Crafting Quality Homes Since 2018</h1>
+            <p class="text-xl text-gray-200 mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Custom Homes • Home Additions • TREX & Cedar Decks</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Free Estimate</a>
+                <a href="#services" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-amber-800 transition duration-300">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 playfair mb-4">Our Services</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up">
+                    <div class="text-amber-700 mb-5">
+                        <i data-feather="home" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Custom Homes</h3>
+                    <p class="text-gray-600">Ground-up custom home construction tailored to your unique vision and lifestyle needs.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-amber-700 mb-5">
+                        <i data-feather="plus-square" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Home Additions</h3>
+                    <p class="text-gray-600">Seamless home additions that expand your living space while maintaining structural integrity.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-amber-700 mb-5">
+                        <i data-feather="grid" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">TREX & Cedar Decks</h3>
+                    <p class="text-gray-600">Expert deck construction with premium materials. TrexPro Gold certified with 80+ completed decks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="py-16 wood-texture">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white bg-opacity-90 rounded-lg p-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 playfair mb-4">Why Choose Us?</h2>
+                    <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up">
+                        <div class="inline-block p-4 bg-amber-100 rounded-full mb-4">
+                            <i data-feather="award" class="w-10 h-10 text-amber-700"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Licensed & Insured</h3>
+                        <p class="text-gray-600">WA License: BULLSCL892PQ<br>$1M Insurance Policy</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="inline-block p-4 bg-amber-100 rounded-full mb-4">
+                            <i data-feather="shield" class="w-10 h-10 text-amber-700"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">TrexPro Gold</h3>
+                        <p class="text-gray-600">Certified experts with 80+ completed decks</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="inline-block p-4 bg-amber-100 rounded-full mb-4">
+                            <i data-feather="star" class="w-10 h-10 text-amber-700"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Top Rated</h3>
+                        <p class="text-gray-600">BuildZoom Score: 94<br>(Top 24% in WA)</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="inline-block p-4 bg-amber-100 rounded-full mb-4">
+                            <i data-feather="clock" class="w-10 h-10 text-amber-700"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">6+ Years Experience</h3>
+                        <p class="text-gray-600">Serving Yakima & Tri-Cities areas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 playfair mb-4">Our Work</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Explore our portfolio of custom homes, additions, and decks</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1719381502987-058c2140df08?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Custom Home" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold text-gray-900">Custom Home</h3>
+                        <p class="text-gray-600">Modern design with natural materials</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1656646549633-80ad4bd2ab40?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Trex Deck" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold text-gray-900">Trex Deck</h3>
+                        <p class="text-gray-600">Multi-level entertainment space</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1656733911001-16912b79d2bf?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Home Addition" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold text-gray-900">Home Addition</h3>
+                        <p class="text-gray-600">Seamless family room expansion</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 playfair mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up">
+                    <div class="flex items-center mb-5">
+                        <div class="text-amber-500 mr-2">
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Bullseye Carpentry transformed our backyard with a stunning Trex deck. Robert and his team were professional, detail-oriented, and completed the project on time. We couldn't be happier!"</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Sarah K.</h4>
+                            <p class="text-gray-600">Yakima, WA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-5">
+                        <div class="text-amber-500 mr-2">
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                            <i data-feather="star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"We hired Bullseye Carpentry for a major home addition. Their craftsmanship is exceptional, and they kept us informed throughout the entire process. Highly recommend for any carpentry needs!"</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Michael T.</h4>
+                            <p class="text-gray-600">Tri-Cities, WA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold playfair mb-4">Get Your Free Estimate</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Contact us today for a consultation on your next project</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Our Location</h4>
+                                <p class="text-gray-300">1716 Parsons Loop<br>Yakima, WA 98908</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="phone" class="text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone</h4>
+                                <p class="text-gray-300">(509) 249-1040</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p class="text-gray-300">bullseyecarpentry@live.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="clock" class="text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Business Hours</h4>
+                                <p class="text-gray-300">Monday - Friday: 8AM - 5PM<br>Saturday: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Request a Quote</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <input type="tel" placeholder="Your Phone" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                                <option value="" disabled selected>Select Service</option>
+                                <option>Custom Home</option>
+                                <option>Home Addition</option>
+                                <option>TREX Deck</option>
+                                <option>Cedar Deck</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea placeholder="Project Details" rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold playfair mb-4">Bullseye Carpentry</h3>
+                    <p class="text-gray-400">Quality craftsmanship for custom homes, additions, and decks in Yakima and Tri-Cities areas.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Custom Homes</li>
+                        <li>Home Additions</li>
+                        <li>TREX Decks</li>
+                        <li>Cedar Decks</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-amber-500">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-amber-500">Portfolio</a></li>
+                        <li><a href="#testimonials" class="hover:text-amber-500">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-amber-500">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <address class="not-italic text-gray-400">
+                        1716 Parsons Loop<br>
+                        Yakima, WA 98908<br>
+                        (509) 249-1040<br>
+                        bullseyecarpentry@live.com
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Bullseye Carpentry LLC. All rights reserved. WA License: BULLSCL892PQ</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>AOS.init();</script>
+    <script>feather.replace();</script>
+</body>
+</html>
