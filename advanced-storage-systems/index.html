@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Storage Systems - Silver Valley's Premier Storage Solution</title>
+    <meta name="description" content="Secure, convenient, and affordable self-storage in Smelterville, ID. Serving Silver Valley with 24/7 access, climate-controlled units, and vehicle storage.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rust': '#b85450',
+                        'forest': '#2d5016',
+                        'sage': '#87a96b',
+                        'stone': '#8b7355',
+                        'cream': '#f5f5dc'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-image: 
+                linear-gradient(45deg, rgba(184, 84, 80, 0.1) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(184, 84, 80, 0.1) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(184, 84, 80, 0.1) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(184, 84, 80, 0.1) 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+        }
+        .unit-card {
+            transition: all 0.3s ease;
+        }
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-warehouse text-rust text-2xl mr-3"></i>
+                    <span class="font-bold text-xl text-forest">Advanced Storage Systems</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-rust transition">Home</a>
+                    <a href="#units" class="text-gray-700 hover:text-rust transition">Storage Units</a>
+                    <a href="#features" class="text-gray-700 hover:text-rust transition">Features</a>
+                    <a href="#location" class="text-gray-700 hover:text-rust transition">Location</a>
+                    <a href="#contact" class="text-gray-700 hover:text-rust transition">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2">
+                <a href="#home" class="block py-2 text-gray-700">Home</a>
+                <a href="#units" class="block py-2 text-gray-700">Storage Units</a>
+                <a href="#features" class="block py-2 text-gray-700">Features</a>
+                <a href="#location" class="block py-2 text-gray-700">Location</a>
+                <a href="#contact" class="block py-2 text-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-stone-100 to-cream hero-pattern py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold text-forest mb-6">
+                        Silver Valley's Premier Storage Solution
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Secure, convenient, and affordable storage serving Smelterville and the Silver Valley communities. 
+                        24/7 access with local, personal service you can trust.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('units')" 
+                                class="bg-rust text-white px-8 py-3 rounded-lg hover:bg-red-600 transition">
+                            <i class="fas fa-search mr-2"></i>View Units
+                        </button>
+                        <button onclick="openReservationModal()" 
+                                class="border-2 border-forest text-forest px-8 py-3 rounded-lg hover:bg-forest hover:text-white transition">
+                            <i class="fas fa-calendar-plus mr-2"></i>Reserve Now
+                        </button>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white rounded-xl shadow-xl p-6">
+                        <h3 class="text-2xl font-semibold text-forest mb-4">Quick Quote</h3>
+                        <form id="quote-form" class="space-y-4">
+                            <select id="unit-size" class="w-full p-3 border rounded-lg">
+                                <option value="">Select Unit Size</option>
+                                <option value="5x5">5x5 - Closet</option>
+                                <option value="5x10">5x10 - Walk-in Closet</option>
+                                <option value="10x10">10x10 - Bedroom</option>
+                                <option value="10x15">10x15 - Large Bedroom</option>
+                                <option value="10x20">10x20 - Single Car Garage</option>
+                                <option value="10x30">10x30 - Double Car Garage</option>
+                            </select>
+                            <select id="unit-type" class="w-full p-3 border rounded-lg">
+                                <option value="">Select Type</option>
+                                <option value="standard">Standard</option>
+                                <option value="climate">Climate Controlled</option>
+                                <option value="vehicle">Vehicle Storage</option>
+                            </select>
+                            <button type="submit" class="w-full bg-sage text-white py-3 rounded-lg hover:bg-green-600 transition">
+                                Get Instant Quote
+                            </button>
+                        </form>
+                        <div id="quote-result" class="mt-4 hidden">
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                <p class="text-green-800 font-semibold">Your Quote: $<span id="quote-price">0</span>/month</p>
+                                <button onclick="openReservationModal()" class="mt-2 bg-rust text-white px-4 py-2 rounded text-sm">
+                                    Reserve This Unit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h2 class="text-3xl font-bold text-forest mb-4">Why Choose Advanced Storage Systems?</h2>
+                <p class="text-xl text-gray-600 mb-12">Your trusted neighborhood storage solution</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-rust text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-forest mb-2">24/7 Security</h3>
+                    <p class="text-gray-600">State-of-the-art surveillance and secure access control for your peace of mind</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-sage text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-forest mb-2">24/7 Access</h3>
+                    <p class="text-gray-600">Access your belongings anytime with our convenient 24/7 customer access</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-stone text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-holding-usd text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-forest mb-2">Competitive Pricing</h3>
+                    <p class="text-gray-600">Affordable rates designed for our local community with no hidden fees</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storage Units Section -->
+    <section id="units" class="py-16 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h2 class="text-3xl font-bold text-forest mb-4">Storage Units & Pricing</h2>
+                <p class="text-xl text-gray-600 mb-12">Find the perfect size for your needs</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Small Units -->
+                <div class="unit-card bg-white rounded-xl shadow-lg p-6 fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-box text-rust text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-forest mb-2">5x5 Unit</h3>
+                        <p class="text-gray-600 mb-4">Small closet - Perfect for boxes, seasonal items</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Standard:</span>
+                                <span class="font-bold text-rust">$45/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Climate Controlled:</span>
+                                <span class="font-bold text-rust">$65/month</span>
+                            </div>
+                        </div>
+                        <button onclick="selectUnit('5x5', 45)" 
+                                class="w-full mt-4 bg-sage text-white py-2 rounded-lg hover:bg-green-600 transition">
+                            Reserve Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="unit-card bg-white rounded-xl shadow-lg p-6 fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-couch text-rust text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-forest mb-2">5x10 Unit</h3>
+                        <p class="text-gray-600 mb-4">Walk-in closet - Furniture, mattress set, boxes</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Standard:</span>
+                                <span class="font-bold text-rust">$65/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Climate Controlled:</span>
+                                <span class="font-bold text-rust">$85/month</span>
+                            </div>
+                        </div>
+                        <button onclick="selectUnit('5x10', 65)" 
+                                class="w-full mt-4 bg-sage text-white py-2 rounded-lg hover:bg-green-600 transition">
+                            Reserve Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="unit-card bg-white rounded-xl shadow-lg p-6 fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-bed text-rust text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-forest mb-2">10x10 Unit</h3>
+                        <p class="text-gray-600 mb-4">Bedroom - 1-2 bedroom apartment contents</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Standard:</span>
+                                <span class="font-bold text-rust">$95/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Climate Controlled:</span>
+                                <span class="font-bold text-rust">$135/month</span>
+                            </div>
+                        </div>
+                        <button onclick="selectUnit('10x10', 95)" 
+                                class="w-full mt-4 bg-sage text-white py-2 rounded-lg hover:bg-green-600 transition">
+                            Reserve Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Large Units -->
+                <div class="unit-card bg-white rounded-xl shadow-lg p-6 fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-home text-rust text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-forest mb-2">10x15 Unit</h3>
+                        <p class="text-gray-600 mb-4">Large bedroom - 2-3 bedroom house contents</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Standard:</span>
+                                <span class="font-bold text-rust">$125/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Climate Controlled:</span>
+                                <span class="font-bold text-rust">$175/month</span>
+                            </div>
+                        </div>
+                        <button onclick="selectUnit('10x15', 125)" 
+                                class="w-full mt-4 bg-sage text-white py-2 rounded-lg hover:bg-green-600 transition">
+                            Reserve Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="unit-card bg-white rounded-xl shadow-lg p-6 fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-car text-rust text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-forest mb-2">10x20 Unit</h3>
+                        <p class="text-gray-600 mb-4">Single car garage - House contents + vehicle</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Standard:</span>
+                                <span class="font-bold text-rust">$155/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Climate Controlled:</span>
+                                <span class="font-bold text-rust">$215/month</span>
+                            </div>
+                        </div>
+                        <button onclick="selectUnit('10x20', 155)" 
+                                class="w-full mt-4 bg-sage text-white py-2 rounded-lg hover:bg-green-600 transition">
+                            Reserve Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="unit-card bg-white rounded-xl shadow-lg p-6 fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-truck text-rust text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-forest mb-2">10x30 Unit</h3>
+                        <p class="text-gray-600 mb-4">Double car garage - Large house + RV storage</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Standard:</span>
+                                <span class="font-bold text-rust">$195/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Climate Controlled:</span>
+                                <span class="font-bold text-rust">$275/month</span>
+                            </div>
+                        </div>
+                        <button onclick="selectUnit('10x30', 195)" 
+                                class="w-full mt-4 bg-sage text-white py-2 rounded-lg hover:bg-green-600 transition">
+                            Reserve Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicle Storage -->
+            <div class="mt-12 text-center fade-in">
+                <h3 class="text-2xl font-bold text-forest mb-4">Vehicle Storage</h3>
+                <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-4">
+                        <i class="fas fa-motorcycle text-rust text-2xl mb-2"></i>
+                        <p class="font-semibold">Motorcycle</p>
+                        <p class="text-rust font-bold">$35/month</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4">
+                        <i class="fas fa-car text-rust text-2xl mb-2"></i>
+                        <p class="font-semibold">Car</p>
+                        <p class="text-rust font-bold">$55/month</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4">
+                        <i class="fas fa-bus text-rust text-2xl mb-2"></i>
+                        <p class="font-semibold">RV/Boat</p>
+                        <p class="text-rust font-bold">$85/month</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h2 class="text-3xl font-bold text-forest mb-4">Visit Us Today</h2>
+                <p class="text-xl text-gray-600 mb-12">Conveniently located on Interstate 90 in Smelterville</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <div class="bg-cream rounded-xl p-6">
+                        <h3 class="text-2xl font-bold text-forest mb-4">Location</h3>
+                        <p class="text-lg mb-4">
+                            <i class="fas fa-map-marker-alt text-rust mr-2"></i>
+                            1000 Main Street<br>
+                            Smelterville, ID 83868
+                        </p>
+                        <p class="text-lg mb-4">
+                            <i class="fas fa-phone text-rust mr-2"></i>
+                            (208) 786-7039
+                        </p>
+                        <div class="space-y-2">
+                            <p><i class="fas fa-clock text-rust mr-2"></i><strong>Office Hours:</strong></p>
+                            <p class="ml-6">Monday-Friday: 9AM - 5PM</p>
+                            <p class="ml-6">Saturday: 9AM - 2PM</p>
+                            <p class="ml-6">Sunday: Closed</p>
+                            <p class="mt-4"><i class="fas fa-clock text-rust mr-2"></i><strong>Gate Access:</strong> 24/7</p>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-forest mb-2">Serving:</h4>
+                            <p class="text-sm text-gray-600">Smelterville • Kellogg • Wallace • Pinehurst • Osburn • All of Silver Valley</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-gray-200 rounded-xl h-96 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map text-6xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-500">Interactive Map Coming Soon</p>
+                            <p class="text-sm text-gray-400 mt-2">We're located just off Interstate 90</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h2 class="text-3xl font-bold text-forest mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 mb-12">Ready to reserve your storage unit? Contact us today!</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <form id="contact-form" class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-forest mb-4">Send Us a Message</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                                <input type="text" name="name" required 
+                                       class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-sage">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                                <input type="email" name="email" required 
+                                       class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-sage">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                                <input type="tel" name="phone" required 
+                                       class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-sage">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Unit Size Interest</label>
+                                <select name="unit-size" class="w-full p-3 border rounded-lg">
+                                    <option value="">Select Size</option>
+                                    <option value="5x5">5x5</option>
+                                    <option value="5x10">5x10</option>
+                                    <option value="10x10">10x10</option>
+                                    <option value="10x15">10x15</option>
+                                    <option value="10x20">10x20</option>
+                                    <option value="10x30">10x30</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea name="message" rows="4" 
+                                          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-sage"
+                                          placeholder="Tell us about your storage needs..."></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-sage text-white py-3 rounded-lg hover:bg-green-600 transition">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-forest mb-4">Quick Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-rust text-xl mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Call Now</p>
+                                    <p class="text-gray-600">(208) 786-7039</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-rust text-xl mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-gray-600">info@advancedstoragesystems.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-rust text-xl mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Office Hours</p>
+                                    <p class="text-gray-600">Mon-Fri: 9AM-5PM | Sat: 9AM-2PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-forest mb-2">Need help choosing?</h4>
+                            <p class="text-gray-600 text-sm mb-4">Our storage experts are here to help you find the perfect unit size for your needs.</p>
+                            <button onclick="openReservationModal()" 
+                                    class="w-full bg-rust text-white py-3 rounded-lg hover:bg-red-600 transition">
+                                <i class="fas fa-calendar-check mr-2"></i>Reserve Online
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Advanced Storage Systems</h3>
+                    <p class="text-gray-300">Silver Valley's trusted storage solution since 2010. Secure, convenient, and affordable storage for your peace of mind.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#units" class="hover:text-white transition">Storage Units</a></li>
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Personal Storage</li>
+                        <li>Business Storage</li>
+                        <li>Climate Control</li>
+                        <li>Vehicle Storage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <p class="text-gray-300">1000 Main Street</p>
+                    <p class="text-gray-300">Smelterville, ID 83868</p>
+                    <p class="text-gray-300">(208) 786-7039</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Advanced Storage Systems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservation-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl max-w-md w-full p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-forest">Reserve Your Unit</h3>
+                    <button onclick="closeReservationModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <form id="reservation-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Unit Size</label>
+                        <input type="text" id="selected-unit-size" readonly 
+                               class="w-full p-3 bg-gray-100 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Monthly Rate</label>
+                        <input type="text" id="selected-unit-price" readonly 
+                               class="w-full p-3 bg-gray-100 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <input type="text" name="full-name" required 
+                               class="w-full p-3 border rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" name="email" required 
+                               class="w-full p-3 border rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                        <input type="tel" name="phone" required 
+                               class="w-full p-3 border rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Move-in Date</label>
+                        <input type="date" name="move-in-date" 
+                               class="w-full p-3 border rounded-lg">
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-sage text-white py-3 rounded-lg hover:bg-green-600 transition">
+                        <i class="fas fa-check-circle mr-2"></i>Submit Reservation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Quote calculator
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const size = document.getElementById('unit-size').value;
+            const type = document.getElementById('unit-type').value;
+            
+            const prices = {
+                '5x5': { standard: 45, climate: 65, vehicle: 35 },
+                '5x10': { standard: 65, climate: 85, vehicle: 55 },
+                '10x10': { standard: 95, climate: 135, vehicle: 75 },
+                '10x15': { standard: 125, climate: 175, vehicle: 95 },
+                '10x20': { standard: 155, climate: 215, vehicle: 115 },
+                '10x30': { standard: 195, climate: 275, vehicle: 135 }
+            };
+            
+            let price = prices[size] ? prices[size][type] || prices[size].standard : 0;
+            
+            if (price > 0) {
+                document.getElementById('quote-price').textContent = price;
+                document.getElementById('quote-result').classList.remove('hidden');
+            }
+        });
+
+        // Reservation modal functions
+        function openReservationModal() {
+            document.getElementById('reservation-modal').classList.remove('hidden');
+        }
+
+        function closeReservationModal() {
+            document.getElementById('reservation-modal').classList.add('hidden');
+        }
+
+        function selectUnit(size, price) {
+            document.getElementById('selected-unit-size').value = size;
+            document.getElementById('selected-unit-price').value = '$' + price + '/month';
+            openReservationModal();
+        }
+
+        // Form submissions
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            this.reset();
+        });
+
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Reservation submitted successfully! We will contact you to finalize your storage unit.');
+            this.reset();
+            closeReservationModal();
+        });
+
+        // Close modal on outside click
+        document.getElementById('reservation-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeReservationModal();
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/advanced-storage-systems" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
