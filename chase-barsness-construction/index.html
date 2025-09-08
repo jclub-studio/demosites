@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase Barsness Construction LLC - Walla Walla Construction Experts</title>
+    <meta name="description" content="Chase Barsness Construction LLC offers expert residential and commercial construction services in Walla Walla, WA. From new builds to remodeling, we deliver quality craftsmanship.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'construction-orange': '#FF6B35',
+                        'construction-blue': '#2C3E50',
+                        'construction-gray': '#7F8C8D',
+                        'construction-light-gray': '#ECF0F1'
+                    },
+                    fontFamily: {
+                        'heading': ['Inter', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .form-input:focus {
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        .project-overlay {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-heading font-bold text-construction-blue">Chase Barsness Construction</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-construction-blue hover:text-construction-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-construction-blue hover:text-construction-orange px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#about" class="text-construction-blue hover:text-construction-orange px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#portfolio" class="text-construction-blue hover:text-construction-orange px-3 py-2 text-sm font-medium transition-colors">Portfolio</a>
+                        <a href="#contact" class="text-construction-blue hover:text-construction-orange px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <a href="tel:5094054769" class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-phone mr-2"></i>(509) 405-4769
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-construction-blue hover:text-construction-orange p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu fixed top-16 right-0 w-64 h-full bg-white shadow-xl md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" onclick="closeMenu()" class="block px-3 py-2 text-construction-blue hover:text-construction-orange">Home</a>
+                <a href="#services" onclick="closeMenu()" class="block px-3 py-2 text-construction-blue hover:text-construction-orange">Services</a>
+                <a href="#about" onclick="closeMenu()" class="block px-3 py-2 text-construction-blue hover:text-construction-orange">About</a>
+                <a href="#portfolio" onclick="closeMenu()" class="block px-3 py-2 text-construction-blue hover:text-construction-orange">Portfolio</a>
+                <a href="#contact" onclick="closeMenu()" class="block px-3 py-2 text-construction-blue hover:text-construction-orange">Contact</a>
+                <a href="tel:5094054769" class="block px-3 py-2 btn-primary text-white rounded-md mt-4">
+                    <i class="fas fa-phone mr-2"></i>(509) 405-4769
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-4 fade-in">Chase Barsness Construction</h1>
+            <p class="text-xl md:text-2xl mb-8 fade-in">Quality Construction Services in Walla Walla, WA</p>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto fade-in">From new home construction to complete remodeling, we deliver excellence with every project. Serving Walla Walla and surrounding communities.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-lg text-lg font-semibold">
+                    <i class="fas fa-calculator mr-2"></i>Free Estimate
+                </a>
+                <a href="tel:5094054769" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-construction-blue transition-all">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-construction-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-construction-blue mb-4 fade-in">Our Services</h2>
+                <p class="text-xl text-construction-gray max-w-3xl mx-auto fade-in">Comprehensive construction services tailored to meet your residential and commercial needs in Walla Walla, WA</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Full Home Construction -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 fade-in">
+                    <div class="w-16 h-16 bg-construction-orange rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-semibold text-construction-blue mb-4">Full Home Construction</h3>
+                    <p class="text-construction-gray mb-4">New home builds from ground up with custom residential construction tailored to your vision and lifestyle.</p>
+                    <ul class="text-sm text-construction-gray space-y-1">
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Custom home design</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Quality materials & craftsmanship</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Timeline-focused construction</li>
+                    </ul>
+                </div>
+
+                <!-- Remodeling Services -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 fade-in">
+                    <div class="w-16 h-16 bg-construction-orange rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-semibold text-construction-blue mb-4">Remodeling Services</h3>
+                    <p class="text-construction-gray mb-4">Transform your existing space with our expert remodeling services from kitchen to bathroom renovations.</p>
+                    <ul class="text-sm text-construction-gray space-y-1">
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Kitchen & bathroom remodeling</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Room additions</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Whole house renovations</li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Construction -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 fade-in">
+                    <div class="w-16 h-16 bg-construction-orange rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hammer text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-semibold text-construction-blue mb-4">Specialized Construction</h3>
+                    <p class="text-construction-gray mb-4">Expert services in concrete work, siding, framing, finish metal work, trim work, flooring, and roofing.</p>
+                    <ul class="text-sm text-construction-gray space-y-1">
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Concrete foundations & flatwork</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Siding & exterior finishes</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Roofing (residential & commercial)</li>
+                    </ul>
+                </div>
+
+                <!-- Small Projects -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 fade-in">
+                    <div class="w-16 h-16 bg-construction-orange rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wrench text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-semibold text-construction-blue mb-4">Small Projects</h3>
+                    <p class="text-construction-gray mb-4">Professional home repairs and maintenance work to keep your property in excellent condition.</p>
+                    <ul class="text-sm text-construction-gray space-y-1">
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Home repairs & fixes</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Maintenance work</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Various improvements</li>
+                    </ul>
+                </div>
+
+                <!-- Commercial Construction -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 fade-in">
+                    <div class="w-16 h-16 bg-construction-orange rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-semibold text-construction-blue mb-4">Commercial Construction</h3>
+                    <p class="text-construction-gray mb-4">Comprehensive commercial construction services for businesses in Walla Walla and surrounding areas.</p>
+                    <ul class="text-sm text-construction-gray space-y-1">
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Office buildings</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Retail spaces</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Commercial renovations</li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Services -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 fade-in">
+                    <div class="w-16 h-16 bg-construction-orange rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-semibold text-construction-blue mb-4">Emergency Services</h3>
+                    <p class="text-construction-gray mb-4">Rapid response for emergency construction needs including storm damage repair and urgent fixes.</p>
+                    <ul class="text-sm text-construction-gray space-y-1">
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Storm damage repair</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Emergency boarding</li>
+                        <li><i class="fas fa-check text-construction-orange mr-2"></i>Quick response service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-heading font-bold text-construction-blue mb-6">About Chase Barsness Construction</h2>
+                    <p class="text-lg text-construction-gray mb-6">
+                        Chase Barsness Construction LLC is a locally owned and operated construction company serving Walla Walla, Washington. With deep roots in the community and a lifelong dedication to the construction industry, we bring expertise, quality, and personalized service to every project.
+                    </p>
+                    <p class="text-lg text-construction-gray mb-6">
+                        Founded on October 16, 2024, our mission is to serve the Walla Walla community with exceptional construction services. We offer free estimates and personal consultation to ensure your vision becomes reality.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-heading font-semibold text-construction-blue mb-2">Our Values</h4>
+                            <ul class="text-construction-gray space-y-1">
+                                <li><i class="fas fa-check text-construction-orange mr-2"></i>Quality First</li>
+                                <li><i class="fas fa-check text-construction-orange mr-2"></i>Honest Pricing</li>
+                                <li><i class="fas fa-check text-construction-orange mr-2"></i>Timely Completion</li>
+                                <li><i class="fas fa-check text-construction-orange mr-2"></i>Customer Satisfaction</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-construction-blue mb-2">Service Area</h4>
+                            <ul class="text-construction-gray space-y-1">
+                                <li><i class="fas fa-map-marker-alt text-construction-orange mr-2"></i>Walla Walla, WA</li>
+                                <li><i class="fas fa-map-marker-alt text-construction-orange mr-2"></i>Surrounding Areas</li>
+                                <li><i class="fas fa-clock text-construction-orange mr-2"></i>24/7 Availability</li>
+                                <li><i class="fas fa-dollar-sign text-construction-orange mr-2"></i>Free Estimates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Construction Professional" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-construction-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-construction-blue mb-4 fade-in">Our Portfolio</h2>
+                <p class="text-xl text-construction-gray max-w-3xl mx-auto fade-in">Explore our recent construction projects showcasing quality craftsmanship and attention to detail</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Home Construction" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h4 class="text-xl font-bold mb-2">Modern Home Construction</h4>
+                                <p class="text-sm mb-4">Complete custom home build</p>
+                                <button class="bg-construction-orange text-white px-4 py-2 rounded">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-heading font-semibold text-construction-blue mb-2">Modern Home Construction</h4>
+                        <p class="text-construction-gray">Custom 3,500 sq ft home with modern amenities and energy-efficient features.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1682888813913-e13f18692019?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Kitchen Remodel" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h4 class="text-xl font-bold mb-2">Kitchen Remodel</h4>
+                                <p class="text-sm mb-4">Complete kitchen renovation</p>
+                                <button class="bg-construction-orange text-white px-4 py-2 rounded">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-heading font-semibold text-construction-blue mb-2">Kitchen Remodel</h4>
+                        <p class="text-construction-gray">Transformed outdated kitchen into modern, functional space with premium finishes.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Commercial Construction" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h4 class="text-xl font-bold mb-2">Commercial Construction</h4>
+                                <p class="text-sm mb-4">Office building construction</p>
+                                <button class="bg-construction-orange text-white px-4 py-2 rounded">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-heading font-semibold text-construction-blue mb-2">Commercial Construction</h4>
+                        <p class="text-construction-gray">Built new office space for local business with modern design and functionality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-construction-blue mb-4 fade-in">What Our Clients Say</h2>
+                <p class="text-xl text-construction-gray max-w-3xl mx-auto fade-in">Real feedback from satisfied customers across Walla Walla</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-lg shadow-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-construction-orange rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-construction-blue">Sarah Johnson</h4>
+                            <p class="text-sm text-construction-gray">Homeowner - Walla Walla</p>
+                        </div>
+                    </div>
+                    <p class="text-construction-gray mb-4">"Chase and his team did an incredible job on our kitchen remodel. Professional, timely, and the quality exceeded our expectations. Highly recommend!"</p>
+                    <div class="flex text-construction-orange">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-lg shadow-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-construction-orange rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-construction-blue">Mike Thompson</h4>
+                            <p class="text-sm text-construction-gray">Business Owner - Walla Walla</p>
+                        </div>
+                    </div>
+                    <p class="text-construction-gray mb-4">"Outstanding work on our commercial space renovation. Chase was responsive, professional, and delivered exactly what we needed on time and budget."</p>
+                    <div class="flex text-construction-orange">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-lg shadow-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-construction-orange rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-construction-blue">Emily Davis</h4>
+                            <p class="text-sm text-construction-gray">Homeowner - Walla Walla</p>
+                        </div>
+                    </div>
+                    <p class="text-construction-gray mb-4">"Built our dream home from the ground up. Chase's attention to detail and commitment to quality made the process smooth and enjoyable. Thank you!"</p>
+                    <div class="flex text-construction-orange">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-construction-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold mb-4 fade-in">Get Your Free Estimate</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto fade-in">Ready to start your construction project? Contact us today for a free, no-obligation estimate.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-heading font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-construction-orange text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Address</p>
+                                <p class="opacity-90">56 Talon Loop, Walla Walla, WA 99362-2691</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-construction-orange text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="opacity-90">(509) 405-4769</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-construction-orange text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="opacity-90">Chasebarsness@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-construction-orange text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Hours</p>
+                                <p class="opacity-90">Monday - Friday: 7:00 AM - 6:00 PM</p>
+                                <p class="opacity-90">Saturday: 8:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded-md text-gray-900">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 rounded-md text-gray-900">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="form-input w-full px-4 py-3 rounded-md text-gray-900">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium mb-2">Service Needed</label>
+                            <select id="service" name="service" required class="form-input w-full px-4 py-3 rounded-md text-gray-900">
+                                <option value="">Select a service</option>
+                                <option value="full-home-construction">Full Home Construction</option>
+                                <option value="kitchen-remodel">Kitchen Remodel</option>
+                                <option value="bathroom-remodel">Bathroom Remodel</option>
+                                <option value="room-addition">Room Addition</option>
+                                <option value="roofing">Roofing</option>
+                                <option value="concrete-work">Concrete Work</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Project Details</label>
+                            <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-3 rounded-md text-gray-900" placeholder="Please describe your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full text-white py-3 rounded-md text-lg font-semibold">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Chase Barsness Construction</h3>
+                    <p class="text-gray-400">Quality construction services in Walla Walla, WA. From new builds to remodeling, we deliver excellence.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-construction-orange transition-colors">Full Home Construction</a></li>
+                        <li><a href="#services" class="hover:text-construction-orange transition-colors">Remodeling Services</a></li>
+                        <li><a href="#services" class="hover:text-construction-orange transition-colors">Commercial Construction</a></li>
+                        <li><a href="#services" class="hover:text-construction-orange transition-colors">Small Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Walla Walla, WA</li>
+                        <li><i class="fas fa-phone mr-2"></i>(509) 405-4769</li>
+                        <li><i class="fas fa-envelope mr-2"></i>Chasebarsness@gmail.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-construction-orange transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-construction-orange transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-construction-orange transition-colors">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Chase Barsness Construction LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.remove('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            // For demo purposes, we'll show an alert
+            alert('Thank you for your message! We\'ll get back to you soon with your free estimate.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add active class to navigation based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+                        link.classList.remove('text-construction-orange');
+                        link.classList.add('text-construction-blue');
+                    });
+                    
+                    const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove('text-construction-blue');
+                        activeLink.classList.add('text-construction-orange');
+                    }
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/chase-barsness-construction" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
