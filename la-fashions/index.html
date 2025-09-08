@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA Fashions | Handmade Clothing by Laura Alvarez</title>
+    <meta name="description" content="Experience luxury handmade clothing crafted with passion by Laura Alvarez. Custom dresses, cover-ups, and special occasion wear tailored to perfection.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-rose: #F8D9D6;
+            --secondary-cream: #FDF8F5;
+            --accent-gold: #D4AF37;
+            --text-charcoal: #2C2C2C;
+            --text-muted: #6B6B6B;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary-cream);
+            color: var(--text-charcoal);
+            line-height: 1.6;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(248, 217, 214, 0.8) 0%, rgba(253, 248, 245, 0.9) 100%);
+        }
+        
+        .gold-accent {
+            color: var(--accent-gold);
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #B8941F;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--accent-gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+            border: 1px solid #E5E5E5;
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .carousel-container {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        
+        .carousel-item {
+            scroll-snap-align: start;
+        }
+        
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+            }
+        }
+        
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--accent-gold);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .instagram-item {
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .instagram-item:hover .instagram-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-display font-bold gold-accent">LA Fashions</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium">About</a>
+                        <a href="#products" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Products</a>
+                        <a href="#process" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Process</a>
+                        <a href="#gallery" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Gallery</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-0 bg-white z-40 pt-16">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium">About</a>
+                <a href="#products" class="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium">Products</a>
+                <a href="#process" class="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium">Process</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-rose-100 via-cream-50 to-white"></div>
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-light text-gray-900 mb-6 fade-in">
+                Where <span class="gold-accent italic">Artisanal</span> Meets <span class="gold-accent italic">Elegance</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto fade-in">
+                Handcrafted clothing that celebrates your unique style, created with passion by Laura Alvarez
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <button onclick="scrollToSection('products')" class="btn-primary px-8 py-3 rounded-full font-medium">
+                    Explore Collection
+                </button>
+                <button onclick="scrollToSection('contact')" class="btn-secondary px-8 py-3 rounded-full font-medium">
+                    Schedule Consultation
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-gray-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-display font-light mb-6">Meet Laura</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        With over 15 years of experience in luxury fashion design, Laura Alvarez brings her passion for craftsmanship to every piece she creates. Born in Los Angeles and trained in Paris, she combines timeless elegance with contemporary sensibility.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Each garment is meticulously handcrafted using premium fabrics sourced from sustainable suppliers worldwide. From intimate weddings to red carpet events, Laura's creations help women feel confident, beautiful, and authentically themselves.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold gold-accent">500+</h3>
+                            <p class="text-gray-600">Custom Creations</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold gold-accent">15+</h3>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&h=800&fit=crop" 
+                             alt="Laura Alvarez" 
+                             class="rounded-2xl shadow-2xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-rose-100 p-6 rounded-2xl shadow-lg">
+                            <p class="font-serif italic text-lg">"Fashion is about crafting dreams into reality"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-rose-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-display font-light mb-4">Our Collections</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover exquisite handmade pieces designed for every moment that matters
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=300&fit=crop" 
+                             alt="Custom Dresses" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-display font-medium mb-2">Custom Dresses</h3>
+                        <p class="text-gray-600 mb-4">From everyday elegance to special occasions, each dress is tailored to your unique measurements and style preferences.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-accent">$350+</span>
+                            <button onclick="openOrderModal('Custom Dresses')" class="btn-primary px-6 py-2 rounded-full text-sm">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=300&fit=crop" 
+                             alt="Beach Cover-ups" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-display font-medium mb-2">Beach Cover-ups</h3>
+                        <p class="text-gray-600 mb-4">Lightweight, flowing designs perfect for resort wear and summer elegance.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-accent">$120+</span>
+                            <button onclick="openOrderModal('Beach Cover-ups')" class="btn-primary px-6 py-2 rounded-full text-sm">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=300&fit=crop" 
+                             alt="Special Occasion" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-display font-medium mb-2">Special Occasion</h3>
+                        <p class="text-gray-600 mb-4">Wedding gowns, cocktail dresses, and formal wear designed to make unforgettable memories.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-accent">$800+</span>
+                            <button onclick="openOrderModal('Special Occasion')" class="btn-primary px-6 py-2 rounded-full text-sm">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-display font-light mb-4">Our Process</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    From first sketch to final fitting, experience the art of bespoke fashion
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold gold-accent">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Consultation</h3>
+                    <p class="text-gray-600">Share your vision, explore fabrics, and discuss your perfect fit</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold gold-accent">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Design</h3>
+                    <p class="text-gray-600">Custom sketches created with your unique style and measurements</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold gold-accent">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Creation</h3>
+                    <p class="text-gray-600">Handcrafted with meticulous attention to every detail</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold gold-accent">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Perfect Fit</h3>
+                    <p class="text-gray-600">Final fitting and adjustments to ensure your complete satisfaction</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-rose-50 rounded-2xl p-8 fade-in">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-display font-medium mb-4">Timeline & Pricing</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-clock gold-accent mt-1 mr-3"></i>
+                                <span>Standard pieces: 2-3 weeks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock gold-accent mt-1 mr-3"></i>
+                                <span>Custom gowns: 4-6 weeks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-dollar-sign gold-accent mt-1 mr-3"></i>
+                                <span>Rush orders available with 25% surcharge</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-display font-medium mb-4">What's Included</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check gold-accent mt-1 mr-3"></i>
+                                <span>Initial consultation (included)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check gold-accent mt-1 mr-3"></i>
+                                <span>Two fittings included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check gold-accent mt-1 mr-3"></i>
+                                <span>Minor alterations within 30 days</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-rose-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-display font-light mb-4">Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    A showcase of our most cherished creations and delighted clients
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=500&fit=crop" 
+                         alt="Elegant gown" 
+                         class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=500&fit=crop" 
+                         alt="Beach cover-up" 
+                         class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=500&fit=crop" 
+                         alt="Wedding dress" 
+                         class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=500&fit=crop" 
+                         alt="Designer at work" 
+                         class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=500&fit=crop" 
+                         alt="Fashion studio" 
+                         class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935d?w=400&h=500&fit=crop" 
+                         alt="Fashion details" 
+                         class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-display font-light mb-4">Client Stories</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Hear from women who've experienced the magic of handmade fashion
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold gold-accent">S</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah M.</h4>
+                            <p class="text-sm text-gray-600">Wedding Client</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Laura created the most stunning wedding dress I could have imagined. Every detail was perfect, and I felt like a princess on my special day."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold gold-accent">E</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Emma R.</h4>
+                            <p class="text-sm text-gray-600">Corporate Executive</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The custom blazer Laura created has become my power outfit. The fit is impeccable, and I always receive compliments."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold gold-accent">M</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Maria L.</h4>
+                            <p class="text-sm text-gray-600">Mother of the Bride</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Laura designed a beautiful mother-of-the-bride dress that made me feel confident and elegant. The process was seamless and enjoyable."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-rose-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-display font-light mb-4">Let's Create Something Beautiful</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Schedule your consultation with Laura today
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" name="firstName" required 
+                                       class="form-input w-full px-4 py-3 rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" name="lastName" required 
+                                       class="form-input w-full px-4 py-3 rounded-lg">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" name="email" required 
+                                   class="form-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" name="phone" required 
+                                   class="form-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
+                            <select name="service" required 
+                                    class="form-input w-full px-4 py-3 rounded-lg">
+                                <option value="">Select a service</option>
+                                <option value="custom-dress">Custom Dress</option>
+                                <option value="wedding-gown">Wedding Gown</option>
+                                <option value="special-occasion">Special Occasion</option>
+                                <option value="consultation">Design Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea name="message" rows="4" required 
+                                      class="form-input w-full px-4 py-3 rounded-lg" 
+                                      placeholder="Tell us about your vision..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="btn-primary w-full py-3 rounded-lg font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                        Thank you! We'll be in touch within 24 hours.
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-display font-medium mb-6">Get In Touch</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone gold-accent mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <a href="tel:760-662-9366" class="text-gray-600 hover:text-gray-900">760-662-9366</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope gold-accent mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <a href="mailto:alvarezlaura@gmail.com" class="text-gray-600 hover:text-gray-900">alvarezlaura@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt gold-accent mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Location</p>
+                                    <p class="text-gray-600">Los Angeles, CA</p>
+                                    <p class="text-sm text-gray-500">By appointment only</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 pt-8 border-t">
+                            <h4 class="font-semibold mb-4">Follow Our Journey</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-rose-100 transition">
+                                    <i class="fab fa-instagram text-gray-600"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-rose-100 transition">
+                                    <i class="fab fa-facebook text-gray-600"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-rose-100 transition">
+                                    <i class="fab fa-pinterest text-gray-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-display font-light mb-4">LA Fashions</h3>
+                    <p class="text-gray-400">Handcrafted luxury clothing designed with passion and precision.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Custom Dresses</a></li>
+                        <li><a href="#" class="hover:text-white transition">Wedding Gowns</a></li>
+                        <li><a href="#" class="hover:text-white transition">Special Occasion</a></li>
+                        <li><a href="#" class="hover:text-white transition">Alterations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-pinterest text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 LA Fashions by Laura Alvarez. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-display font-medium">Request Custom Order</h3>
+                    <button onclick="closeOrderModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form id="order-form" class="space-y-4">
+                    <input type="hidden" name="productType" id="product-type">
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input type="text" name="customerName" required 
+                               class="form-input w-full px-3 py-2 rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" name="customerEmail" required 
+                               class="form-input w-full px-3 py-2 rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                        <input type="tel" name="customerPhone" required 
+                               class="form-input w-full px-3 py-2 rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Occasion/Details</label>
+                        <textarea name="details" rows="3" required 
+                                  class="form-input w-full px-3 py-2 rounded-lg" 
+                                  placeholder="Tell us about your vision..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                        <select name="budget" required 
+                                class="form-input w-full px-3 py-2 rounded-lg">
+                            <option value="">Select budget range</option>
+                            <option value="200-500">$200 - $500</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-2000">$1,000 - $2,000</option>
+                            <option value="2000+">$2,000+</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="btn-primary w-full py-3 rounded-lg font-medium">
+                        Send Request
+                    </button>
+                </form>
+                
+                <div id="order-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                    Thank you! We'll contact you within 24 hours to discuss your custom order.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('open') 
+                ? '<i class="fas fa-times text-xl"></i>' 
+                : '<i class="fas fa-bars text-xl"></i>';
+        });
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<div class="loader mx-auto"></div>';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('form-success').classList.remove('hidden');
+                e.target.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+        
+        // Order modal functions
+        function openOrderModal(productType) {
+            document.getElementById('product-type').value = productType;
+            document.getElementById('order-modal').classList.remove('hidden');
+        }
+        
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+            document.getElementById('order-success').classList.add('hidden');
+            document.getElementById('order-form').reset();
+        }
+        
+        // Order form handling
+        document.getElementById('order-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<div class="loader mx-auto"></div>';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('order-success').classList.remove('hidden');
+                e.target.style.display = 'none';
+            }, 2000);
+        });
+        
+        // Close modal on outside click
+        document.getElementById('order-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'order-modal') {
+                closeOrderModal();
+            }
+        });
+        
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/lafashions" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
