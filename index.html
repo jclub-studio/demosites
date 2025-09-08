@@ -3,16 +3,42 @@
 <head>
     <title>My Client Websites</title>
     <style>
-        body { font-family: Arial; padding: 20px; }
-        .client-site { border: 1px solid #ccc; padding: 20px; margin: 20px 0; }
-        .visit-button { background: blue; color: white; padding: 10px; text-decoration: none; }
+        body { font-family: Arial; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .client-site { border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .visit-button { background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; }
+        .visit-button:hover { background: #0056b3; }
+        h3 { margin-top: 0; color: #333; }
     </style>
 </head>
 <body>
-    <h1>My Client Websites</h1>
-    <p>Here are all the websites I've built:</p>
+    <h1>🚀 My Client Websites</h1>
+    <p>Professional websites I've created:</p>
     
-    <!-- You'll add each client here -->
-    
+    <div id="sites"></div>
+
+    <script>
+        // ADD NEW CLIENTS HERE - Just add the folder name
+        const sites = [
+            'bobs-pizza',
+            'sarahs-salon'
+            // Add new folder names here
+        ];
+
+        const container = document.getElementById('sites');
+        
+        sites.forEach(folder => {
+            // Convert folder name to display name (removes dashes, capitalizes)
+            const displayName = folder.split('-').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+            
+            container.innerHTML += `
+                <div class="client-site">
+                    <h3>${displayName}</h3>
+                    <a href="./${folder}/" class="visit-button">Visit Site →</a>
+                </div>
+            `;
+        });
+    </script>
 </body>
 </html>
