@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Lawn Care Tri-Cities | 5-Star Lawn Care & Landscaping</title>
+    <meta name="description" content="Tri-Cities' premier lawn care service. 5-star rated, 24/7 availability. Professional grass seeding, irrigation repair, landscaping & more. Call (509) 314-9098">
+    <meta name="keywords" content="lawn care tri-cities, landscaping kennewick, irrigation repair pasco, sod installation richland, grass seeding, lawn mowing service">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lawn-green': '#22c55e',
+                        'forest': '#166534',
+                        'sage': '#84cc16',
+                        'earth': '#92400e',
+                        'stone': '#78716c'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.9) 0%, rgba(22, 101, 52, 0.8) 100%);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .animated-bg {
+            animation: gradient 15s ease infinite;
+            background: linear-gradient(-45deg, #22c55e, #84cc16, #166534, #22c55e);
+            background-size: 400% 400%;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+        
+        .review-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .review-card:hover {
+            border-left-color: #22c55e;
+            transform: translateX(5px);
+        }
+        
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+            border-color: #22c55e;
+        }
+        
+        .gallery-item {
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .sticky-cta {
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-seedling text-2xl text-lawn-green mr-2"></i>
+                    <span class="text-xl font-bold text-gray-900">Project Lawn Care</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-lawn-green transition">Services</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-lawn-green transition">Gallery</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-lawn-green transition">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-lawn-green transition">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="tel:5093149098" class="bg-lawn-green text-white px-6 py-2 rounded-full hover:bg-forest transition">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-lawn-green">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-lawn-green">Services</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-lawn-green">Gallery</a>
+                <a href="#reviews" class="block px-3 py-2 text-gray-700 hover:text-lawn-green">Reviews</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-lawn-green">Contact</a>
+                <a href="tel:5093149098" class="block px-3 py-2 bg-lawn-green text-white rounded-full text-center">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNzQxNTEiLz48Y2lyY2xlIGN4PSI5NjAiIGN5PSI1NDAiIHI9IjMwMCIgZmlsbD0iIzIyYzU1ZSIgZmlsbC1vcGFjaXR5PSIwLjMiLz48Y2lyY2xlIGN4PSI0ODAiIGN5PSIyNzAiIHI9IjIwMCIgZmlsbD0iIzg0Y2MxNiIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSIxNDQwIiBjeT0iODEwIiByPSIyNTAiIGZpbGw9IiMxNjY1MzQiIGZpbGwtb3BhY2l0eT0iMC4yNSIvPjwvc3ZnPg==');">
+            </div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <div data-aos="fade-up" class="mb-8">
+                <div class="inline-flex items-center bg-white/20 rounded-full px-4 py-2 mb-6 glass-effect">
+                    <i class="fas fa-star text-yellow-400 mr-2"></i>
+                    <span class="text-sm font-semibold">5.0 Stars from 11 Google Reviews</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Transform Your Lawn with
+                    <span class="text-lawn-green">Tri-Cities' Best</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    24/7 Emergency Service • Professional Lawn Care • Guaranteed Satisfaction
+                </p>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:5093149098" class="bg-lawn-green hover:bg-forest text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center">
+                    <i class="fas fa-phone mr-3"></i>
+                    Call Now: (509) 314-9098
+                </a>
+                <button onclick="scrollToQuote()" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105">
+                    Get Free Quote
+                </button>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="400" class="mt-12 flex justify-center space-x-8 text-sm">
+                <div class="text-center">
+                    <i class="fas fa-clock text-2xl mb-2 text-lawn-green"></i>
+                    <p>24/7 Availability</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-map-marker-alt text-2xl mb-2 text-lawn-green"></i>
+                    <p>Tri-Cities Area</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-certificate text-2xl mb-2 text-lawn-green"></i>
+                    <p>Licensed & Insured</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="bg-red-600 text-white py-3 text-center">
+        <i class="fas fa-exclamation-circle mr-2"></i>
+        <span class="font-semibold">Emergency Services Available 24/7</span>
+        <span class="mx-2">•</span>
+        <a href="tel:5093149098" class="underline hover:no-underline">Call (509) 314-9098 Now</a>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Comprehensive Lawn Care Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    From basic maintenance to complete landscape transformation, we handle every aspect of lawn care with expertise and dedication.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Grass Seeding -->
+                <div data-aos="fade-up" data-aos-delay="100" class="service-card rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-lawn-green/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-seedling text-3xl text-lawn-green"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Grass Seeding</h3>
+                    <p class="text-gray-600 mb-4">Professional seeding for new lawns and overseeding for existing ones. We use premium grass varieties suited for Tri-Cities climate.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• New lawn installation</li>
+                        <li>• Overseeding services</li>
+                        <li>• Premium seed varieties</li>
+                    </ul>
+                </div>
+                
+                <!-- Irrigation Repair -->
+                <div data-aos="fade-up" data-aos-delay="200" class="service-card rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tint text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Irrigation Systems</h3>
+                    <p class="text-gray-600 mb-4">Complete sprinkler system services from installation to emergency repairs. Keep your lawn perfectly watered year-round.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• System installation</li>
+                        <li>• Repair & maintenance</li>
+                        <li>• Seasonal adjustments</li>
+                    </ul>
+                </div>
+                
+                <!-- Landscape Design -->
+                <div data-aos="fade-up" data-aos-delay="300" class="service-card rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-drafting-compass text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Landscape Design</h3>
+                    <p class="text-gray-600 mb-4">Custom landscape planning and installation that transforms your outdoor space into a beautiful, functional environment.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Custom design plans</li>
+                        <li>• Plant selection</li>
+                        <li>• Hardscaping integration</li>
+                    </ul>
+                </div>
+                
+                <!-- Lawn Maintenance -->
+                <div data-aos="fade-up" data-aos-delay="400" class="service-card rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-cut text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Lawn Mowing & Maintenance</h3>
+                    <p class="text-gray-600 mb-4">Regular scheduled maintenance programs tailored to your lawn's specific needs. Weekly, bi-weekly, or custom schedules available.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Scheduled mowing</li>
+                        <li>• Edge trimming</li>
+                        <li>• Seasonal cleanup</li>
+                    </ul>
+                </div>
+                
+                <!-- Mulching -->
+                <div data-aos="fade-up" data-aos-delay="500" class="service-card rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tree text-3xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Mulching</h3>
+                    <p class="text-gray-600 mb-4">Decorative and protective mulch installation that enhances appearance while improving soil health and moisture retention.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Decorative mulches</li>
+                        <li>• Soil protection</li>
+                        <li>• Weed suppression</li>
+                    </ul>
+                </div>
+                
+                <!-- Sod Installation -->
+                <div data-aos="fade-up" data-aos-delay="600" class="service-card rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-layer-group text-3xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Sod Installation</h3>
+                    <p class="text-gray-600 mb-4">Professional sod laying for instant lawn transformation. We ensure proper establishment for long-term success.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Premium sod selection</li>
+                        <li>• Professional installation</li>
+                        <li>• Establishment care</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Map -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Serving the Tri-Cities Area</h2>
+                <p class="text-xl text-gray-600">Kennewick • Richland • Pasco • Surrounding Areas</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Our Service Coverage</h3>
+                        <p class="text-gray-600 mb-6">We proudly serve the entire Tri-Cities region with fast, reliable lawn care services. Whether you're in Kennewick, Richland, Pasco, or any nearby community, we're just a call away.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-lawn-green mr-3"></i>
+                                <span>Kennewick - All areas</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-lawn-green mr-3"></i>
+                                <span>Richland - All neighborhoods</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-lawn-green mr-3"></i>
+                                <span>Pasco - East and West sides</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-lawn-green mr-3"></i>
+                                <span>West Richland & surrounding areas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <p class="text-sm text-gray-500 mb-2">Average response time: <span class="text-lawn-green font-bold">Under 2 hours</span></p>
+                            <p class="text-sm text-gray-500">Emergency service: <span class="text-red-600 font-bold">24/7 Available</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-lawn-green/5 rounded-r-2xl"></div>
+                        <div class="relative p-8 h-full flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marked-alt text-5xl text-lawn-green"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Tri-Cities Service Area</h4>
+                                <p class="text-gray-600">Click to view interactive map</p>
+                                <button class="mt-4 bg-lawn-green text-white px-6 py-2 rounded-full hover:bg-forest transition">
+                                    View Full Map
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Before & After Gallery</h2>
+                <p class="text-xl text-gray-600">See the transformation our expert team delivers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="gallery-item relative rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTkiPkJlZm9yZTogUGF0Y2h5IExhd248L3RleHQ+PC9zdmc+" alt="Before lawn renovation" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="text-sm font-semibold">Before: Patchy Lawn</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="gallery-item relative rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjJjNTVlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5BZnRlcjogTHVzaCBHcmVlbiBMYXdOPC90ZXh0Pjwvc3ZnPg==" alt="After lawn renovation" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="text-sm font-semibold">After: Lush Green Lawn</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="gallery-item relative rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2NjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM2NjYiPkJlZm9yZTogQmFyZSBHYXJkZW48L3RleHQ+PC9zdmc+" alt="Garden before" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="text-sm font-semibold">Before: Bare Garden</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div data-aos="fade-up" data-aos-delay="400" class="gallery-item relative rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjODRjYzE2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5BZnRlcjogQ29tcGxldGUgTGFuZHNjYXBlPC90ZXh0Pjwvc3ZnPg==" alt="Garden after" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="text-sm font-semibold">After: Complete Landscape</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div data-aos="fade-up" data-aos-delay="500" class="gallery-item relative rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOTk5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5JcnJpZ2F0aW9uIFN5c3RlbSBCZWZvcmU8L3RleHQ+PC9zdmc+" alt="Irrigation before" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="text-sm font-semibold">Before: Broken System</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div data-aos="fade-up" data-aos-delay="600" class="gallery-item relative rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjJiNTVkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5BZnRlcjogTmV3IElycmlnYXRpb248L3RleHQ+PC9zdmc+" alt="Irrigation after" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="text-sm font-semibold">After: New Irrigation System</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-lawn-green text-white px-8 py-3 rounded-full hover:bg-forest transition">
+                    View Full Gallery
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">11 Google Reviews with a Perfect 5.0 Rating</p>
+                
+                <!-- Google Rating Badge -->
+                <div class="inline-flex items-center bg-white rounded-full px-6 py-3 mt-6 shadow-lg">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIyLjU2IDEyLjI1YzAtLjM5LS4wMS0uNzctLjAzLTEuMTRoLTEwLjN2Mi4xaDUuODNjLS4xOC45NC0uNjkgMS43Ny0xLjQ3IDIuMzF2MS4zNmgyLjM4YzEuMzktMS4yNyAyLjE5LTMuMTQgMi4xOS01LjMzeiIgZmlsbD0iIzQyODVmNCIvPjxwYXRoIGQ9Ik0xMi4yNSAyM2MtMS45MiAwLTMuNjItLjU2LTUuMDgtMS41bC0yLjM4IDEuMzZDNC41IDI0LjU0IDcuMjQgMjYgMTAuMjQgMjZjNi4yMyAwIDExLjQ2LTQuMTIgMTMuMjgtOS43aC0yLjM4Yy0xLjU2IDMuMDItNC42NiA1LjEtOC4yOSA1LjF6IiBmaWxsPSIjMDBhY2E0Ii8+PHBhdGggZD0iTTUuMDggMTQuNzVjLS4zNS0uNzUtLjU1LTEuNTgtLjU1LTIuNDYgMC0uODguMi0xLjcxLjU1LTIuNDZsLTIuMzgtMS4zNkMuNzggNy45NyAwIDkuOTcgMCAxMi4yNWMwIDIuMjguNzggNC4yOCAyLjMgNS45bDIuMzgtMS4zNnoiIGZpbGw9IiNmZmI5MDAiLz48cGF0aCBkPSJNMTIuMjUgNC41YzIuNTYgMCA0Ljc2Ljg4IDYuNTQgMi42MWwxLjktMS45QzE2LjkxIDEuNjUgMTMuOTkgMCAxMC4yNCAwIDcuMjQgMCA0LjUgMS40NiAyLjk1IDMuODZsMi4zOCAxLjM2QzYuNjIgNS4zOCA4LjY5IDQuNSAxMi4yNSA0LjV6IiBmaWxsPSIjZmY0MjIxIi8+PC9zdmc+" alt="Google" class="w-6 h-6 mr-2">
+                    <div class="text-left">
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 text-sm">★★★★★</span>
+                            <span class="ml-2 text-sm font-semibold">5.0</span>
+                        </div>
+                        <p class="text-xs text-gray-600">11 Google reviews</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="review-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-lawn-green"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sarah M.</h4>
+                            <p class="text-sm text-gray-600">Kennewick, WA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Project Lawn Care transformed our patchy backyard into a beautiful green oasis. The team was professional, arrived on time, and the results exceeded our expectations. Highly recommend!"</p>
+                    <p class="text-sm text-gray-500">2 weeks ago</p>
+                </div>
+                
+                <!-- Review 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="review-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-lawn-green"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Mike R.</h4>
+                            <p class="text-sm text-gray-600">Richland, WA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Had an irrigation emergency on a Sunday night. Called them at 8 PM and they were here within an hour! Fixed the broken sprinkler line and saved my lawn. True 24/7 service!"</p>
+                    <p class="text-sm text-gray-500">1 month ago</p>
+                </div>
+                
+                <!-- Review 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="review-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-lawn-green"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Jennifer L.</h4>
+                            <p class="text-sm text-gray-600">Pasco, WA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The landscape design they created for our front yard is stunning. They listened to our vision and brought it to life with beautiful plants and a perfect layout. Couldn't be happier!"</p>
+                    <p class="text-sm text-gray-500">3 weeks ago</p>
+                </div>
+                
+                <!-- Review 4 -->
+                <div data-aos="fade-up" data-aos-delay="400" class="review-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-lawn-green"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">David K.</h4>
+                            <p class="text-sm text-gray-600">West Richland, WA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Signed up for weekly maintenance and it's been the best decision. My lawn has never looked better. They even gave me tips on how to keep it healthy between visits!"</p>
+                    <p class="text-sm text-gray-500">2 months ago</p>
+                </div>
+                
+                <!-- Review 5 -->
+                <div data-aos="fade-up" data-aos-delay="500" class="review-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-lawn-green"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Amanda T.</h4>
+                            <p class="text-sm text-gray-600">Kennewick, WA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The sod installation was flawless. They removed our old, dead lawn and installed new sod in just one day. The team was efficient and cleaned up everything afterwards."</p>
+                    <p class="text-sm text-gray-500">1 month ago</p>
+                </div>
+                
+                <!-- Review 6 -->
+                <div data-aos="fade-up" data-aos-delay="600" class="review-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-lawn-green"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Robert H.</h4>
+                            <p class="text-sm text-gray-600">Richland, WA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Great communication, fair pricing, and excellent work. They did mulching around our entire property and it looks amazing. Will definitely use them again for future projects."</p>
+                    <p class="text-sm text-gray-500">3 weeks ago</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://g.page/r/CQJ5pYT4F0MLEAE/review" target="_blank" class="bg-lawn-green text-white px-8 py-3 rounded-full hover:bg-forest transition">
+                    <i class="fab fa-google mr-2"></i>
+                    Read All Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get Your Free Quote Today</h2>
+                <p class="text-xl text-gray-600">Ready to transform your lawn? Contact us for a free, no-obligation quote</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-lawn-green"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-semibold">Phone</p>
+                                <a href="tel:5093149098" class="text-lawn-green hover:underline">(509) 314-9098</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-clock text-lawn-green"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-semibold">Hours</p>
+                                <p class="text-gray-600">24/7 Emergency Service Available</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-lawn-green/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-lawn-green"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-semibold">Service Area</p>
+                                <p class="text-gray-600">Kennewick, Richland, Pasco & Surrounding Areas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emergency CTA -->
+                    <div class="mt-8 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
+                        <h4 class="font-bold text-red-800 mb-2">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Emergency Service Available
+                        </h4>
+                        <p class="text-red-700 text-sm">Broken sprinkler? Lawn emergency? We're here 24/7 to help!</p>
+                        <a href="tel:5093149098" class="inline-block mt-3 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+                            Call Now: (509) 314-9098
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quote Form -->
+                <div data-aos="fade-left">
+                    <form id="quote-form" class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Request a Free Quote</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                            <input type="tel" name="phone" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                            <select name="city" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                <option value="">Select Your City</option>
+                                <option value="Kennewick">Kennewick</option>
+                                <option value="Richland">Richland</option>
+                                <option value="Pasco">Pasco</option>
+                                <option value="West Richland">West Richland</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Services Needed</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Grass Seeding" class="mr-2">
+                                    <span class="text-sm">Grass Seeding</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Irrigation" class="mr-2">
+                                    <span class="text-sm">Irrigation</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Landscape Design" class="mr-2">
+                                    <span class="text-sm">Landscape Design</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Lawn Maintenance" class="mr-2">
+                                    <span class="text-sm">Lawn Maintenance</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Mulching" class="mr-2">
+                                    <span class="text-sm">Mulching</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Sod Installation" class="mr-2">
+                                    <span class="text-sm">Sod Installation</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tell us about your project</label>
+                            <textarea name="message" rows="4" placeholder="Describe your lawn care needs..." class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-lawn-green text-white py-4 rounded-lg font-semibold hover:bg-forest transition duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Get My Free Quote
+                        </button>
+                        
+                        <p class="text-xs text-gray-500 text-center mt-4">
+                            * We respect your privacy. Your information will only be used to contact you about your quote.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-seedling text-2xl text-lawn-green mr-2"></i>
+                        <span class="text-xl font-bold">Project Lawn Care</span>
+                    </div>
+                    <p class="text-gray-400">Tri-Cities' premier lawn care and landscaping service. 5-star rated, 24/7 availability.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-lawn-green transition">Grass Seeding</a></li>
+                        <li><a href="#services" class="hover:text-lawn-green transition">Irrigation Systems</a></li>
+                        <li><a href="#services" class="hover:text-lawn-green transition">Landscape Design</a></li>
+                        <li><a href="#services" class="hover:text-lawn-green transition">Lawn Maintenance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Service Areas</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Kennewick, WA</li>
+                        <li>Richland, WA</li>
+                        <li>Pasco, WA</li>
+                        <li>West Richland, WA</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>(509) 314-9098</p>
+                        <p><i class="fas fa-clock mr-2"></i>24/7 Emergency Service</p>
+                    </div>
+                    
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://g.page/r/CQJ5pYT4F0MLEAE" target="_blank" class="text-gray-400 hover:text-lawn-green transition">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lawn-green transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Project Lawn Care. All rights reserved. | Licensed & Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div id="sticky-cta" class="fixed bottom-4 right-4 z-50 hidden">
+        <div class="bg-white rounded-full shadow-lg p-4 flex items-center space-x-4">
+            <a href="tel:5093149098" class="bg-lawn-green text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-forest transition">
+                <i class="fas fa-phone mr-1"></i>Call Now
+            </a>
+            <button onclick="scrollToQuote()" class="text-gray-700 text-sm font-semibold hover:text-lawn-green transition">
+                Free Quote
+            </button>
+            <button onclick="closeStickyCTA()" class="text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out'
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                menuOpen = false;
+            });
+        });
+
+        // Smooth scroll to quote
+        function scrollToQuote() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send the data to your server
+            // For demo purposes, we'll show a success message
+            
+            // Show success message
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check mr-2"></i>Quote Requested!';
+            button.classList.add('bg-green-600');
+            button.disabled = true;
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-600');
+                button.disabled = false;
+            }, 3000);
+        });
+
+        // Sticky CTA
+        let stickyCTAShown = false;
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const heroHeight = window.innerHeight;
+            
+            if (scrollPosition > heroHeight && !stickyCTAShown) {
+                document.getElementById('sticky-cta').classList.remove('hidden');
+                document.getElementById('sticky-cta').classList.add('sticky-cta');
+                stickyCTAShown = true;
+            } else if (scrollPosition <= heroHeight && stickyCTAShown) {
+                document.getElementById('sticky-cta').classList.add('hidden');
+                stickyCTAShown = false;
+            }
+        });
+
+        function closeStickyCTA() {
+            document.getElementById('sticky-cta').classList.add('hidden');
+        }
+
+        // Gallery click handler
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // In a real implementation, this would open a lightbox
+                alert('Full gallery feature would open here');
+            });
+        });
+
+        // Phone number formatting
+        document.querySelector('input[name="phone"]').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
+            } else if (value.length >= 3) {
+                value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+            }
+            e.target.value = value;
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=EddieOS/projectlawncare" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
