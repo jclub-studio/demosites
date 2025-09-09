@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artsy Fartsy Studio | Tri-Cities Premier Ceramics Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1595351298020-038700609878?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .clay-bg {
+            background-color: #D2691E;
+        }
+        
+        .cream-bg {
+            background-color: #F5F5DC;
+        }
+        
+        .sage-bg {
+            background-color: #9CAF88;
+        }
+        
+        .warm-gray-bg {
+            background-color: #8B7D6B;
+        }
+        
+        .clay-text {
+            color: #D2691E;
+        }
+        
+        .custom-shape-divider-bottom-1718668923 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1718668923 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        .custom-shape-divider-bottom-1718668923 .shape-fill {
+            fill: #F5F5DC;
+        }
+        
+        .pottery-wheel {
+            animation: spin 20s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-cream-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold clay-text">Artsy Fartsy Studio</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">Classes</a>
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">Events</a>
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">Shop</a>
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">Gallery</a>
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#" class="text-gray-900 hover:text-clay-500 px-3 py-2 text-sm font-medium">Contact</a>
+                    <button class="clay-bg text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition duration-300">Book Now</button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-clay-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="hero" class="hero-section relative h-screen flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0" id="vanta-globe"></div>
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif" data-aos="fade-down">Where Creativity Meets Community</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Tri-Cities' premier destination for hands-on ceramics education and supplies</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+                <button class="clay-bg text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition duration-300">Explore Classes</button>
+                <button class="bg-white clay-text px-8 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition duration-300">Book an Event</button>
+            </div>
+        </div>
+        <div class="custom-shape-divider-bottom-1718668923">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,233.88-45.71Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- Classes Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 font-serif" data-aos="fade-up">Our Classes & Workshops</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">From beginner to advanced, we offer a variety of ceramics experiences</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Class Card 1 -->
+                <div class="bg-cream-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1753164727417-1d814202aaf0?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Beginner Pottery Class" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Beginner Pottery</h3>
+                        <p class="text-gray-600 mb-4">Learn the fundamentals of wheel throwing in our 4-week introductory course.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$120</span>
+                            <button class="clay-bg text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition duration-300">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Class Card 2 -->
+                <div class="bg-cream-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1589051079002-b140a970f568?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Handbuilding Workshop" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Handbuilding Workshop</h3>
+                        <p class="text-gray-600 mb-4">Explore slab, coil, and pinch techniques in this hands-on weekend workshop.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$85</span>
+                            <button class="clay-bg text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition duration-300">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Class Card 3 -->
+                <div class="bg-cream-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1753164726456-487d6c6d1f9d?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Kids Clay Camp" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Kids Clay Camp</h3>
+                        <p class="text-gray-600 mb-4">A fun-filled week of creative exploration for young artists ages 7-12.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$150</span>
+                            <button class="clay-bg text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition duration-300">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <button class="border-2 border-clay-500 text-clay-500 px-8 py-3 rounded-md text-lg font-medium hover:bg-clay-500 hover:text-white transition duration-300">View All Classes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-20 sage-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-10 lg:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6 font-serif">Private Events & Parties</h2>
+                    <p class="text-lg mb-4">Celebrate birthdays, anniversaries, or team building with a creative twist!</p>
+                    <p class="text-lg mb-6">Our studio is the perfect venue for groups of 6-20 people to enjoy guided pottery painting or handbuilding activities.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="text-white"></i>
+                            </div>
+                            <p class="ml-3">All materials and instruction included</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="text-white"></i>
+                            </div>
+                            <p class="ml-3">Customizable projects for your group</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="text-white"></i>
+                            </div>
+                            <p class="ml-3">Private studio space for your event</p>
+                        </div>
+                    </div>
+                    <button class="bg-white clay-text px-6 py-2 rounded-md text-lg font-medium hover:bg-opacity-90 transition duration-300">Plan Your Event</button>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://plus.unsplash.com/premium_photo-1706115464365-a82276f7e7b4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG90dGVyeSUyMGNsYXNzfGVufDB8fDB8fHww$0"Birthday party" class="rounded-lg shadow-xl">
+                        <img src="https://plus.unsplash.com/premium_photo-1677456380268-813e7a11bc57?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeSUyMGNsYXNzfGVufDB8fDB8fHww$0" alt="Corporate event" class="rounded-lg shadow-xl mt-8">
+                        <img src="https://plus.unsplash.com/premium_photo-1705865373977-ca66a9502b7f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvdHRlcnklMjBjbGFzc3xlbnwwfHwwfHx8MA%3D%3D$0" alt="Group activity" class="rounded-lg shadow-xl -mt-8">
+                        <img src="https://images.unsplash.com/photo-1710835037843-0d2dacc177f2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvdHRlcnklMjBjbGFzc3xlbnwwfHwwfHx8MA%3D%3D$0" alt="Team building" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="py-20 warm-gray-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 font-serif" data-aos="fade-up">What Our Students Say</h2>
+                <p class="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Don't just take our word for it - hear from our community</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 mr-4">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/1" alt="Sarah J.">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <div class="flex text-yellow-300">
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"Teresa's beginner pottery class completely changed my perspective on ceramics. Her patient instruction made the wheel approachable, and now I'm hooked!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 mr-4">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/2" alt="Mark T.">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mark T.</h4>
+                            <div class="flex text-yellow-300">
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"We hosted our company's team building event at Artsy Fartsy Studio and it was fantastic! Everyone from engineers to accountants had a blast getting creative."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 mr-4">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/3" alt="Emily & Rachel">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emily & Rachel</h4>
+                            <div class="flex text-yellow-300">
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                                <i data-feather="star" class="fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"Our daughter's 10th birthday party here was perfect! The staff helped make it special and all the kids loved painting their own pottery pieces to take home."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 font-serif" data-aos="fade-up">Ceramics Supplies</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Quality tools and materials for your ceramic projects</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition duration-300" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1595446472632-9a3dfdd51bd9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBvdHRlcnklMjBjbGF5fGVufDB8fDB8fHww$0" alt="Pottery clay" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Stoneware Clay (25lb)</h3>
+                        <p class="text-gray-600 text-sm mb-3">Smooth, versatile clay perfect for wheel throwing and handbuilding</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$24.99</span>
+                            <button class="clay-bg text-white px-3 py-1 rounded text-sm font-medium hover:bg-opacity-90 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://plus.unsplash.com/premium_photo-1677456380031-945bf829cd79?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Pottery tools" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Beginner Tool Set</h3>
+                        <p class="text-gray-600 text-sm mb-3">Essential 12-piece pottery tool kit for all your shaping needs</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$32.99</span>
+                            <button class="clay-bg text-white px-3 py-1 rounded text-sm font-medium hover:bg-opacity-90 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://plus.unsplash.com/premium_photo-1677533380697-c6994c1ccf90?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Ceramic glazes" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Glaze Set (6 colors)</h3>
+                        <p class="text-gray-600 text-sm mb-3">Food-safe glaze collection with brush included</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$45.99</span>
+                            <button class="clay-bg text-white px-3 py-1 rounded text-sm font-medium hover:bg-opacity-90 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1723021073699-77f5442510a2?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Apron" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Potter's Apron</h3>
+                        <p class="text-gray-600 text-sm mb-3">Heavy-duty canvas apron with pockets for tools</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-clay-600 font-bold">$28.99</span>
+                            <button class="clay-bg text-white px-3 py-1 rounded text-sm font-medium hover:bg-opacity-90 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <button class="border-2 border-clay-500 text-clay-500 px-8 py-3 rounded-md text-lg font-medium hover:bg-clay-500 hover:text-white transition duration-300">Browse All Supplies</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 clay-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6 font-serif" data-aos="fade-up">Ready to Get Your Hands Dirty?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Join our community of ceramic artists today</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+                <button class="bg-white clay-text px-8 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition duration-300">Book Your First Class</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Artsy Fartsy Studio</h3>
+                    <p class="text-gray-400">Tri-Cities' premier ceramics studio since 2005</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Classes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shop</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1 flex-shrink-0"></i>
+                            <span class="text-gray-400">2007 Turner St<br>Richland, WA 99354</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2"></i>
+                            <span class="text-gray-400">(509) 555-0199</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2"></i>
+                            <span class="text-gray-400">hello@artsyfartsystudio.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2024 Artsy Fartsy Studio. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        feather.replace();
+        
+        VANTA.GLOBE({
+            el: "#vanta-globe",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xd2691e,
+            backgroundColor: 0x0,
+            size: 0.8
+        });
+    </script>
+</body>
+</html>
