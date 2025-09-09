@@ -1,0 +1,63 @@
+name: Deploy Site from N8N
+
+on:
+  repository_dispatch:
+    types: [deploy-site]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create site directory and files
+        run: |
+          BUSINESS_NAME="${{ github.event.client_payload.business_name }}"
+          HTML_CONTENT="${{ github.event.client_payload.html_content }}"
+          
+          # Sanitize business name for folder
+          FOLDER_NAME=$(echo "$BUSINESS_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+          
+          # Create directory
+          mkdir -p "sites/$FOLDER_NAME"
+          
+          # Write HTML content
+          echo "$HTML_CONTENT" > "sites/$FOLDER_NAME/index.html"
+
+      - name: Update main index page
+        run: |
+          # Generate updated directory listing
+          cat > index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head><title>Demo Sites</title></head>
+          <body>
+          <h1>Demo Sites</h1>
+          <ul>
+          EOF
+          
+          for dir in sites/*/; do
+            if [ -d "$dir" ]; then
+              dirname=$(basename "$dir")
+              echo "<li><a href=\"sites/$dirname/\">$dirname</a></li>" >> index.html
+            fi
+          done
+          
+          echo "</ul></body></html>" >> index.html
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Deploy site: ${{ github.event.client_payload.business_name }}" || exit 0
+          git push
+
+      - name: Enable GitHub Pages (if not already enabled)
+        run: |
+          gh api repos/${{ github.repository }}/pages --method POST --field source.branch=main --field source.path=/ || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
