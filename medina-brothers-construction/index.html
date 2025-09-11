@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medina Brothers Construction LLC | Top-Rated Tri-Cities Builder</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        :root {
+            --navy: #1e3a8a;
+            --navy-light: #3b82f6;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .glass-card {
+            background: rgba(30, 58, 138, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="https://images.unsplash.com/photo-1649807438813-acc4489bcf0a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uc3RydWN0aW9uJTIwbWFjaGluZXxlbnwwfHwwfHx8MA%3D%3D$0" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        }
+        
+        .stat-number {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .project-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover::after {
+            opacity: 1;
+        }
+        
+        .project-card .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: 10;
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .form-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(30, 58, 138, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(30, 58, 138, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full nav-glass z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-900">Medina Brothers Construction LLC</h1>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-900 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-900 transition-colors">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-900 transition-colors">Services</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-900 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:5095823087" class="text-blue-900 hover:text-blue-700 transition-colors">
+                        <i data-feather="phone" class="w-5 h-5 inline mr-2"></i>
+                        (509) 582-3087
+                    </a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">
+                        Free Estimate
+                    </button>
+                </div>
+                
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed top-0 right-0 w-full h-full bg-white z-50 md:hidden" id="mobile-menu">
+            <div class="flex justify-end p-6">
+                <button id="close-menu">
+                    <i data-feather="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center space-y-8 mt-16">
+                <a href="#home" class="text-2xl text-gray-700 hover:text-blue-900 transition-colors">Home</a>
+                <a href="#about" class="text-2xl text-gray-700 hover:text-blue-900 transition-colors">About</a>
+                <a href="#services" class="text-2xl text-gray-700 hover:text-blue-900 transition-colors">Services</a>
+                <a href="#projects" class="text-2xl text-gray-700 hover:text-blue-900 transition-colors">Projects</a>
+                <a href="#contact" class="text-2xl text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
+                <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold mt-8">
+                    Free Estimate
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div id="vanta-bg" class="absolute inset-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-blue-900/50"></div>
+        </div>
+        
+        <!-- Geometric Overlay -->
+        <div class="absolute inset-0 z-10 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Headline & CTA -->
+                <div class="text-center lg:text-left lg:max-w-3xl">
+                    <div class="mb-6" data-aos="fade-up">
+                        <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium border border-white/20">
+                            <i data-feather="award" class="w-4 h-4 mr-2"></i>
+                            BuildZoom Score: 98/100
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                        <span class="text-white">Building Excellence</span>
+                        <span class="text-blue-300 block mt-2">in Tri-Cities</span>
+                    </h1>
+                    
+                    <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="200">
+                        Family-owned construction company serving Kennewick, Pasco, and Richland 
+                        with 18+ years of trusted, top-rated service.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="300">
+                        <button class="btn-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/25">
+                            Get Free Estimate
+                        </button>
+                        <button class="glass text-white px-8 py-4 rounded-xl font-semibold text-lg border-2 border-white/30 hover:bg-white/10 transition-all backdrop-blur-sm">
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Element -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-blue-300 mb-2">18+</div>
+                                <div class="text-white/80 text-sm">Years in Business</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-blue-300 mb-2">5</div>
+                                <div class="text-white/80 text-sm">Recent Projects</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-blue-300 mb-2">$282K</div>
+                                <div class="text-white/80 text-sm">Projects Completed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-blue-300 mb-2">Top 16%</div>
+                                <div class="text-white/80 text-sm">WA Contractors</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-6 -right-6 bg-white rounded-full p-4 shadow-2xl animate-pulse">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-900">98</div>
+                            <div class="text-xs text-gray-600">BuildZoom</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-blue-900 mb-4">About Medina Brothers</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Family-owned construction company serving Tri-Cities with excellence since 2007
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div data-aos="fade-right">
+                    <div class="glass-card rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Our Story</h3>
+                        <p class="text-gray-700 mb-4">
+                            Established on May 20, 2007, Medina Brothers Construction LLC has been the trusted name 
+                            in Tri-Cities construction for over 18 years. Led by Ariel Medina, Luis Medina Avalos, 
+                            and principal Reynaldo Medina, we've built our reputation on quality, integrity, and 
+                            exceptional customer service.
+                        </p>
+                        <p class="text-gray-700">
+                            From our base in Kennewick, we've completed hundreds of residential projects, earning 
+                            a BuildZoom score of 98 - placing us in the top 16% of all Washington contractors.
+                        </p>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D$0" alt="Construction team" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="trust-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <i data-feather="award" class="w-12 h-12 text-blue-900 mx-auto mb-4"></i>
+                    <h4 class="text-xl font-bold text-blue-900 mb-2">Top Rated</h4>
+                    <p class="text-gray-600">BuildZoom score of 98 - top 16% of WA contractors</p>
+                </div>
+                <div class="trust-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <i data-feather="shield" class="w-12 h-12 text-blue-900 mx-auto mb-4"></i>
+                    <h4 class="text-xl font-bold text-blue-900 mb-2">Fully Licensed</h4>
+                    <p class="text-gray-600">Licensed & bonded with $12,000 surety bond</p>
+                </div>
+                <div class="trust-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <i data-feather="users" class="w-12 h-12 text-blue-900 mx-auto mb-4"></i>
+                    <h4 class="text-xl font-bold text-blue-900 mb-2">Family Owned</h4>
+                    <p class="text-gray-600">Multi-generational team with 18+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-blue-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From single-family homes to custom decks and garages, we deliver quality construction services 
+                    throughout the Tri-Cities area.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-8 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <i data-feather="home" class="w-16 h-16 text-blue-900 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Residential Construction</h3>
+                    <p class="text-gray-700 mb-6">Single-family housing construction with attention to detail and quality craftsmanship that exceeds building codes.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Custom home building</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Home additions</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Renovations</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-8 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <i data-feather="layout" class="w-16 h-16 text-blue-900 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Deck & Stair Construction</h3>
+                    <p class="text-gray-700 mb-6">Beautiful, safe, and durable outdoor living spaces including decks, stairs, and railings.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Custom deck design</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Stair construction</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Outdoor structures</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-8 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <i data-feather="truck" class="w-16 h-16 text-blue-900 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Detached Structures</h3>
+                    <p class="text-gray-700 mb-6">Custom detached garages, workshops, and accessory buildings to expand your property's functionality.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Detached garages</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Workshop buildings</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i> Storage structures</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <p class="text-lg text-gray-600 mb-6">Have a custom project in mind?</p>
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                    Discuss Your Project
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-blue-900 mb-4">Recent Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    View our portfolio of recent construction projects across the Tri-Cities area
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card rounded-2xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1656646549607-8fda5837a4ca?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFja3lhcmQlMjBkZWNrfGVufDB8fDB8fHww$0" alt="Deck construction" class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold text-white mb-2">Custom Deck Addition</h3>
+                        <p class="text-white/90 mb-4">Kennewick, WA</p>
+                        <p class="text-white/80">Complete deck and stair addition with custom railings and lighting</p>
+                    </div>
+                </div>
+                
+                <div class="project-card rounded-2xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1694885185886-013cc283d542?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGV0YWNoZWQlMjBnYXJhZ2V8ZW58MHx8MHx8fDA%3D$0" alt="Detached garage" class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold text-white mb-2">24x36 Detached Garage</h3>
+                        <p class="text-white/90 mb-4">Richland, WA</p>
+                        <p class="text-white/80">864 sq ft pole frame garage with concrete slab and custom features</p>
+                    </div>
+                </div>
+                
+                <div class="project-card rounded-2xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1719381502987-058c2140df08?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMGFkZGl0aW9ufGVufDB8fDB8fHww$0" alt="Home renovation" class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold text-white mb-2">Home Addition</h3>
+                        <p class="text-white/90 mb-4">Pasco, WA</p>
+                        <p class="text-white/80">Seamless home addition expanding living space with modern design</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-blue-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it - hear from satisfied clients across the Tri-Cities
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Medina Brothers transformed our backyard with a beautiful deck. Professional, 
+                        on-time, and exceeded our expectations. Highly recommend!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="w-6 h-6 text-blue-900"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-blue-900">Sarah Johnson</p>
+                            <p class="text-sm text-gray-600">Kennewick, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Built our detached garage exactly as specified. Quality workmanship and great 
+                        communication throughout the project. Would use again!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="w-6 h-6 text-blue-900"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-blue-900">Mike Chen</p>
+                            <p class="text-sm text-gray-600">Richland, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "The home addition blends perfectly with our existing house. Professional crew, 
+                        clean worksite, and finished on schedule. Five stars!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="w-6 h-6 text-blue-900"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-blue-900">Lisa Martinez</p>
+                            <p class="text-sm text-gray-600">Pasco, WA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Build?</h2>
+                    <p class="text-xl text-blue-100 mb-8">
+                        Contact us today for a free, no-obligation estimate on your construction project.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <i data-feather="map-pin" class="w-6 h-6 mr-4 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">1524 W 7th Place</p>
+                                <p class="text-blue-100">Kennewick, WA 99336</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i data-feather="phone" class="w-6 h-6 mr-4 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">(509) 582-3087</p>
+                                <p class="text-blue-100">Mon-Fri, 7AM-5PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i data-feather="clock" class="w-6 h-6 mr-4 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">Licensed & Bonded</p>
+                                <p class="text-blue-100">License #MEDINBC937MC</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">Service Area</h3>
+                        <p class="text-blue-100">
+                            Serving Kennewick, Pasco, Richland, and all of Benton & Franklin Counties
+                        </p>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <form class="glass rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Get Your Free Estimate</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <input type="text" placeholder="First Name" class="form-input rounded-lg px-4 py-3 w-full">
+                            <input type="text" placeholder="Last Name" class="form-input rounded-lg px-4 py-3 w-full">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <input type="email" placeholder="Email Address" class="form-input rounded-lg px-4 py-3 w-full">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <input type="tel" placeholder="Phone Number" class="form-input rounded-lg px-4 py-3 w-full">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <select class="form-input rounded-lg px-4 py-3 w-full">
+                                <option>Select Service</option>
+                                <option>Residential Construction</option>
+                                <option>Deck Construction</option>
+                                <option>Detached Garage</option>
+                                <option>Home Addition</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <textarea placeholder="Tell us about your project" rows="4" class="form-input rounded-lg px-4 py-3 w-full resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg w-full">
+                            Request Free Estimate
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Medina Brothers</h3>
+                    <p class="text-gray-400 mb-4">Top-rated construction company serving Tri-Cities with excellence since 2007.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="linkedin" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Residential Construction</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Deck Construction</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Detached Garages</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Home Additions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#projects" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            (509) 582-3087
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2 mt-1"></i>
+                            <span>1524 W 7th Place<br>Kennewick, WA 99336</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="clock" class="w-4 h-4 mr-2"></i>
+                            Mon-Fri: 7AM-5PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Medina Brothers Construction LLC. All rights reserved.</p>
+                <p class="mt-2">Licensed Contractor #MEDINBC937MC | Fully Bonded & Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            backgroundColor: 0x1e3a8a,
+            points: 8.00,
+            maxDistance: 25.00,
+            spacing: 18.00
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('open');
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your inquiry! We will contact you within 24 hours.');
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Animate numbers on scroll
+        const animateNumbers = () => {
+            const numbers = document.querySelectorAll('.stat-number');
+            numbers.forEach(number => {
+                const target = parseInt(number.textContent);
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateNumber = () => {
+                    if (current < target) {
+                        current += increment;
+                        number.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        number.textContent = target;
+                    }
+                };
+                
+                // Check if element is in viewport
+                const rect = number.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    updateNumber();
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateNumbers);
+        
+        // Initial check
+        animateNumbers();
+    </script>
+</body>
+</html>
