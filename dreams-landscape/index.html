@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream's Landscape Management & Weed Control LLC | Tri-Cities, WA</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dream-green': '#2E8B57',
+                        'dream-light': '#F0FFF0',
+                        'dream-dark': '#1A472A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://plus.unsplash.com/premium_photo-1725408037993-f891474828c9?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .vanta-bg {
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-dream-light">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-dream-green text-2xl font-bold">Dream's Landscape Management</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-dream-green transition">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-dream-green transition">About</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-dream-green transition">Testimonials</a>
+                    <a href="#contact" class="bg-dream-green text-white px-6 py-2 rounded-full hover:bg-dream-dark transition">Free Quote</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-aos="fade-up">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Dependable Lawn Care, Rooted in Our Community</h1>
+            <p class="text-xl md:text-2xl mb-8">Expert Landscape Management & Professional Weed Control</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-dream-green hover:bg-dream-dark text-white px-8 py-4 rounded-full text-lg font-semibold transition">Get Free Assessment</a>
+                <a href="#services" class="border-2 border-white hover:bg-white hover:text-dream-dark text-white px-8 py-4 rounded-full text-lg font-semibold transition">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-dream-dark mb-4">Our Professional Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive landscape solutions for the Tri-Cities area</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-dream-light rounded-xl p-8 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-dream-green rounded-full flex items-center justify-center mb-6">
+                        <svg class="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12h18"/>
+                            <path d="M12 3v18"/>
+                            <path d="M6 6l12 12"/>
+                            <path d="M18 6L6 18"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dream-dark mb-4">Landscape Management</h3>
+                    <p class="text-gray-600 mb-4">Custom design, installation, and maintenance tailored to our desert climate</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Lawn Care Programs</li>
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Irrigation Systems</li>
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Seasonal Cleanup</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-dream-light rounded-xl p-8 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-dream-green rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dream-dark mb-4">Weed Control</h3>
+                    <p class="text-gray-600 mb-4">Professional weed elimination and prevention for residential and commercial properties</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Pre-emergent Programs</li>
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Organic Options</li>
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Year-round Maintenance</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-dream-light rounded-xl p-8 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-dream-green rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="home" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dream-dark mb-4">Hardscaping & Design</h3>
+                    <p class="text-gray-600 mb-4">Create beautiful outdoor living spaces that enhance your property value</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Patios & Walkways</li>
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Water Features</li>
+                        <li class="flex items-center"><i data-feather="check" class="text-dream-green mr-2"></i> Outdoor Lighting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dream-dark text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-6">Why Choose Dream's Landscape</h2>
+                <p class="text-xl mb-12">The only landscape management company in the Tri-Cities that specializes in both professional landscape design and expert weed control, delivering comprehensive solutions tailored to our unique desert climate.</p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 bg-dream-green rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="award" class="text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Licensed & Insured</h3>
+                        <p class="text-gray-300">Fully licensed professionals with comprehensive insurance coverage</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 bg-dream-green rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="map-pin" class="text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Local Expertise</h3>
+                        <p class="text-gray-300">Deep understanding of Tri-Cities climate and soil conditions</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 bg-dream-green rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="heart" class="text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Eco-Friendly</h3>
+                        <p class="text-gray-300">Environmentally responsible methods and sustainable practices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-dream-dark mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">Serving the Tri-Cities community with excellence</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-dream-light p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-dream-green rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Sarah K.</h4>
+                            <p class="text-dream-green">Kennewick Homeowner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Dream's transformed our backyard into an oasis. Their weed control program keeps everything pristine year-round!"</p>
+                </div>
+                <div class="bg-dream-light p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-dream-green rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Mike T.</h4>
+                            <p class="text-dream-green">Richland Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Professional, reliable, and exceptional quality. Our commercial property has never looked better."</p>
+                </div>
+                <div class="bg-dream-light p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-dream-green rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Lisa M.</h4>
+                            <p class="text-dream-green">Pasco HOA President</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Their comprehensive approach to landscape management has significantly increased our property values."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dream-green text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Property?</h2>
+            <p class="text-xl mb-8">Get your FREE landscape assessment and quote today</p>
+            <a href="#contact" class="bg-white text-dream-green px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition">Schedule Your Consultation</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-dream-dark mb-6">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 mb-8">We serve the entire Tri-Cities area including Kennewick, Richland, and Pasco</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-dream-green rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="phone" class="text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="text-gray-600">[Phone Number]</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-dream-green rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="mail" class="text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-600">[Email Address]</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-dream-green rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="map-pin" class="text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Service Area</p>
+                                <p class="text-gray-600">Tri-Cities, WA and surrounding areas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-dream-dark mb-6">Request Your Free Quote</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dream-green focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dream-green focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dream-green focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Service Needed</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dream-green focus:border-transparent">
+                                    <option>Landscape Management</option>
+                                    <option>Weed Control</option>
+                                    <option>Hardscaping</option>
+                                    <option>Maintenance Program</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-dream-green text-white py-4 rounded-lg font-semibold hover:bg-dream-dark transition">Get Free Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dream-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Dream's Landscape</h4>
+                    <p class="text-gray-400">Professional landscape management and weed control services for the Tri-Cities area.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Landscape Management</li>
+                        <li>Weed Control</li>
+                        <li>Hardscaping</li>
+                        <li>Irrigation Systems</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>[Phone Number]</li>
+                        <li>[Email Address]</li>
+                        <li>Tri-Cities, WA</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Dream's Landscape Management & Weed Control LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
