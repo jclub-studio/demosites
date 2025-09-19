@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voth Construction & Design | Walla Walla Custom Builders</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D4A574',
+                        accent: '#5D4037',
+                        light: '#F5F5DC',
+                        dark: '#2C1810'
+                    },
+                    fontFamily: {
+                        heading: ['Roboto Slab', 'serif'],
+                        body: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(44, 24, 16, 0.85), rgba(44, 24, 16, 0.95)), url('http://static.photos/construction/1200x630/15');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-content {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .cta-section {
+            background: linear-gradient(to right, #8B4513, #5D4037);
+        }
+    </style>
+</head>
+<body class="font-body text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-xl md:text-2xl font-heading font-bold text-primary">Voth Construction & Design</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#services" class="text-dark hover:text-primary transition duration-300 font-medium text-sm">Services</a>
+                        <a href="#portfolio" class="text-dark hover:text-primary transition duration-300 font-medium text-sm">Portfolio</a>
+                        <a href="#testimonials" class="text-dark hover:text-primary transition duration-300 font-medium text-sm">Testimonials</a>
+                        <a href="#about" class="text-dark hover:text-primary transition duration-300 font-medium text-sm">About</a>
+                        <a href="#contact" class="text-dark hover:text-primary transition duration-300 font-medium text-sm">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-primary hover:bg-accent text-white px-4 py-2 rounded-lg font-medium transition duration-300 transform hover:scale-105 text-sm">Get Estimate</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary">Portfolio</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary">Testimonials</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary">Contact</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center hover:bg-accent mt-2">Get Estimate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center hero-content">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight" data-aos="fade-up">
+                Crafting Custom Homes &<br>Transformative Remodels
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-light mb-8 max-w-3xl mx-auto font-medium" data-aos="fade-up" data-aos-delay="200">
+                Walla Walla's Premier Design-Build Partner
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact" class="bg-primary hover:bg-accent text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-base md:text-lg font-medium transition duration-300 shadow-lg transform hover:scale-105">
+                    Schedule Consultation
+                </a>
+                <a href="#services" class="bg-transparent border-2 border-light text-light hover:bg-light hover:text-dark px-6 py-3 md:px-8 md:py-4 rounded-lg text-base md:text-lg font-medium transition duration-300 transform hover:scale-105">
+                    Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-heading font-bold text-dark mb-3">Our Comprehensive Services</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">Design-Build Expertise Under One Roof</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-500" data-aos="fade-up">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
+                        <i data-feather="home" class="text-white h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-dark mb-4">Custom Home Building</h3>
+                    <p class="text-gray-600 mb-4">Your Dream Home, Built to Perfection. Luxury home design and build with energy-efficient solutions and smart home technology integration.</p>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                        <li>New custom home construction</li>
+                        <li>Energy-efficient home solutions</li>
+                        <li>Smart home technology integration</li>
+                        <li>Land development consultation</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-6">
+                        <i data-feather="refresh-cw" class="text-white h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-dark mb-4">Home Remodeling</h3>
+                    <p class="text-gray-600 mb-4">Transform Your Existing Space. Increase your home's value and improve functionality with our expert renovation services.</p>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                        <li>Kitchen and bathroom remodeling</li>
+                        <li>Whole house renovations</li>
+                        <li>Room additions and expansions</li>
+                        <li>Outdoor living spaces</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-6">
+                        <i data-feather="tool" class="text-white h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-dark mb-4">Specialized Services</h3>
+                    <p class="text-gray-600 mb-4">Complete Construction Solutions. From custom cabinets to stamped concrete, we handle specialized construction needs.</p>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                        <li>Custom cabinets and millwork</li>
+                        <li>Stamped concrete and decorative surfaces</li>
+                        <li>Commercial tenant improvements</li>
+                        <li>Accessibility modifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <img src="http://static.photos/construction/640x360/15" alt="Voth Construction Team" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-2xl md:text-3xl font-heading font-bold text-dark mb-4">Our Story & Values</h2>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">Founded by Rick Voth, our company has grown from a passion for quality construction and client satisfaction. Starting with a commitment to serve the Walla Walla community, we've built our reputation one project at a time.</p>
+                    <div class="mb-6">
+                        <h3 class="text-lg md:text-xl font-bold text-primary mb-3">Our Mission</h3>
+                        <p class="text-gray-600 text-sm md:text-base">To transform your construction dreams into reality through innovative design, quality craftsmanship, and personalized service that exceeds expectations.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg md:text-xl font-bold text-primary mb-3">Core Values</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span class="text-sm">Custom solutions tailored to each client</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span class="text-sm">Uncompromising quality in materials</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span class="text-sm">Transparent communication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span class="text-sm">Respect for timelines and budgets</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span>Uncompromising quality in materials</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span>Transparent communication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-secondary h-5 w-5 mt-1 mr-2"></i>
+                                <span>Respect for timelines and budgets</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-heading font-bold text-dark mb-3">Our Portfolio</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">Custom Wine Country Estates & Transformative Remodels</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1656589370113-2aca109a4e92?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Luxury Wine Country Estate" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold text-dark mb-2">Wine Country Estate</h3>
+                        <p class="text-gray-600">Custom luxury home with vineyard views and integrated wine cellar</p>
+                    </div>
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1682888813726-24adc990e6f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Modern Kitchen Remodel" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold text-dark mb-2">Modern Kitchen Remodel</h3>
+                        <p class="text-gray-600">Transformative kitchen renovation with premium finishes</p>
+                    </div>
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1722858812731-d96eceb10f52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0" alt="Luxury Bathroom Renovation" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold text-dark mb-2">Luxury Bathroom Renovation</h3>
+                        <p class="text-gray-600">Spa-like master bathroom with custom tile work</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-primary hover:bg-accent text-white px-8 py-3 rounded-full font-medium transition duration-300">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-heading font-bold text-dark mb-3">What Our Clients Say</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">Proven Track Record of Excellence</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="testimonial-card rounded-xl shadow-md p-8" data-aos="fade-up">
+                    <div class="flex items-center mb-6">
+                        <div>
+                            <h4 class="font-bold text-dark">Sarah & Michael Johnson</h4>
+                            <p class="text-gray-600">Walla Walla Homeowners</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Rick and his team at Voth Construction transformed our vision into reality. The attention to detail and quality of work exceeded our expectations. Our custom home perfectly captures the essence of wine country living."</p>
+                    <div class="flex">
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-xl shadow-md p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div>
+                            <h4 class="font-bold text-dark">Robert Thompson</h4>
+                            <p class="text-gray-600">Historic Home Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The remodeling project was completed on time and within budget. Voth Construction's design expertise helped us maximize our space while maintaining the character of our historic Walla Walla home. Truly exceptional work."</p>
+                    <div class="flex">
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                        <i data-feather="star" class="text-yellow-400 fill-current h-5 w-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-white mb-4">Ready to Start Your Project?</h2>
+            <p class="text-base md:text-lg text-light mb-8 max-w-3xl mx-auto">Limited design slots available for 2024 builds. Schedule your complimentary consultation today.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-white hover:bg-light text-primary px-6 py-3 rounded-lg text-base md:text-lg font-medium transition duration-300 shadow-lg transform hover:scale-105">Schedule Design Consultation</a>
+                <a href="tel:5093011234" class="bg-transparent border-2 border-light text-light hover:bg-light hover:text-dark px-6 py-3 rounded-lg text-base md:text-lg font-medium transition duration-300 transform hover:scale-105">(509) 301-1234</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-heading font-bold text-dark mb-3">Contact Us</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">Let's Discuss Your Custom Construction Project</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-heading font-bold text-dark mb-6">Get In Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mr-4">
+                                    <i data-feather="map-pin" class="text-white h-6 w-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Our Location</h4>
+                                    <p class="text-gray-600">6142 Mill Creek Rd, Walla Walla, WA 99362</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mr-4">
+                                    <i data-feather="phone" class="text-white h-6 w-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Phone</h4>
+                                    <p class="text-gray-600">(509) 301-1234</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mr-4">
+                                    <i data-feather="clock" class="text-white h-6 w-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Business Hours</h4>
+                                    <p class="text-gray-600">Mon-Fri: 7:00 AM - 5:00 PM</p>
+                                    <p class="text-gray-600">Sat-Sun: By appointment</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6">
+                                <h4 class="font-bold text-dark mb-4">Service Area</h4>
+                                <ul class="grid grid-cols-2 gap-2 text-gray-600">
+                                    <li>Walla Walla</li>
+                                    <li>College Place</li>
+                                    <li>Waitsburg</li>
+                                    <li>Prescott</li>
+                                    <li>Franklin County</li>
+                                    <li>Walla Walla County</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-heading font-bold text-dark mb-6">Request Consultation</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Interest</label>
+                                <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option>Select a service</option>
+                                    <option>Custom Home Building</option>
+                                    <option>Home Remodeling</option>
+                                    <option>Specialized Construction</option>
+                                    <option>Design Services</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-accent text-white py-3 px-6 rounded-lg font-medium transition duration-300">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div>
+                    <h3 class="text-lg font-heading font-bold mb-3">Voth Construction & Design</h3>
+                    <p class="text-gray-300 mb-3 text-sm">Premier construction company serving Walla Walla and surrounding counties in Washington State.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-300 hover:text-light"><i data-feather="facebook" class="h-4 w-4"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-light"><i data-feather="instagram" class="h-4 w-4"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-light"><i data-feather="linkedin" class="h-4 w-4"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-base font-bold mb-3">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-light text-sm">Custom Home Building</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-light text-sm">Home Remodeling</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-light text-sm">Specialized Construction</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-light text-sm">Design Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base font-bold mb-3">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-light text-sm">About Us</a></li>
+                        <li><a href="#portfolio" class="text-gray-300 hover:text-light text-sm">Portfolio</a></li>
+                        <li><a href="#testimonials" class="text-gray-300 hover:text-light text-sm">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-light text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base font-bold mb-3">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>6142 Mill Creek Rd</li>
+                        <li>Walla Walla, WA 99362</li>
+                        <li>(509) 301-1234</li>
+                        <li>info@vothconstruction.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Voth Construction & Design. All rights reserved. Licensed General Contractor in Washington State.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
