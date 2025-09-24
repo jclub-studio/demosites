@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murphey Brothers' General Excavating | Prosser, WA</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'earth-brown': '#8B4513',
+                        'earth-yellow': '#D4A574',
+                        'earth-dark': '#654321',
+                        'earth-light': '#F5DEB3'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Oswald', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i data-feather="truck" class="h-8 w-8 text-earth-brown mr-2"></i>
+                    <span class="text-xl font-display font-bold text-earth-dark">Murphey Brothers</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-earth-dark hover:text-earth-brown transition-colors">Home</a>
+                        <a href="#services" class="nav-link text-earth-dark hover:text-earth-brown transition-colors">Services</a>
+                        <a href="#about" class="nav-link text-earth-dark hover:text-earth-brown transition-colors">About</a>
+                        <a href="#testimonials" class="nav-link text-earth-dark hover:text-earth-brown transition-colors">Testimonials</a>
+                        <a href="#contact" class="nav-link bg-earth-brown text-white px-6 py-2 rounded-lg hover:bg-earth-dark transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-earth-dark hover:text-earth-brown">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-earth-dark hover:text-earth-brown">Home</a>
+                <a href="#services" class="block px-3 py-2 text-earth-dark hover:text-earth-brown">Services</a>
+                <a href="#about" class="block px-3 py-2 text-earth-dark hover:text-earth-brown">About</a>
+                <a href="#testimonials" class="block px-3 py-2 text-earth-dark hover:text-earth-brown">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 bg-earth-brown text-white rounded-lg mx-3">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="http://static.photos/industry/1920x1080/42" alt="Excavation equipment" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-earth-dark/80 to-earth-brown/60"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6" data-aos="fade-up">
+                Murphey Brothers'
+                <span class="block text-earth-yellow">General Excavating</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Reliable Excavation Services in Tri-Cities & Prosser, WA
+            </p>
+            <p class="text-lg mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                Serving Central Washington since 1979 with precision grading, site preparation, and septic excavation services
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="#contact" class="bg-earth-brown hover:bg-earth-yellow text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                    Request Free Estimate
+                </a>
+                <a href="tel:5097863103" class="bg-white hover:bg-gray-100 text-earth-dark px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                    <i data-feather="phone" class="inline-block mr-2"></i>
+                    (509) 786-3103
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i data-feather="chevron-down" class="h-8 w-8"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-earth-dark mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Complete excavation solutions for residential, commercial, and agricultural projects
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-earth-brown w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="move" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-earth-dark mb-4">Site Preparation & Land Clearing</h3>
+                    <p class="text-gray-600">Professional land clearing and site preparation for construction projects, ensuring proper grading and drainage.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-earth-brown w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="trending-down" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-earth-dark mb-4">Grading & Leveling</h3>
+                    <p class="text-gray-600">Precision grading and leveling services for foundations, driveways, and landscape preparation.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-earth-brown w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="minus" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-earth-dark mb-4">Trenching & Utilities</h3>
+                    <p class="text-gray-600">Underground utility installation with precise trenching for water, sewer, and electrical lines.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-earth-brown w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="box" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-earth-dark mb-4">Foundation Excavation</h3>
+                    <p class="text-gray-600">Expert foundation excavation with proper soil compaction and drainage for lasting structural integrity.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-earth-brown w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="droplet" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-earth-dark mb-4">Septic & Drainage Excavation</h3>
+                    <p class="text-gray-600">Certified septic system installation and drainage solutions for residential and commercial properties.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-earth-brown w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="tool" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-earth-dark mb-4">Specialty Excavation</h3>
+                    <p class="text-gray-600">Custom excavation solutions for unique project requirements, including pond construction and land shaping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 md:py-32 bg-earth-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-earth-dark mb-4">Why Choose Murphey Brothers</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your trusted local excavation partner with decades of experience
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="map-pin" class="h-8 w-8 text-earth-brown mr-3"></i>
+                        <h3 class="text-xl font-display font-semibold text-earth-dark">Local Tri-Cities Roots</h3>
+                    </div>
+                    <p class="text-gray-600">Deeply rooted in the Prosser and Tri-Cities community, understanding local soil conditions and regulations.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="award" class="h-8 w-8 text-earth-brown mr-3"></i>
+                        <h3 class="text-xl font-display font-semibold text-earth-dark">Licensed Septic Installer</h3>
+                    </div>
+                    <p class="text-gray-600">Certified by Yakima Health District for septic system installation, pumping, and design services.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="calendar" class="h-8 w-8 text-earth-brown mr-3"></i>
+                        <h3 class="text-xl font-display font-semibold text-earth-dark">Since 1979</h3>
+                    </div>
+                    <p class="text-gray-600">Over 45 years of excavation experience, delivering quality workmanship since 1979.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="users" class="h-8 w-8 text-earth-brown mr-3"></i>
+                        <h3 class="text-xl font-display font-semibold text-earth-dark">Personal Attention</h3>
+                    </div>
+                    <p class="text-gray-600">Small, responsive team led by Rick Murphy ensures personalized service and direct communication.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="shield" class="h-8 w-8 text-earth-brown mr-3"></i>
+                        <h3 class="text-xl font-display font-semibold text-earth-dark">Fully Insured</h3>
+                    </div>
+                    <p class="text-gray-600">Comprehensive insurance coverage and safety-focused operations protect your property and investment.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="clock" class="h-8 w-8 text-earth-brown mr-3"></i>
+                        <h3 class="text-xl font-display font-semibold text-earth-dark">On-Time Completion</h3>
+                    </div>
+                    <p class="text-gray-600">Reliable scheduling and efficient project management to keep your construction timeline on track.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-earth-dark mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600">Trusted by property owners throughout Central Washington</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-earth-yellow">
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Murphey Brothers handled our site prep with precision and on time. Rick's team was professional and left the site clean and ready for construction."</p>
+                    <div class="flex items-center">
+                        <div class="bg-earth-brown w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">
+                            J
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-earth-dark">J.D.</p>
+                            <p class="text-gray-600 text-sm">Kennewick, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-earth-yellow">
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Excellent septic system installation. Knowledgeable about local regulations and got all permits handled efficiently. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-earth-brown w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">
+                            M
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-earth-dark">Maria S.</p>
+                            <p class="text-gray-600 text-sm">Prosser, WA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-xl p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-earth-yellow">
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                            <i data-feather="star" class="h-5 w-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Rick and his team did outstanding work on our foundation excavation. Fair pricing and completed ahead of schedule. Will definitely use again."</p>
+                    <div class="flex items-center">
+                        <div class="bg-earth-brown w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">
+                            T
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-earth-dark">Tom R.</p>
+                            <p class="text-gray-600 text-sm">Yakima, WA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-earth-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-earth-dark mb-6">About Murphey Brothers</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Family-owned and operated since 1979, Murphey Brothers' General Excavating has been serving the Tri-Cities and Yakima region with reliable excavation and grading services.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Led by Rick Murphy, our team combines decades of local experience with modern equipment and techniques to deliver quality workmanship on every project.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        From site preparation for new construction to septic system installation, we pride ourselves on our attention to detail, safety-first approach, and commitment to keeping your project on schedule.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-display font-semibold text-earth-dark mb-2">Established</h4>
+                            <p class="text-2xl font-bold text-earth-brown">1979</p>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-semibold text-earth-dark mb-2">Service Area</h4>
+                            <p class="text-lg text-gray-700">Tri-Cities & Yakima</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="http://static.photos/industry/640x480/88" alt="Excavation equipment" class="rounded-xl shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-earth-brown text-white p-6 rounded-xl">
+                        <p class="font-display font-bold text-2xl">45+ Years</p>
+                        <p class="text-earth-yellow">Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-earth-dark mb-4">Get Your Free Quote Today</h2>
+                <p class="text-xl text-gray-600">Ready to start your excavation project? Contact us for a free estimate.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-earth-brown focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-earth-brown focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-earth-brown focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-earth-brown focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="site-prep">Site Preparation</option>
+                                <option value="grading">Grading & Leveling</option>
+                                <option value="trenching">Trenching & Utilities</option>
+                                <option value="foundation">Foundation Excavation</option>
+                                <option value="septic">Septic & Drainage</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-earth-brown focus:border-transparent" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-earth-brown hover:bg-earth-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Map -->
+                <div data-aos="fade-left">
+                    <div class="bg-gray-50 rounded-xl p-8 mb-8">
+                        <h3 class="text-xl font-display font-semibold text-earth-dark mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i data-feather="map-pin" class="h-5 w-5 text-earth-brown mr-3"></i>
+                                <div>
+                                    <p class="font-medium text-earth-dark">Address</p>
+                                    <p class="text-gray-600">144001 W Johnson Rd, Prosser, WA 99350</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="phone" class="h-5 w-5 text-earth-brown mr-3"></i>
+                                <div>
+                                    <p class="font-medium text-earth-dark">Phone</p>
+                                    <a href="tel:5097863103" class="text-gray-600 hover:text-earth-brown">(509) 786-3103</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="clock" class="h-5 w-5 text-earth-brown mr-3"></i>
+                                <div>
+                                    <p class="font-medium text-earth-dark">Hours</p>
+                                    <p class="text-gray-600">Monday - Friday: 7:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="map" class="h-5 w-5 text-earth-brown mr-3"></i>
+                                <div>
+                                    <p class="font-medium text-earth-dark">Service Area</p>
+                                    <p class="text-gray-600">Tri-Cities, Yakima County & Central Washington</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Embed -->
+                    <div class="bg-gray-200 rounded-xl h-64 flex items-center justify-center">
+                        <p class="text-gray-600">Map Location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-earth-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i data-feather="truck" class="h-8 w-8 text-earth-yellow mr-2"></i>
+                        <span class="text-xl font-display font-bold">Murphey Brothers</span>
+                    </div>
+                    <p class="text-gray-300">General Excavating serving Tri-Cities and Central Washington since 1979.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-earth-yellow transition-colors">Site Preparation</a></li>
+                        <li><a href="#services" class="hover:text-earth-yellow transition-colors">Grading & Leveling</a></li>
+                        <li><a href="#services" class="hover:text-earth-yellow transition-colors">Trenching</a></li>
+                        <li><a href="#services" class="hover:text-earth-yellow transition-colors">Septic Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>144001 W Johnson Rd</li>
+                        <li>Prosser, WA 99350</li>
+                        <li><a href="tel:5097863103" class="hover:text-earth-yellow transition-colors">(509) 786-3103</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com" target="_blank" class="text-gray-300 hover:text-earth-yellow transition-colors">
+                            <i data-feather="facebook" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-300 text-sm mt-4">Licensed & Insured</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2025 Murphey Brothers' General Excavating. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
