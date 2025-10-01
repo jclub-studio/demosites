@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketelsen Construction Co. | Walla Walla's Trusted Builder Since 1980</title>
+    <meta name="description" content="45 years of quality commercial and residential construction in Walla Walla Valley. Done right the first time, every time.">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#64748b',
+                        },
+                        secondary: {
+                            500: '#0ea5e9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1575281923032-f40d94ef6160?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-image: url('https://images.unsplash.com/photo-1575281923032-f40d94ef6160?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-500">
+                <span class="relative">
+                    Ketelsen<span class="text-secondary-500">Construction</span>
+                    <span class="absolute bottom-1 right-0 w-full h-1 bg-secondary-500 transform translate-y-1"></span>
+                </span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="font-medium hover:text-secondary-500 transition">Services</a>
+                <a href="#about" class="font-medium hover:text-secondary-500 transition">About</a>
+                <a href="#projects" class="font-medium hover:text-secondary-500 transition">Projects</a>
+                <a href="#contact" class="font-medium hover:text-secondary-500 transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary-500">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+            <a href="#services" class="block py-2 font-medium hover:text-secondary-500">Services</a>
+            <a href="#about" class="block py-2 font-medium hover:text-secondary-500">About</a>
+            <a href="#projects" class="block py-2 font-medium hover:text-secondary-500">Projects</a>
+            <a href="#contact" class="block py-2 font-medium hover:text-secondary-500">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative min-h-[80vh] flex items-center">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-4 relative z-10 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 max-w-2xl">
+                Walla Walla's Trusted Builder Since 1980
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl">
+                45 years of quality commercial and residential construction. Done right the first time.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contact" class="bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-center">
+                    Get Your Free Estimate
+                </a>
+                <a href="tel:5095256038" class="bg-white hover:bg-gray-100 text-primary-500 font-bold py-3 px-8 rounded-lg transition duration-300 text-center">
+                    <i data-feather="phone" class="inline mr-2"></i> (509) 525-6038
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-primary-500 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2">45+</div>
+                    <div class="text-lg">Years in Business</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2">12</div>
+                    <div class="text-lg">Skilled Craftsmen</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2">1000+</div>
+                    <div class="text-lg">Projects Completed</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2">Top 8%</div>
+                    <div class="text-lg">WA Contractor Ranking</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Construction Services</h2>
+                <div class="w-24 h-1 bg-secondary-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Commercial Construction -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="trending-up" class="text-white w-8 h-8"></i>
+</div>
+                    <h3 class="text-xl font-bold mb-4">Commercial Construction</h3>
+                    <p class="text-gray-600 mb-4">
+                        From office buildings to retail spaces, we deliver quality commercial construction tailored to your business needs.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Office buildings
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Retail buildouts
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Industrial facilities
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-secondary-500 font-medium hover:underline inline-flex items-center">
+                        Learn more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Residential Construction -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="home" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Residential Construction</h3>
+                    <p class="text-gray-600 mb-4">
+                        Custom homes, renovations, and additions built with craftsmanship and attention to detail.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            New home construction
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Kitchen/bath remodels
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Home additions
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-secondary-500 font-medium hover:underline inline-flex items-center">
+                        Learn more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- General Contracting -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="clipboard" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">General Contracting</h3>
+                    <p class="text-gray-600 mb-4">
+                        Full-service project management from concept to completion for stress-free construction.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Project planning
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Permitting assistance
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            Quality control
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-secondary-500 font-medium hover:underline inline-flex items-center">
+                        Learn more <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Built on 45 Years of Trust</h2>
+                    <div class="w-24 h-1 bg-secondary-500 mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        Since 1980, Ketelsen Construction Co. has been a cornerstone of the Walla Walla construction community. Our longevity speaks to our reliability and commitment to quality craftsmanship.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Led by President Allen Ketelsen, we've grown from our roots into a respected construction firm known for getting it right the first time - saving our clients time, money, and headaches.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <i data-feather="award" class="text-secondary-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-2">Our Promise</h4>
+                                <p class="text-gray-600">
+                                    Quality work that stands the test of time, backed by our commitment to clear communication and fair, transparent pricing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <img src="http://static.photos/construction/640x360/2" alt="Ketelsen Construction Team" class="w-full rounded-lg shadow-lg">
+                        <div class="absolute -bottom-6 -right-6 bg-primary-500 text-white p-6 rounded-lg shadow-lg">
+                            <div class="text-3xl font-bold">1980</div>
+                            <div class="text-sm">Year Established</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Work in Walla Walla</h2>
+                <div class="w-24 h-1 bg-secondary-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="http://static.photos/construction/640x360/3" alt="Commercial Project" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Commercial Office Building</h3>
+                            <p class="text-sm">Downtown Walla Walla</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="http://static.photos/construction/640x360/4" alt="Residential Project" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Custom Home Construction</h3>
+                            <p class="text-sm">Walla Walla Valley</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="http://static.photos/construction/640x360/5" alt="Remodeling Project" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Kitchen Remodel</h3>
+                            <p class="text-sm">Historic Walla Walla Home</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-secondary-500 hover:bg-secondary-600 transition duration-300">
+                    Start Your Project Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-primary-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <div class="w-24 h-1 bg-secondary-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/1" alt="Client">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-white/80">Walla Walla Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "Ketelsen Construction transformed our outdated office space into a modern, functional workplace. Their attention to detail and commitment to staying on schedule was impressive."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/2" alt="Client">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Michael &amp; Lisa Chen</h4>
+                            <p class="text-sm text-white/80">Homeowners</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "Building our dream home with Ketelsen was a fantastic experience. They listened to our needs and delivered beyond our expectations. Truly done right the first time."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/3" alt="Client">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">David Wilson</h4>
+                            <p class="text-sm text-white/80">Property Developer</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "As a developer, I've worked with many contractors. Ketelsen's team stands out for their professionalism, quality work, and deep knowledge of Walla Walla building requirements."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Build With Us?</h2>
+                    <div class="w-24 h-1 bg-secondary-500 mb-6"></div>
+                    <p class="text-gray-600 mb-8">
+                        Whether you're planning a commercial project or dreaming of a custom home, we're here to help. Contact us today for a free consultation.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-full p-3 text-white">
+                                <i data-feather="map-pin"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Our Location</h4>
+                                <p class="text-gray-600">3050 Brisbane Drive, Walla Walla, WA 99362</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-full p-3 text-white">
+                                <i data-feather="phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Call Us</h4>
+                                <p class="text-gray-600">(509) 525-6038</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-full p-3 text-white">
+                                <i data-feather="clock"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Business Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 7:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Get Your Free Estimate</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="project" class="block text-gray-700 mb-2">Project Type</label>
+                                <select id="project" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500">
+                                    <option>Commercial Construction</option>
+                                    <option>Residential Construction</option>
+                                    <option>Remodeling</option>
+                                    <option>General Contracting</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Project Details</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Request Free Consultation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-primary-500 mb-2">Licensed</div>
+                    <div class="text-sm text-gray-600">WA Contractor</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-primary-500 mb-2">Insured</div>
+                    <div class="text-sm text-gray-600">Full Coverage</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-primary-500 mb-2">Top 8%</div>
+                    <div class="text-sm text-gray-600">WA Ranking</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-primary-500 mb-2">A+</div>
+                    <div class="text-sm text-gray-600">BBB Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-500 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ketelsen Construction</h3>
+                    <p class="mb-4">
+                        45 years of quality construction in the Walla Walla Valley. Done right the first time.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-secondary-500 transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary-500 transition">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary-500 transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-secondary-500 transition">Commercial Construction</a></li>
+                        <li><a href="#" class="hover:text-secondary-500 transition">Residential Construction</a></li>
+                        <li><a href="#" class="hover:text-secondary-500 transition">Remodeling</a></li>
+                        <li><a href="#" class="hover:text-secondary-500 transition">General Contracting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-secondary-500 transition">Our Services</a></li>
+                        <li><a href="#about" class="hover:text-secondary-500 transition">About Us</a></li>
+                        <li><a href="#projects" class="hover:text-secondary-500 transition">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-secondary-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">3050 Brisbane Drive</p>
+                        <p class="mb-4">Walla Walla, WA 99362</p>
+                        <p class="mb-2">
+                            <a href="tel:5095256038" class="hover:text-secondary-500 transition">
+                                <i data-feather="phone" class="inline mr-2"></i> (509) 525-6038
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@ketelsen.construction" class="hover:text-secondary-500 transition">
+                                <i data-feather="mail" class="inline mr-2"></i> info@ketelsen.construction
+                            </a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p>&copy; 2023 Ketelsen Construction Co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
