@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Made Concrete and Carpentry - Montana's Premier Construction Company</title>
+    <meta name="description" content="Taylor Made Concrete and Carpentry provides expert concrete and carpentry services in Ronan, Montana. Specializing in foundations, driveways, framing, and custom woodwork for residential and commercial projects.">
+    <meta name="keywords" content="Montana concrete contractor, Ronan carpentry services, Lake County construction, Montana foundation repair, Northwest Montana contractors, Ronan concrete services, Montana home improvement, Lake County remodeling">
+    <meta name="author" content="Taylor Made Concrete and Carpentry">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Taylor Made Concrete and Carpentry - Montana Construction Experts">
+    <meta property="og:description" content="Professional concrete and carpentry services in Ronan, Montana. Building Montana Strong with quality craftsmanship.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taylormadeconcrete.com">
+    <meta property="og:image" content="http://static.photos/construction/1200x630/1">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Taylor Made Concrete and Carpentry",
+        "description": "Professional concrete and carpentry services in Ronan, Montana",
+        "url": "https://taylormadeconcrete.com",
+        "telephone": "+1-406-531-2573",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "32557 Snyder Hill Ln",
+            "addressLocality": "Ronan",
+            "addressRegion": "MT",
+            "postalCode": "59864-9032",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.5316",
+            "longitude": "-114.1019"
+        },
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "serviceArea": {
+            "@type": "Place",
+            "name": "Lake County, Montana"
+        }
+    }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full bg-white shadow-lg z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i data-feather="home" class="text-white w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Taylor Made</h1>
+                        <p class="text-xs text-gray-600">Concrete & Carpentry</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-600 transition-colors font-medium">About</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Contact</a>
+                    <a href="tel:406-531-2573" class="cta-button text-white px-6 py-2 rounded-full font-semibold">
+                        Call Now
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-feather="menu" class="w-6 h-6 text-gray-700"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-600 transition-colors font-medium">About</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 transition-colors font-medium">Contact</a>
+                    <a href="tel:406-531-2573" class="cta-button text-white px-6 py-2 rounded-full font-semibold text-center">
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white slide-in">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                        Building Montana <span class="text-gradient">Strong</span>
+                    </h2>
+                    <p class="text-xl mb-8 text-gray-300">
+                        Professional concrete and carpentry services in Ronan, Montana. 
+                        Quality craftsmanship for residential and commercial projects 
+                        across Lake County and beyond.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:406-531-2573" class="cta-button text-white px-8 py-4 rounded-full font-semibold text-center">
+                            <i data-feather="phone" class="inline w-5 h-5 mr-2"></i>
+                            Get Free Estimate
+                        </a>
+                        <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all text-center">
+                            View Our Services
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>
+                            <span class="text-gray-300">Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>
+                            <span class="text-gray-300">4+ Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1758947353402-9155b29c7a49?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvbnN0cnVjdGlvbiUyMG1vbnRhbmF8ZW58MHx8MHx8fDA%3D$0" alt="Construction Work" class="rounded-2xl shadow-2xl floating">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i data-feather="award" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900">100+ Projects</p>
+                                <p class="text-sm text-gray-600">Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive concrete and carpentry solutions tailored to Montana's unique 
+                    building challenges and requirements.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Concrete Services -->
+                <div class="service-card card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="service-icon w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="box" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Concrete Services</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Foundation Work</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Driveways & Patios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Structural Concrete</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Stamped & Decorative</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carpentry Services -->
+                <div class="service-card card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="service-icon w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="tool" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Carpentry Services</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Framing & Structure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Finish Carpentry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Custom Woodwork</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Deck & Fence Building</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- General Construction -->
+                <div class="service-card card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="service-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="home" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">General Construction</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>New Construction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Renovations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Additions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Commercial Projects</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1707510844722-ede3afa9858c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGNvbnN0cnVjdGlvbiUyMG1vbnRhbmF8ZW58MHx8MHx8fDA%3D$0" alt="Jason Taylor" class="rounded-2xl shadow-xl">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">About Taylor Made</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Founded by Jason Taylor in 2021, Taylor Made Concrete and Carpentry has become 
+                        a trusted name in Montana's construction industry. With deep roots in Ronan and 
+                        extensive knowledge of Montana's unique building challenges, we deliver exceptional 
+                        craftsmanship on every project.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        We specialize in both concrete and carpentry services, providing our clients with 
+                        a comprehensive solution that eliminates the need to coordinate multiple contractors. 
+                        From foundations to finish work, we handle every aspect with precision and care.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-3xl font-bold text-red-600 mb-2">4+</h4>
+                            <p class="text-gray-600">Years in Business</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-3xl font-bold text-amber-600 mb-2">100+</h4>
+                            <p class="text-gray-600">Projects Completed</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-3xl font-bold text-blue-600 mb-2">100%</h4>
+                            <p class="text-gray-600">Client Satisfaction</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-3xl font-bold text-green-600 mb-2">Licensed</h4>
+                            <p class="text-gray-600">& Insured</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600">
+                    Trusted by homeowners and businesses across Lake County
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/80x80/45" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Mitchell</h4>
+                            <div class="flex text-yellow-500">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Jason and his team did an amazing job on our new driveway. Professional, 
+                        punctual, and the quality exceeded our expectations. Highly recommend!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/80x80/67" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Mike Johnson</h4>
+                            <div class="flex text-yellow-500">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "The custom deck they built is absolutely perfect. Their attention to detail 
+                        and craftsmanship is outstanding. Best contractors in Ronan!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/80x80/89" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Emily Davis</h4>
+                            <div class="flex text-yellow-500">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "From foundation to finish, Taylor Made handled our home addition perfectly. 
+                        Their knowledge of Montana building requirements is invaluable."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 hero-gradient">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Get a free, no-obligation estimate for your concrete or carpentry project. 
+                Serving Ronan and all of Lake County, Montana.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:406-531-2573" class="cta-button text-white px-8 py-4 rounded-full font-semibold text-center">
+                    <i data-feather="phone" class="inline w-5 h-5 mr-2"></i>
+                    Call (406) 531-2573
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all text-center">
+                    Send a Message
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600">
+                    Get in touch for a free consultation and estimate
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Project Details</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full cta-button text-white py-3 rounded-lg font-semibold">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i data-feather="phone" class="w-6 h-6 text-red-600 mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Phone</p>
+                                    <p class="text-gray-600">(406) 531-2573</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="map-pin" class="w-6 h-6 text-red-600 mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Address</p>
+                                    <p class="text-gray-600">32557 Snyder Hill Ln<br>Ronan, MT 59864-9032</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="clock" class="w-6 h-6 text-red-600 mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Business Hours</p>
+                                    <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: By Appointment<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="map" class="w-6 h-6 text-red-600 mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Service Area</p>
+                                    <p class="text-gray-600">Ronan, Polson, Charlo, Arlee<br>and all of Lake County, Montana</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-600 to-amber-500 rounded-lg flex items-center justify-center">
+                            <i data-feather="home" class="text-white w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Taylor Made</h3>
+                            <p class="text-xs text-gray-400">Concrete & Carpentry</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Building Montana Strong with quality craftsmanship and professional service.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>Concrete Work</li>
+                        <li>Carpentry</li>
+                        <li>Foundations</li>
+                        <li>Decks & Fences</li>
+                        <li>Custom Woodwork</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            (406) 531-2573
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2 mt-0.5"></i>
+                            Ronan, MT 59864
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Taylor Made Concrete and Carpentry. All rights reserved. | Licensed & Insured in Montana</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Contact Form Handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Create success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 slide-in';
+            successDiv.innerHTML = `
+                <div class="flex items-center">
+                    <i data-feather="check-circle" class="w-5 h-5 mr-2"></i>
+                    <span>Message sent successfully! We'll contact you soon.</span>
+                </div>
+            `;
+            document.body.appendChild(successDiv);
+            feather.replace();
+            
+            // Reset form
+            this.reset();
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                successDiv.remove();
+            }, 5000);
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all service cards and testimonial cards
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
