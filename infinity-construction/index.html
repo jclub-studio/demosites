@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Construction and Repair, LLC | Montana General Contractor</title>
+    <meta name="description" content="Locally owned general contractor serving Missoula and Superior Montana. Specializing in home renovations, additions, kitchen & bathroom remodeling, deck construction, and accessibility modifications.">
+    <meta name="keywords" content="Montana general contractor Superior, Missoula home remodeling contractor, Montana kitchen bathroom remodeling, Superior Montana home additions, Montana deck builders contractors, Missoula basement finishing contractors">
+    <meta name="author" content="Infinity Construction and Repair, LLC">
+    <meta property="og:title" content="Infinity Construction and Repair, LLC - Building Excellence in Big Sky Country">
+    <meta property="og:description" content="Your trusted Montana construction partner for quality craftsmanship and exceptional service.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .stats-counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .nav-shadow {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white z-50 nav-shadow transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i data-feather="home" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Infinity Construction</h1>
+                        <p class="text-xs text-gray-600">Montana's Trusted Builder</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="tel:4062073571" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2">
+                        <i data-feather="phone" class="w-4 h-4"></i>
+                        <span>(406) 207-3571</span>
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-600">About</a>
+                <a href="#services" class="block text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#projects" class="block text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#testimonials" class="block text-gray-700 hover:text-blue-600">Testimonials</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="tel:4062073571" class="bg-blue-600 text-white px-6 py-2 rounded-lg inline-block">
+                    Call Now: (406) 207-3571
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-yellow-400 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="inline-block bg-yellow-500 text-blue-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        🏗️ Licensed & Insured Montana Contractor
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Building Excellence in <span class="text-gradient">Big Sky Country</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Where Quality Craftsmanship Meets Montana Values. From minor repairs to major renovations, we bring your vision to life with exceptional service and attention to detail.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-all transform hover:scale-105 cta-pulse">
+                            Get Free Estimate
+                        </a>
+                        <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all">
+                            View Our Services
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <i data-feather="check-circle" class="w-5 h-5 text-green-400"></i>
+                            <span>5+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-feather="users" class="w-5 h-5 text-green-400"></i>
+                            <span>Family Owned</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-feather="award" class="w-5 h-5 text-green-400"></i>
+                            <span>BBB Rated</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://plus.unsplash.com/premium_photo-1661871416250-b444422e0eaf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29uc3RydWN0aW9uJTIwc2l0ZSUyMGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D$0" alt="Construction Work" class="rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i data-feather="phone" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Call for Free Quote</p>
+                                <p class="font-bold text-lg">(406) 207-3571</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-blue-600 stats-counter" data-target="5">0</div>
+                    <p class="text-gray-600 mt-2">Years in Business</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-blue-600 stats-counter" data-target="150">0</div>
+                    <p class="text-gray-600 mt-2">Projects Completed</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-blue-600 stats-counter" data-target="6">0</div>
+                    <p class="text-gray-600 mt-2">Cities Served</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-blue-600">100%</div>
+                    <p class="text-gray-600 mt-2">Customer Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Your Trusted <span class="text-blue-600">Montana</span> Construction Partner
+                    </h2>
+                    <p class="text-gray-600 mb-6">
+                        Infinity Construction and Repair, LLC is a locally owned general contracting company based in Superior, Montana. Since 2020, our family-operated business has built a solid reputation serving the greater Missoula area and surrounding communities.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        We take great pride in providing exceptional workmanship and complete customer satisfaction from start to completion. Owner Jeremy Evans personally manages every project, ensuring attention to detail and quality that exceeds expectations.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-feather="check" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Service Excellence</h3>
+                                <p class="text-gray-600 text-sm">Commitment to superior customer service at every phase</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-feather="shield" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Safety First</h3>
+                                <p class="text-gray-600 text-sm">Maintaining the highest safety standards regardless of project size</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-feather="star" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Quality Craftsmanship</h3>
+                                <p class="text-gray-600 text-sm">Delivering exceptional results through skilled workmanship</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative fade-in">
+                    <img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbnN0cnVjdGlvbiUyMHRvb2xzfGVufDB8fDB8fHww$0" alt="About Us" class="rounded-2xl shadow-xl">
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-2xl text-center">
+                            <div class="text-5xl mb-2">🏆</div>
+                            <p class="font-bold text-lg">BBB Accredited</p>
+                            <p class="text-sm text-gray-600">Licensed & Insured</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Our <span class="text-blue-600">Services</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive construction and remodeling services designed to solve homeowners' space, functionality, and aesthetic challenges
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Major Home Services -->
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="home" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Complete Home Renovations</h3>
+                    <p class="text-gray-600 mb-4">Multi-room projects that transform entire living spaces with modern design and functionality.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="plus-square" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Home Additions</h3>
+                    <p class="text-gray-600 mb-4">Expand your living space with seamless integration to existing structures.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="tool" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">General Contracting</h3>
+                    <p class="text-gray-600 mb-4">Full-service project management for major construction projects from start to finish.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Specialized Remodeling -->
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="zap" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kitchen Remodeling</h3>
+                    <p class="text-gray-600 mb-4">Complete kitchen transformations with custom design solutions and modern amenities.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="droplet" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Bathroom Remodeling</h3>
+                    <p class="text-gray-600 mb-4">Full bathroom renovations including accessibility modifications and luxury features.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="layers" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Basement Finishing</h3>
+                    <p class="text-gray-600 mb-4">Convert unused basement space into functional living areas with proper insulation and design.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Exterior Construction -->
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="sun" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Deck & Porch Construction</h3>
+                    <p class="text-gray-600 mb-4">Custom outdoor living spaces perfect for Montana's beautiful landscapes and weather.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="umbrella" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sunroom & Patio Enclosures</h3>
+                    <p class="text-gray-600 mb-4">Year-round outdoor enjoyment with weather protection and energy-efficient designs.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="coffee" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Outdoor Kitchens</h3>
+                    <p class="text-gray-600 mb-4">Complete outdoor cooking and entertaining spaces built for Montana lifestyle.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Specialty Services -->
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="user-check" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Accessibility Modifications</h3>
+                    <p class="text-gray-600 mb-4">Disability ramps, retrofits, and barrier-free remodeling for all mobility needs.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="box" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Carpentry</h3>
+                    <p class="text-gray-600 mb-4">Interior trim, moldings, stairs, railings, and built-in storage solutions.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 card-hover fade-in service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 service-icon">
+                        <i data-feather="package" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Metal Fabrication</h3>
+                    <p class="text-gray-600 mb-4">Custom metalwork including carports, structural beams, and decorative elements.</p>
+                    <a href="#contact" class="text-blue-600 font-semibold flex items-center space-x-1 hover:text-blue-700">
+                        <span>Learn More</span>
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Recent <span class="text-blue-600">Projects</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Take a look at some of our recent work and see the quality craftsmanship we bring to every project
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+                    <img src="https://images.unsplash.com/photo-1682888813913-e13f18692019?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2l0Y2hlbiUyMHJlbW9kZWx8ZW58MHx8MHx8fDA%3D$0" alt="Kitchen Remodel" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Complete Kitchen Remodel</h3>
+                            <p class="text-sm">Modern design with custom cabinetry</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+                    <img src="https://plus.unsplash.com/premium_photo-1733514692194-1cc39ee41141?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJhY2t5YXJkfGVufDB8fDB8fHww$0" alt="Deck Construction" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Custom Deck with Ramp</h3>
+                            <p class="text-sm">Accessibility-friendly outdoor space</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+                    <img src="https://images.unsplash.com/photo-1679736907648-601dcb45b5b9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhdGhyb29tJTIwcmVub3ZhdGlvbnxlbnwwfHwwfHx8MA%3D%3D$0" alt="Bathroom Renovation" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Luxury Bathroom Renovation</h3>
+                            <p class="text-sm">Spa-like retreat with modern fixtures</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+                    <img src="https://images.unsplash.com/photo-1646592474273-86049d4f3575?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFzZW1lbnQlMjByZW1vZGVsfGVufDB8fDB8fHww$0" alt="Basement Finishing" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Basement Transformation</h3>
+                            <p class="text-sm">Converted to entertainment space</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+                    <img src="https://images.unsplash.com/photo-1583430691214-abff69c2748a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGhvbWUlMjBhZGRpdGlvbnxlbnwwfHwwfHx8MA%3D%3D$0" alt="Home Addition" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Home Addition</h3>
+                            <p class="text-sm">Seamless expansion of living space</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+                    <img src="https://images.unsplash.com/photo-1723258344172-0af23318a4a5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVpbHQlMjBpbiUyMHN0b3JhZ2UlMjBzaGVsdmVzfGVufDB8fDB8fHww$0" alt="Custom Carpentry" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Custom Built-ins</h3>
+                            <p class="text-sm">Handcrafted storage solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center space-x-2">
+                    <span>View Your Project</span>
+                    <i data-feather="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    What Our <span class="text-blue-600">Clients Say</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Real reviews from satisfied customers who trust us with their construction needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-xl p-6 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-feather="user" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Sarah M.</h4>
+                            <div class="flex text-yellow-500">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Jeremy was professional and great to work with. Beautiful stairs! The attention to detail and quality of work exceeded our expectations."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-feather="user" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Mike R.</h4>
+                            <div class="flex text-yellow-500">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Jeremy and Rochelle were so professional and friendly from the very beginning. I am so IN LOVE with my new fence they built for my dogs. It came out better than I could have ever imagined."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-feather="user" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Lisa T.</h4>
+                            <div class="flex text-yellow-500">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "My experience with Infinity was great! This was my first big project and Jeremy gave me options, detail oriented information. When a big problem presented itself, he and his helpers went the extra mile to fix it."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Serving <span class="text-blue-600">Montana</span> Communities
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Proudly serving the greater Missoula area and surrounding communities with quality construction services
+                </p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <i data-feather="map-pin" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                        <h3 class="font-bold text-lg mb-2">Primary Service Area</h3>
+                        <p>Missoula, MT</p>
+                    </div>
+                    <div>
+                        <i data-feather="map" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                        <h3 class="font-bold text-lg mb-2">Surrounding Communities</h3>
+                        <p>Frenchtown, Alberton, Huson, Lolo, Milltown</p>
+                    </div>
+                    <div>
+                        <i data-feather="home" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                        <h3 class="font-bold text-lg mb-2">Home Base</h3>
+                        <p>Superior, MT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Get Your <span class="text-blue-600">Free Estimate</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ready to start your project? Contact us today for a free, no-obligation consultation and estimate
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Name</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Phone</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="(406) 000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Project Type</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                                    <option>Select a service</option>
+                                    <option>Home Renovation</option>
+                                    <option>Kitchen Remodeling</option>
+                                    <option>Bathroom Remodeling</option>
+                                    <option>Home Addition</option>
+                                    <option>Deck Construction</option>
+                                    <option>Basement Finishing</option>
+                                    <option>Custom Carpentry</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-blue-600 text-white rounded-xl p-8 mb-6">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="phone" class="w-6 h-6 text-yellow-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <p class="text-blue-100">(406) 207-3571</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="mail" class="w-6 h-6 text-yellow-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-blue-100">info@infinityconstructionmt.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="map-pin" class="w-6 h-6 text-yellow-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Physical Address</p>
+                                    <p class="text-blue-100">1693 Diamond Match Road<br>Superior, MT 59872</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-feather="inbox" class="w-6 h-6 text-yellow-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Mailing Address</p>
+                                    <p class="text-blue-100">PO Box 1021<br>Superior, MT 59872</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <i data-feather="clock" class="w-6 h-6 text-yellow-600"></i>
+                            <h3 class="font-bold text-lg">Business Hours</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            By appointment only. Call us to schedule your free consultation at a time that works for you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="home" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Infinity Construction</h3>
+                            <p class="text-xs text-gray-400">Montana's Trusted Builder</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">
+                        Building excellence in Big Sky Country with quality craftsmanship and exceptional service.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Home Renovations</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Deck Construction</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Custom Carpentry</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i data-feather="phone" class="w-4 h-4"></i>
+                            <span>(406) 207-3571</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mt-1"></i>
+                            <span>Superior, MT 59872</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-feather="mail" class="w-4 h-4"></i>
+                            <span>info@infinityconstructionmt.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Infinity Construction and Repair, LLC. All rights reserved. | Licensed & Insured Montana Contractor</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.stats-counter');
+        const speed = 200;
+        
+        const countUp = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => countUp(counter), 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.innerText === '0') {
+                    countUp(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Create success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successMsg.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i data-feather="check-circle" class="w-5 h-5"></i>
+                    <span>Message sent successfully! We'll contact you soon.</span>
+                </div>
+            `;
+            document.body.appendChild(successMsg);
+            feather.replace();
+            
+            // Reset form
+            e.target.reset();
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                successMsg.remove();
+            }, 5000);
+        });
+        
+        // Add animation to service cards on hover
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                anime({
+                    targets: card,
+                    scale: 1.02,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                anime({
+                    targets: card,
+                    scale: 1,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+        });
+        
+        // Project image hover effect
+        document.querySelectorAll('.group').forEach(group => {
+            const img = group.querySelector('img');
+            if (img) {
+                group.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: img,
+                        scale: 1.1,
+                        duration: 500,
+                        easing: 'easeOutQuad'
+                    });
+                });
+                
+                group.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: img,
+                        scale: 1,
+                        duration: 500,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
